@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="main_tab_session">会话</string>
+    <string name="main_tab_contact">联系人</string>
+    <string name="chat_room">直播间</string>
+    <string name="app_name">TC Demos</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="song_name">歌曲:走着走着就散了</string>
+    <string name="song_author">歌手:庄心妍</string>
+    <string name="song_from">专辑:2016酷音乐亚洲盛典</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="to_gridview_tab">切换栏目</string>
+    <string name="from_gridview_addtabs">点击添加更多栏目</string>
+    <string name="hello">你好</string>
+    <string name="screen_big">全屏</string>
+    <string name="modify_content">修改内容</string>
+    <string name="back_tv">返回</string>
+    <string name="back_zhuc">注册</string>
+    <string name="open_right_str">开启闪光灯</string>
+    <string name="code_notice">将二维码放入框内，即可自动扫描</string>
+    <string name="teachcourse_blog">TeachCourse</string>
+    <string name="scan_zxing_login">扫描二维码登录</string>
+    <!--jingchen Demo学习-->
+    <string name="pull_to_refresh">下拉刷新</string>
+    <string name="release_to_refresh">释放立即刷新</string>
+    <string name="refreshing">正在刷新...</string>
+    <string name="refresh_succeed">刷新成功</string>
+    <string name="refresh_fail">刷新失败</string>
+    <string name="pullup_to_load">上拉加载更多</string>
+    <string name="release_to_load">释放立即加载</string>
+    <string name="loading">正在加载...</string>
+    <string name="load_succeed">加载成功</string>
+    <string name="load_fail">加载失败</string>
+    <string name="title_activity_radio_button">RadioButtonActivity</string>
+    <string name="man">男人</string>
+    <string name="woman">女人</string>
+    <string name="button">按钮</string>
+
+</resources>

@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--多级地区选择JSON数据-->
+    <string name="jsonDistrict">
+[
+    {
+      "id": "1",
+      "parentId": "0",
+      "name": "贺州",
+      "childrenNodes": [
+        {
+          "id": "2",
+          "parentId": "1",
+          "name": "平桂管理区",
+          "childrenNodes": [
+            {
+              "id": "3",
+              "parentId": "2",
+              "name": "西湾街道办"
+            },
+            {
+              "id": "d9126f3922da42c687eb2cccc6183fbe",
+              "parentId": "2",
+              "name": "黄田镇"
+            },
+            {
+              "id": "04deb635b7864abfb9de424324c08d32",
+              "parentId": "2",
+              "name": "鹅塘镇"
+            },
+            {
+              "id": "972053cc9939440490b62d5969cae4f7",
+              "parentId": "2",
+              "name": "沙田镇"
+            },
+            {
+              "id": "dd3ab5d05d0247a996e6c32678119695",
+              "parentId": "2",
+              "name": "公会镇"
+            },
+            {
+              "id": "b1709d149ce7458f956f65750360a8fa",
+              "parentId": "2",
+              "name": "水口镇"
+            },
+            {
+              "id": "6ac2c01e6b0241b8bfbb90db7a1e2a8a",
+              "parentId": "2",
+              "name": "大平瑶族乡"
+            },
+            {
+              "id": "2bab68f7d09c4de79966d33409e17764",
+              "parentId": "2",
+              "name": "望高镇"
+            },
+            {
+              "id": "913de27c142a45769396380422d4a327",
+              "parentId": "2",
+              "name": "羊头镇"
+            }
+          ]
+        },
+        {
+          "id": "d718c5aca380456c80fca7ad4f557fb4",
+          "parentId": "1",
+          "name": "八步区",
+          "childrenNodes": [
+            {
+              "id": "ed335ea5136b40a8abbedfb3d9f41dfa",
+              "parentId": "d718c5aca380456c80fca7ad4f557fb4",
+              "name": "八步街道"
+            },
+            {
+              "id": "9679ba9ee34648e39b40b35ab756f1ff",
+              "parentId": "d718c5aca380456c80fca7ad4f557fb4",
+              "name": "城东街道"
+            },
+            {
+              "id": "a396eac5029744c6be39d370cdf7ece5",
+              "parentId": "d718c5aca380456c80fca7ad4f557fb4",
+              "name": "江南街道"
+            },
+            {
+              "id": "5654a4b0d6b148bba4bdfa733347d03b",
+              "parentId": "d718c5aca380456c80fca7ad4f557fb4",
+              "name": "贺街镇"
+            },
+            {
+              "id": "599ad8a8a42a4201ac47dbc85f1f3f86",
+              "parentId": "d718c5aca380456c80fca7ad4f557fb4",
+              "name": "步头镇"
+            },
+            {
+              "id": "3d0320bed18d4995919240cb1e493349",
+              "parentId": "d718c5aca380456c80fca7ad4f557fb4",
+              "name": "莲塘镇"
+            },
+            {
+              "id": "e65e843441334bc980a2c1d857b80678",
+              "parentId": "d718c5aca380456c80fca7ad4f557fb4",
+              "name": "大宁镇"
+            },
+            {
+              "id": "f41d0a472de541bdb85143d72ac87baa",
+              "parentId": "d718c5aca380456c80fca7ad4f557fb4",
+              "name": "南乡镇"
+            },
+            {
+              "id": "d535c1c2dcea4e458804fa7a0a88dace",
+              "parentId": "d718c5aca380456c80fca7ad4f557fb4",
+              "name": "桂岭镇"
+            },
+            {
+              "id": "fda8c71f1dae429e87fd3a76e6c96f1a",
+              "parentId": "d718c5aca380456c80fca7ad4f557fb4",
+              "name": "开山镇"
+            },
+            {
+              "id": "641620a269f04361a6581a12f0ae7a6b",
+              "parentId": "d718c5aca380456c80fca7ad4f557fb4",
+              "name": "里松镇"
+            },
+            {
+              "id": "90c01b426a5c4a4185bc59bdcff0e37b",
+              "parentId": "d718c5aca380456c80fca7ad4f557fb4",
+              "name": "信都镇"
+            },
+            {
+              "id": "460a5787c81b4a49b7ee98d476820947",
+              "parentId": "d718c5aca380456c80fca7ad4f557fb4",
+              "name": "灵峰镇"
+            },
+            {
+              "id": "0f15ae363d5f4e108b8071fa07bb85ae",
+              "parentId": "d718c5aca380456c80fca7ad4f557fb4",
+              "name": "仁义镇"
+            },
+            {
+              "id": "7d89b7630fd54bd2b9bf660bb7c0c685",
+              "parentId": "d718c5aca380456c80fca7ad4f557fb4",
+              "name": "铺门镇"
+            },
+            {
+              "id": "d8554f13be334cc0bbc008e9a1ad6411",
+              "parentId": "d718c5aca380456c80fca7ad4f557fb4",
+              "name": "黄洞瑶族乡"
+            }
+          ]
+        },
+        {
+          "id": "0570ff3dd5734ac09cba258cff3b0aed",
+          "parentId": "1",
+          "name": "钟山县",
+          "childrenNodes": [
+            {
+              "id": "980074aa10bd4b9abb7e35b70ec0df48",
+              "parentId": "0570ff3dd5734ac09cba258cff3b0aed",
+              "name": "钟山镇"
+            },
+            {
+              "id": "b61fca1222fd4438aa2d1da3d47a9086",
+              "parentId": "0570ff3dd5734ac09cba258cff3b0aed",
+              "name": "城厢镇"
+            },
+            {
+              "id": "14ec9a0d344e41e3b89bb0528047a1f6",
+              "parentId": "0570ff3dd5734ac09cba258cff3b0aed",
+              "name": "回龙镇"
+            },
+            {
+              "id": "8eeeebb4075544a298f5281eb7ac8028",
+              "parentId": "0570ff3dd5734ac09cba258cff3b0aed",
+              "name": "石龙镇"
+            },
+            {
+              "id": "cbfd7b81e37a47e1b0d2a5af12814827",
+              "parentId": "0570ff3dd5734ac09cba258cff3b0aed",
+              "name": "凤翔镇"
+            },
+            {
+              "id": "7a024e2c14d04a39999683a63c049709",
+              "parentId": "0570ff3dd5734ac09cba258cff3b0aed",
+              "name": "珊瑚镇"
+            },
+            {
+              "id": "8ef186b94b8b4cc2a582cfe042d9f350",
+              "parentId": "0570ff3dd5734ac09cba258cff3b0aed",
+              "name": "同古镇"
+            },
+            {
+              "id": "6d9fc6ff92dc475da1e5a52ff263d898",
+              "parentId": "0570ff3dd5734ac09cba258cff3b0aed",
+              "name": "公安镇"
+            },
+            {
+              "id": "53dafa1d7bef4a909faa76bd41383e8e",
+              "parentId": "0570ff3dd5734ac09cba258cff3b0aed",
+              "name": "英家镇"
+            },
+            {
+              "id": "4990a0e9c60043208b20a5fb20a6aee6",
+              "parentId": "0570ff3dd5734ac09cba258cff3b0aed",
+              "name": "清塘镇"
+            },
+            {
+              "id": "9d7b5a874c1d4940958c7bbc0b0411f6",
+              "parentId": "0570ff3dd5734ac09cba258cff3b0aed",
+              "name": "红花镇"
+            },
+            {
+              "id": "021289126b8c491ab6bf2293b761cf6a",
+              "parentId": "0570ff3dd5734ac09cba258cff3b0aed",
+              "name": "花山瑶族乡"
+            },
+            {
+              "id": "7496f849faf24dcfab2a786c3becc95c",
+              "parentId": "0570ff3dd5734ac09cba258cff3b0aed",
+              "name": "两安瑶族乡"
+            }
+          ]
+        },
+        {
+          "id": "4a53de90a10e4e2aa63cb3ab9a782c77",
+          "parentId": "1",
+          "name": "富川县",
+          "childrenNodes": [
+            {
+              "id": "29c364dcae904e9e856a8f0ebfd003dd",
+              "parentId": "4a53de90a10e4e2aa63cb3ab9a782c77",
+              "name": "富阳镇"
+            },
+            {
+              "id": "4369fad02763467bb80dea9c4c499b53",
+              "parentId": "4a53de90a10e4e2aa63cb3ab9a782c77",
+              "name": "白沙镇"
+            },
+            {
+              "id": "3bf57ceffa63423e84e7aa7cf9a3f753",
+              "parentId": "4a53de90a10e4e2aa63cb3ab9a782c77",
+              "name": "莲山镇"
+            },
+            {
+              "id": "4c518812adb14a92b2bc689da3f39d75",
+              "parentId": "4a53de90a10e4e2aa63cb3ab9a782c77",
+              "name": "古城镇"
+            },
+            {
+              "id": "6d4972aed3cc4f1187206af5cba01501",
+              "parentId": "4a53de90a10e4e2aa63cb3ab9a782c77",
+              "name": "福利镇"
+            },
+            {
+              "id": "5fcecb4324854749991796a26470473b",
+              "parentId": "4a53de90a10e4e2aa63cb3ab9a782c77",
+              "name": "麦岭镇"
+            },
+            {
+              "id": "557b94103c3e41da80663bf773ddb683",
+              "parentId": "4a53de90a10e4e2aa63cb3ab9a782c77",
+              "name": "葛坡镇"
+            },
+            {
+              "id": "07b9799a98b64449ba1478944c01a815",
+              "parentId": "4a53de90a10e4e2aa63cb3ab9a782c77",
+              "name": "城北镇"
+            },
+            {
+              "id": "df7e459bc5564aedb80183bd3a40c1ff",
+              "parentId": "4a53de90a10e4e2aa63cb3ab9a782c77",
+              "name": "朝东镇"
+            },
+            {
+              "id": "f412215112174744ab381adb37b86d15",
+              "parentId": "4a53de90a10e4e2aa63cb3ab9a782c77",
+              "name": "新华乡"
+            },
+            {
+              "id": "e14ad4a763354091874fa1d7b9161f01",
+              "parentId": "4a53de90a10e4e2aa63cb3ab9a782c77",
+              "name": "石家乡"
+            },
+            {
+              "id": "3db69adb9ebb43ad95728039f2951c2c",
+              "parentId": "4a53de90a10e4e2aa63cb3ab9a782c77",
+              "name": "柳家乡"
+            }
+          ]
+        },
+        {
+          "id": "ea46cd6192ad400b926fb191661c7375",
+          "parentId": "1",
+          "name": "昭平县",
+          "childrenNodes": [
+            {
+              "id": "9ec09f6b1803466c95d14b43d689bc56",
+              "parentId": "ea46cd6192ad400b926fb191661c7375",
+              "name": "昭平镇"
+            },
+            {
+              "id": "219c78003b98453c8a55d8f649b464f5",
+              "parentId": "ea46cd6192ad400b926fb191661c7375",
+              "name": "文竹镇"
+            },
+            {
+              "id": "ab30b89a79304e0a80c4900646882d2d",
+              "parentId": "ea46cd6192ad400b926fb191661c7375",
+              "name": "黄姚镇"
+            },
+            {
+              "id": "3ad9f842d5c64f8a8aecac55558c8f08",
+              "parentId": "ea46cd6192ad400b926fb191661c7375",
+              "name": "富罗镇"
+            },
+            {
+              "id": "9d2380bc74c94b189b7c5fb1e65b20d2",
+              "parentId": "ea46cd6192ad400b926fb191661c7375",
+              "name": "北陀镇"
+            },
+            {
+              "id": "860a8eae54334dd19e5603cc6ad7e2a7",
+              "parentId": "ea46cd6192ad400b926fb191661c7375",
+              "name": "马江镇"
+            },
+            {
+              "id": "c9307890f0c444faadc040d6a3237390",
+              "parentId": "ea46cd6192ad400b926fb191661c7375",
+              "name": "五将镇"
+            },
+            {
+              "id": "c20910d3377047c3b0abae872646d393",
+              "parentId": "ea46cd6192ad400b926fb191661c7375",
+              "name": "仙回瑶族乡"
+            },
+            {
+              "id": "6917b39d79464c70b1480c1ada30f497",
+              "parentId": "ea46cd6192ad400b926fb191661c7375",
+              "name": "走马乡"
+            },
+            {
+              "id": "9952a86d26d14ae3ac0299d55a83bbb1",
+              "parentId": "ea46cd6192ad400b926fb191661c7375",
+              "name": "樟木林乡"
+            },
+            {
+              "id": "feb3582c91e642bf82262038d5b96254",
+              "parentId": "ea46cd6192ad400b926fb191661c7375",
+              "name": "凤凰乡"
+            },
+            {
+              "id": "b11f2c3584ec49ed913a49e2f972ac12",
+              "parentId": "ea46cd6192ad400b926fb191661c7375",
+              "name": "木格乡"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+    </string>
+</resources>

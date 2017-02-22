@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="items">
+        <item>1、拍照功能Demo</item>
+        <item>2、录音功能Demo</item>
+        <item>3、enum枚举Demo</item>
+        <item>4、deviceID获取方式Demo</item>
+        <item>5、查通讯录号码</item>
+        <item>6、音乐播放器（简单Demo）</item>
+        <item>7、俯瞰全景效果Demo</item>
+        <item>8、Handler循环发送消息Demo</item>
+        <item>9、Android Studio assets位置</item>
+        <item>10、多级json地区解析</item>
+        <item>11、自定义接口使用Demo</item>
+        <item>12、SwipeRefreshLayout+RecyclerView</item>
+        <item>13、WebView</item>
+        <item>14、RecyclerView.Adapter简单Demo</item>
+        <item>15、BaseAdapter完全解析Demo</item>
+        <item>16、GridView简单使用Demo</item>
+        <item>17、RecyclerView实现网易Tabs效果Demo</item>
+        <item>18、android.location.*各类详细使用说明</item>
+        <item>19、Fragment各功能使用综合演示</item>
+        <item>20、TabHost常用的几种实现方式</item>
+        <item>21、ViewPager各种方法使用总结</item>
+        <item>22、网络下载apk到本地</item>
+        <item>23、获取网络文件大小的方法</item>
+        <item>24、transition标签和TransitionDrawable类</item>
+        <item>25、ViewPager实现多动画引导界面</item>
+        <item>26、WebView全屏播放H5最佳解决办法</item>
+        <item>27、WebView开发之JS交互</item>
+        <item>28、WebView开发之JS交互-二维码扫描功能</item>
+        <item>29、自定义ScrollView实现下拉刷新、上拉加载功能</item>
+        <item>30、RadioButton单选按钮的使用</item>
+        <item>31、深入理解接口的定义和意义</item>
+        <item>32、定义喜欢的进度条样式</item>
+    </string-array>
+
+</resources>

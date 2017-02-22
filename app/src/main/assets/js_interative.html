@@ -1,0 +1,21 @@
+<body xmlns="http://www.w3.org/1999/html">
+<input type="button" value="关闭当前Activity" onclick="window.myObj.finishMyself()"/></br>
+<a>打印Log信息</a>
+<br>
+<script>
+
+    function modifyContent(){
+        var btn=document.getElementById("helloweb");
+
+        btn.innerHTML="修改后。。。HelloWebView,i'm from js";
+    }
+        var aTag = document.getElementsByTagName('a')[0];
+        aTag.addEventListener('click', function(){
+        myObj.dispatchJavaMethod("调用android本地方法fun1FromAndroid(String name)！！");//调用android本地方法
+        return false;
+    }, false);
+
+</script>
+<p></p>
+<div id="helloweb">修改前。。。</div>
+</body>

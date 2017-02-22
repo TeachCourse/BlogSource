@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<msgbean>
+    <msg id="1" >
+        <type>单聊</type>
+        <message>自本月5日会见来访的意大利总理伦齐后,便未再公开露面。11日,俄发布俄罗斯、哈萨克斯坦、白俄罗斯三国领导人会晤推迟举行的消息,西方媒体</message>
+    </msg>
+    <msg id="2" >
+        <type>群聊</type>
+        <message>自本月5日会见来访的意大利总理伦齐后,便未再公开露面。11日,俄发布俄罗斯、哈萨克斯坦、白俄罗斯三国领导人会晤推迟举行的消息,西方媒体</message>
+    </msg>
+</msgbean>

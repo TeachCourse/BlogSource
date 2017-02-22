@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="cn.teachcourse.view.webview.ZXingJSWebViewActivity">
+
+    <LinearLayout
+        android:id="@+id/common_head_ll"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_head_view_height"
+
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/person_central_iv"
+            android:layout_width="@dimen/head_icon_width_height"
+            android:layout_height="@dimen/head_icon_width_height"
+            android:layout_gravity="left"
+            android:src="@drawable/icon_3_n" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:id="@+id/common_head_title_tv"
+            android:text="@string/teachcourse_blog"
+            android:textSize="@dimen/dp_018" />
+
+        <ImageView
+            android:id="@+id/radar_scan_iv"
+            android:layout_width="@dimen/head_icon_width_height"
+            android:layout_height="@dimen/head_icon_width_height"
+            android:layout_gravity="right"
+            android:src="@drawable/radar_button_icon_scan" />
+    </LinearLayout>
+
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/common_head_ll" />
+</RelativeLayout>

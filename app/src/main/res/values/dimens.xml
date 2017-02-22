@@ -1,0 +1,60 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="line_height">1dp</dimen>
+    <dimen name="dp_000">0dp</dimen>
+    <dimen name="dp_001">1dp</dimen>
+    <dimen name="dp_002">2dp</dimen>
+    <dimen name="dp_003">3dp</dimen>
+    <dimen name="dp_004">4dp</dimen>
+    <dimen name="dp_005">5dp</dimen>
+    <dimen name="dp_006">6dp</dimen>
+    <dimen name="dp_007">7dp</dimen>
+    <dimen name="dp_008">8dp</dimen>
+    <dimen name="dp_009">9dp</dimen>
+    <dimen name="dp_010">10dp</dimen>
+    <dimen name="dp_011">11dp</dimen>
+    <dimen name="dp_012">12dp</dimen>
+    <dimen name="dp_013">13dp</dimen>
+    <dimen name="dp_014">14dp</dimen>
+    <dimen name="dp_015">15dp</dimen>
+    <dimen name="dp_016">16dp</dimen>
+    <dimen name="dp_017">17dp</dimen>
+    <dimen name="dp_018">18dp</dimen>
+    <dimen name="dp_019">19dp</dimen>
+    <dimen name="dp_020">20dp</dimen>
+    <dimen name="dp_021">21dp</dimen>
+    <dimen name="dp_022">22dp</dimen>
+    <dimen name="dp_023">23dp</dimen>
+    <dimen name="dp_024">24dp</dimen>
+    <dimen name="dp_025">25dp</dimen>
+    <dimen name="dp_026">26dp</dimen>
+    <dimen name="dp_027">27dp</dimen>
+    <dimen name="dp_028">28dp</dimen>
+    <dimen name="dp_040">40dp</dimen>
+    <dimen name="big_f_width">250dp</dimen>
+    <dimen name="big_f_height">250dp</dimen>
+    <!-- 标题高度 -->
+    <dimen name="head_re_height">50dp</dimen>
+    <dimen name="small_title_text_size">16sp</dimen>
+    <!-- list中的itemt的统一高度 -->
+    <dimen name="sold_list_main_height">80dp</dimen>
+    <!-- 播音上下班按钮高度 -->
+    <dimen name="bo_up_down_btn">40dp</dimen>
+    <dimen name="big_big_title_text_size">20sp</dimen>
+    <dimen name="big_big_big_title_text_size">22sp</dimen>
+    <!-- 通用的编辑框长度 -->
+    <dimen name="text_ed_comm_width_info">100dp</dimen>
+    <dimen name="head_re_img_back_heigth_width">28dp</dimen>
+    <dimen name="sold_text_margin_right">25dp</dimen>
+    <!-- 这是通用的左间隔 -->
+    <dimen name="shadow_width">15dp</dimen>
+    <dimen name="big_title_text_size">18sp</dimen>
+    <dimen name="common_head_view_height">35dp</dimen>
+    <dimen name="head_icon_width_height">35dp</dimen>
+    <dimen name="margin_top_10dp">10dp</dimen>
+    <dimen name="action_bar_height">70dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+</resources>

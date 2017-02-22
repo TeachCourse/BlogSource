@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <SurfaceView
+        android:id="@+id/surfaceview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </SurfaceView>
+
+    <cn.teachcourse.zxing.view.ViewfinderView
+        android:id="@+id/viewfinderview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00000000" />
+
+
+    <TextView
+        android:id="@+id/tv_bt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/head_re_height"
+        android:gravity="center_horizontal"
+        android:text="@string/code_notice"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/small_title_text_size" >
+    </TextView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/sold_list_main_height"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/black" >
+
+        <TextView
+            android:id="@+id/backTV_new"
+            style="@style/CodeFont"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/bo_up_down_btn"
+            android:text="@string/back_tv"
+            android:textSize="@dimen/big_big_title_text_size" />
+
+        <ImageView
+            android:id="@+id/scan_state_img"
+            android:layout_width="@dimen/bo_up_down_btn"
+            android:layout_height="@dimen/bo_up_down_btn"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/bo_up_down_btn" 
+            android:background="@drawable/scan_close_img"/>
+
+        <cn.teachcourse.zxing.view.UISwitchButton
+            xmlns:switch="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/switch12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            android:layout_marginRight="@dimen/bo_up_down_btn" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

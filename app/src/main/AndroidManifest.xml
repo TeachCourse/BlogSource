@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.teachcourse"
+    android:versionCode="1"
+    android:versionName="1.2">
+
+    <uses-sdk
+        android:minSdkVersion="18"
+        android:targetSdkVersion="23" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MEDIA_CONTENT_CONTROL" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!-- 添加录制视频权限 -->
+    <uses-permission android:name="android.permission.CAPTURE_VIDEO_OUTPUT" />
+    <!-- 使用摄像头权限 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- 读取手机状态权限，比如：访问WiFi信息 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 访问WiFi状态权限 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 读取通讯录权限 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!-- 硬件要求： -->
+    <uses-feature android:name="android.hardware.camera" />
+    <!-- 添加网络访问权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 添加写入sdcard权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 添加service组件 -->
+        <service android:name=".service.music.MusicService" />
+        <service
+            android:name=".service.music.ServiceRecycle"
+            android:enabled="true"
+            android:exported="true" />
+
+        <!-- 添加activity组件 -->
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="activity/MainActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.AudioMainActivity"
+            android:label="activity/AudioMainActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".enums.MainActivity"
+            android:label="enums/MainActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.VideoMainActivity"
+            android:label="activity/VideoMainActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".deviceId.MainActivity"
+            android:label="deviceId/MainActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".phone.PhoneNameActivity"
+            android:label="phone/PhoneNameActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".service.music.MusicPlayerActivity"
+            android:label="service/music/MusicPlayerActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".imageview.overlook.OverlookActivity"
+            android:label="imageview/overlook/OverlookActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".handler.RefreshUIActivity"
+            android:label="handler/RefreshUIActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".assets.MainActivity"
+            android:label="assets/MainActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".json.ResolveJSONActivity"
+            android:label="json/ResolveJSONActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".interfaces.MsgBeanActivity"
+            android:label="interfaces/MsgBeanActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.SwitchListViewActivity"
+            android:label="view/SwitchListViewActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.webview.WebViewActivity"
+            android:label="view/webview/WebViewActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.recyclerview.RecyclerViewActivity"
+            android:label="view/recyclerview/RecyclerViewActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.listview.ListViewActivity"
+            android:label="view/listview/ListViewActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.gridview.GridViewActivity"
+            android:label="view/gridview/GridViewActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.recyclerview.netease.TabsActivity"
+            android:label="view/recyclerview/netease/TabsActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".location.AddressActivity"
+            android:label="location/AddressActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".tabhost.OneTabActivity"
+            android:label="tabhost/OneTabActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.viewpager.TabIndicatorActivity"
+            android:label="view/viewpager/TabIndicatorActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".packages.PackageInfoActivity"
+            android:label="packages/PackageInfoActivity"
+            android:logo="@drawable/ic_launcher">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".urlconnection.URLConneActivity"
+            android:label="urlconnection/URLConneActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".transition.TransitionActivity"
+            android:label="transition/TransitionActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.viewpager.WelcomeGuideActivity"
+            android:label="view/viewpager/WelcomeGuideActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".imageloader.CacheBitmapActivity"
+            android:label="imageloader/CacheBitmapActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.webview.H5WebViewActivity"
+            android:label="view/webview/H5WebViewActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.webview.JSWebViewActivity"
+            android:label="view/webview/JSWebViewActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.webview.ZXingJSWebViewActivity"
+            android:label="view/webview/ZXingJSWebViewActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".zxing.CaptureActivity"
+            android:label="zxing/CaptureActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".service.music.ServiceRecycleActivity"
+            android:label="service/music/ServiceRecycleActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".chenjing.PullableScrollViewActivity"
+            android:label="chenjing/PullableScrollViewActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.RadioButtonActivity"
+            android:label="view/RadioButtonActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.MyTextViewActivity"
+            android:label="view/MyTextViewActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.progress.ProgressActivity"
+            android:label="view/progress/ProgressActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainListActivity" />
+        <activity
+            android:name=".view.layoutparams.LinearLayoutParamsActivity"
+            android:label="view/layoutparams/LinearLayoutParamsActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.EventDispatchActivity"
+            android:label="view/EventDispatchActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.triangle.TriangleMathActivity"
+            android:label="view/triangle/TriangleMathActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.viewpager.ActionBarTabsPager"
+            android:label="view/viewpager/ActionBarTabsPager"
+            android:theme="@style/Base.Widget.AppCompat.ActionBar">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.DisplayActionBarActivity"
+            android:label="view/DisplayActionBarActivity"
+            android:theme="@style/Theme.AppCompat">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.MathUtilActivity"
+            android:label="view/MathUtilActivity"
+            android:theme="@style/Theme.AppCompat">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.dialog.TestDialogActivity"
+            android:label="view/dialog/TestDialogActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.dialog.ActivityDialog"
+            android:label="view/dialog/ActivityDialog"
+            android:theme="@style/Theme.CustomDialog">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.dialog.ActionBarDialog"
+            android:label="view/dialog/ActionBarDialog"
+            android:theme="@style/Theme.V7.CustomDialog">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.dialog.AppCompatActivityDialog"
+            android:label="view/dialog/AppCompatActivityDialog"
+            android:theme="@style/Theme.V7.CustomDialog">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.dialog.FragmentActivityDialog"
+            android:label="view/dialog/FragmentActivityDialog"
+            android:theme="@style/Theme.CustomDialog">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.dialog.ListActivityDialog"
+            android:label="view/dialog/ListActivityDialog"
+            android:theme="@style/Theme.CustomDialog">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".rect.RectSimpleSummaryActivity"
+            android:label="rect/RectSimpleSummaryActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".socket.WriteDataActivity"
+            android:label="socket/WriteDataActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".permission.RecordVideoActivity" />
+        <activity
+            android:name=".sharedpreferences.SharedPreferencesActivity"
+            android:label="sharedpreferences/SharedPreferencesActivity">
+            >
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

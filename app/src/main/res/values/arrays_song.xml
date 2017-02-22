@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="singtexts">
+        <item>歌词：</item>
+        <item>习惯人群中找你的影子</item>
+        <item>回想那些幸福的日子</item>
+        <item>但其实我明白</item>
+        <item>我和从前的我</item>
+        <item>已经分开很远很远</item>
+        <item>寂寞世界中的两颗心</item>
+        <item>寂寞城市中的每个人</item>
+        <item>我们相依相拥相互猜测怀疑</item>
+        <item> 一边微笑一边流泪</item>
+        <item>那些激情后的陌生被利用的信任</item>
+        <item>累觉不爱的心任性错过的人</item>
+        <item>伤痕累累才懂认真我就输了</item>
+        <item>有些人走着走着就散了</item>
+        <item>有些事看着看着就淡了</item>
+        <item>有多少无人能懂的不快乐</item>
+        <item>就有多少无能为力的不舍</item>
+        <item>有些人想着想着就忘了</item>
+        <item>有些梦做着做着就醒了</item>
+        <item>才发现从前是我太天真</item>
+        <item>现实又那么残忍</item>
+        <item>有些人想着想着就忘了</item>
+        <item>有些梦做着做着就醒了</item>
+        <item>才发现从前是我太天真</item>
+        <item>现实又那么残忍</item>
+    </string-array>
+</resources>

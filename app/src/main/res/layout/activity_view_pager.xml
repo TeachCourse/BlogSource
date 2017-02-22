@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.viewpager.ViewPagerActivity">
+    <cn.teachcourse.view.viewpager.PagerSlidingTabStrip
+        android:id="@+id/translate_pagertabstrip"
+        xmlns:app="scheme.android.com/apk/res/cn.teachcourse.demoapp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_040"
+        app:pstsIndicatorColor="@color/color_Pink"
+        app:pstsUnderlineColor="@color/color_Crimson"
+        app:pstsDividerColor="@color/color_LightGrey"
+        app:pstsCheckedTextColor="@color/color_Crimson"
+        app:pstsUncheckedTextColor="@color/color_DimGray"
+        app:pstsIndicatorHeight="@dimen/dp_004"
+        app:pstsUnderlineHeight="@dimen/dp_001"
+        app:pstsShouldExpand="true"
+        app:pstsTextAllCaps="true"
+        android:layout_alignParentTop="true"/>
+    <android.support.v4.view.ViewPager
+        android:layout_below="@+id/translate_pagertabstrip"
+        android:id="@+id/translate_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <include layout="@layout/activity_common_layout"
+        style="@style/activity_common_style"/>
+</RelativeLayout>

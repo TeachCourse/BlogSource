@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4682B4">
+    <TextView
+        android:layout_width="400px"
+        android:layout_height="400px"
+        android:background="#00BFFF"
+        android:gravity="center_horizontal"
+        android:layout_centerInParent="true"
+        android:id="@+id/display_coordinate_tv"
+        android:text="显示Rect存储坐标数据"/>
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/calculate_btn"
+        android:background="#7FFFAA"
+        android:layout_centerInParent="true"
+        android:text="计算View坐标"/>
+
+</RelativeLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_DimGray">#696969</color>
+    <color name="color_LightPink">#FFB6C1</color>
+    <color name="color_Pink">#FFC0CB</color>
+    <color name="color_Crimson">#DC143C</color>
+    <color name="color_LightGrey">#D3D3D3</color>
+    <color name="background_tab_focused">#66CCFF</color>
+    <color name="background_tab_pressed">#CCFFFF</color>
+    <color name="title_bg_color_my">#6ed96c</color>
+    <color name="gray">#aaaaaa</color>
+    <color name="light_blue">#6593cb</color>
+</resources>
