@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--
+    1、name对应的属性值，开发者可以自由定义；
+    2、path对应的属性值，当前external-path标签下的相对路径
+    比如：/storage/emulated/0/92Recycle-release.apk
+    sdcard路径：/storage/emulated/0
+    相对路径：/
+    -->
+    <external-path name="my_apk" path="/" />
+    <external-path name="my_image" path="/" />
+    <external-files-path name="common_pic" path="/" />
+</paths>

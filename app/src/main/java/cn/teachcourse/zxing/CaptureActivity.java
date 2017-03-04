@@ -33,6 +33,7 @@ import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;
 
 import cn.teachcourse.R;
+import cn.teachcourse.common.BaseActivity;
 import cn.teachcourse.view.webview.ZXingJSWebViewActivity;
 import cn.teachcourse.zxing.camera.CameraManager;
 import cn.teachcourse.zxing.decoding.CaptureActivityHandler;
@@ -43,7 +44,7 @@ import cn.teachcourse.zxing.view.ViewfinderView;
 
 
 @SuppressLint("NewApi")
-public class CaptureActivity extends FragmentActivity implements Callback,
+public class CaptureActivity extends BaseActivity implements Callback,
 		View.OnClickListener, OnCheckedChangeListener {
 	public static final String QR_RESULT = "RESULT";
 
@@ -82,6 +83,7 @@ public class CaptureActivity extends FragmentActivity implements Callback,
 	 * 初始化布局控件
 	 */
 	private void initView() {
+		initCommon(getWindow().getDecorView());
 		surfaceView = (SurfaceView) findViewById(R.id.surfaceview);
 		viewfinderView = (ViewfinderView) findViewById(R.id.viewfinderview);
 		switchUI = (UISwitchButton) findViewById(R.id.switch12);
@@ -346,5 +348,10 @@ public class CaptureActivity extends FragmentActivity implements Callback,
 					break;
 			}
 		}
+	}
+
+	@Override
+	public String getUrl() {
+		return null;
 	}
 }

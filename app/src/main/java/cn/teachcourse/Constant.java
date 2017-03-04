@@ -36,4 +36,5 @@ public class Constant {
     public static final int RADIO_BUTTON_EXAMPLE=30;//RadioButton单选按钮的使用
     public static final int UNDERSTAND_INTERFACE=31;//深入理解接口的定义和意义
     public static final int DEFINE_PROGRESS_STYLE=32;//定义喜欢的进度条样式
+    public static final String INSTALL_APK_PATH ="cn.teachcourse.fileprovider" ;
 }

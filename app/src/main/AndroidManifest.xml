@@ -5,8 +5,8 @@
     android:versionName="1.2">
 
     <uses-sdk
-        android:minSdkVersion="18"
-        android:targetSdkVersion="23" />
+        android:minSdkVersion="11"
+        android:targetSdkVersion="24" />
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -36,6 +36,18 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
+
+        <!-- 定义FileProvider -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="@string/install_apk_path"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider" />
+        </provider>
+        <!-- 定义Activity -->
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">
@@ -510,6 +522,32 @@
             android:name=".sharedpreferences.SharedPreferencesActivity"
             android:label="sharedpreferences/SharedPreferencesActivity">
             >
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".algorithm.BrokenKeyDerivationActivity"
+            android:label="algorithm/BrokenKeyDerivationActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".nougat.WriteToReadActivity"
+            android:label="nougat/WriteToReadActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.webview.UploadImgForH5Activity"
+            android:label="view/webview/UploadImgForH5Activity">
             <intent-filter>
                 <action android:name="cn.teachcourse.action.MAIN" />
 

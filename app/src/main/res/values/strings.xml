@@ -3,7 +3,7 @@
     <string name="main_tab_session">会话</string>
     <string name="main_tab_contact">联系人</string>
     <string name="chat_room">直播间</string>
-    <string name="app_name">TC Demos</string>
+    <string name="app_name">All Demos</string>
     <string name="hello_world">Hello world!</string>
     <string name="song_name">歌曲:走着走着就散了</string>
     <string name="song_author">歌手:庄心妍</string>
@@ -35,5 +35,6 @@
     <string name="man">男人</string>
     <string name="woman">女人</string>
     <string name="button">按钮</string>
+    <string name="install_apk_path">cn.teachcourse.fileprovider</string>
 
 </resources>

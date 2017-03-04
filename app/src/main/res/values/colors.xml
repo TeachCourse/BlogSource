@@ -10,4 +10,6 @@
     <color name="title_bg_color_my">#6ed96c</color>
     <color name="gray">#aaaaaa</color>
     <color name="light_blue">#6593cb</color>
+    <color name="actionsheet_blue">#037BFF</color>
+    <color name="actionsheet_gray">#8F8F8F</color>
 </resources>
