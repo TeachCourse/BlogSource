@@ -6,4 +6,10 @@
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
+
+    <style name="Theme.ActionSheetDialogStyle.Light.Dialog.Alert" parent="android:Theme.Dialog" >
+        <item name="android:colorAccent">@color/color_Crimson</item>
+    </style>
+
+    <style name="Theme.ActionSheetDialogStyle.Light.Dialog.Alert.Light.Dialog.Alert" parent="android:Theme.Material.Light.Dialog.Alert" />
 </resources>

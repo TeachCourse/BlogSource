@@ -4,15 +4,11 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
-import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -23,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import cn.teachcourse.R;
+import cn.teachcourse.api.MediaUtilAPI;
 import cn.teachcourse.common.BaseActivity;
 
 public class AudioMainActivity extends BaseActivity implements View.OnTouchListener {
@@ -181,6 +178,6 @@ public class AudioMainActivity extends BaseActivity implements View.OnTouchListe
 
     @Override
     public String getUrl() {
-        return null;
+        return "http://teachcourse.cn/2319.html";
     }
 }

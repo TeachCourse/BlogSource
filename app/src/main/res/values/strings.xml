@@ -36,5 +36,6 @@
     <string name="woman">女人</string>
     <string name="button">按钮</string>
     <string name="install_apk_path">cn.teachcourse.fileprovider</string>
+    <string name="install_apk_path_pub">cn.teachcourse.fileprovider.pub</string>
 
 </resources>

@@ -3,7 +3,6 @@ package cn.teachcourse.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Environment;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.SurfaceHolder;
@@ -16,6 +15,7 @@ import android.widget.VideoView;
 import java.io.File;
 
 import cn.teachcourse.R;
+import cn.teachcourse.api.MediaUtilAPI;
 import cn.teachcourse.common.BaseActivity;
 
 public class VideoMainActivity extends BaseActivity implements View.OnClickListener {

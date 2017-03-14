@@ -47,6 +47,7 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_provider" />
         </provider>
+
         <!-- 定义Activity -->
         <activity
             android:name=".MainActivity"
@@ -546,8 +547,27 @@
                 <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.webview.UploadImgForH5Activity"
+        <activity
+            android:name=".view.webview.UploadImgForH5Activity"
             android:label="view/webview/UploadImgForH5Activity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".runtime.RuntimeOrderActivity"
+            android:label="runtime/RuntimeOrderActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".download.DownloadManagerActivity"
+            android:label="download/DownloadManagerActivity">
             <intent-filter>
                 <action android:name="cn.teachcourse.action.MAIN" />
 
