@@ -1,16 +1,22 @@
 package cn.teachcourse.nougat;
 
 import android.Manifest;
+import android.annotation.TargetApi;
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
+import android.os.storage.StorageManager;
+import android.os.storage.StorageVolume;
+import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -28,7 +34,9 @@ public class WriteToReadActivity extends BaseActivity implements View.OnClickLis
     /**
      * 拍摄照片请求码
      **/
-    private static final int RESULT_CAPTURE_IMAGE = 0x1;
+    private static final int REQUEST_CODE = 0x1;
+    private static final int RESULT_CAPTURE_IMAGE = REQUEST_CODE + 1;
+    private static final int REQUEST_CODE_GRAINT_URI = REQUEST_CODE + 2;
     /**
      * 显示本地待安装apk路径
      **/
@@ -50,9 +58,10 @@ public class WriteToReadActivity extends BaseActivity implements View.OnClickLis
      **/
     private String mSDCardPath;
     /**
-     * File类表示本地apk文件路径
+     * File类表示本地sdcard根目录
      **/
-    private File mFileAPK;
+    private File mFileRoot;
+    private StorageManager mStorageManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,10 +74,17 @@ public class WriteToReadActivity extends BaseActivity implements View.OnClickLis
     }
 
     private void initData() {
+        String int_root = getFilesDir().getAbsolutePath();
+        String app_cache = getCacheDir().getAbsolutePath();
+        String ext_root = Environment.getExternalStorageDirectory().getAbsolutePath();
+        String ext_pub = getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath();
+        String ext_cache = getExternalCacheDir().getAbsolutePath();
+
         String state = Environment.getExternalStorageState();
         if (Environment.MEDIA_MOUNTED.equals(state)) {
-            mSDCardPath = Environment.getExternalStorageDirectory().getAbsolutePath();
-            mFileAPK = new File(mSDCardPath, "92Recycle-release.apk");
+            /**公共目录：file:///storage/emulated/0/Download**/
+//            mFileRoot = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+            mFileRoot = Environment.getExternalStorageDirectory();
         } else {
             Toast.makeText(this, "sdcard不存在", Toast.LENGTH_SHORT).show();
         }
@@ -118,8 +134,8 @@ public class WriteToReadActivity extends BaseActivity implements View.OnClickLis
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, REQUEST_CODE_PERMISSION_READ_OR_WRITE);
         } else {
 
-            if (mFileAPK != null)
-                installApk(mFileAPK);
+            if (mFileRoot != null)
+                installApk(mFileRoot);
             else
                 installApk(new File(mPath));
         }
@@ -131,15 +147,22 @@ public class WriteToReadActivity extends BaseActivity implements View.OnClickLis
      * @param file apk文件存放的路径
      */
     private void installApk(File file) {
-        /**Android 7.0以上的方式**/
-        Uri contentUri = getUriForFile(this, getString(R.string.install_apk_path), file);
-        grantUriPermission(getPackageName(), contentUri, Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        file = new File(file, "download/");
+        file = new File(file, "92Recycle-release.apk");
         Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
-                | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
-        intent.setDataAndType(contentUri, "application/vnd.android.package-archive");
-        /**Android 7.0以前的方式**/
-//        intent.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
+        if (Build.VERSION.SDK_INT > 23) {
+            /**Android 7.0以上的方式**/
+            Uri contentUri = getUriForFile(this, getString(R.string.install_apk_path), file);
+            /**请求授予的下面这句话等同于：intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);**/
+//            grantUriPermission("cn.teachcourse.demos", contentUri, Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            intent.setDataAndType(contentUri, "application/vnd.android.package-archive");
+            intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        } else {
+            /**Android 7.0以前的方式**/
+            intent.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
+        }
+
+
         startActivity(intent);
     }
 
@@ -149,7 +172,7 @@ public class WriteToReadActivity extends BaseActivity implements View.OnClickLis
     private void goToTakePhoto() {
         String state = Environment.getExternalStorageState();
         if (Environment.MEDIA_MOUNTED.equals(state)) {
-            File file = new File(mSDCardPath, System.currentTimeMillis() + ".jpg");
+            File file = new File(mFileRoot, System.currentTimeMillis() + ".jpg");
             Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             if (Build.VERSION.SDK_INT > 23) {
                 /**Android 7.0以上的方式**/
@@ -166,6 +189,25 @@ public class WriteToReadActivity extends BaseActivity implements View.OnClickLis
         }
     }
 
+    /**
+     * 调用系统相机
+     */
+    private void takePhoto() {
+        String state = Environment.getExternalStorageState();
+        if (Environment.MEDIA_MOUNTED.equals(state)) {
+            if (Build.VERSION.SDK_INT > 23) {
+                /**Android 7.0以上的方式**/
+                mStorageManager = this.getSystemService(StorageManager.class);
+                StorageVolume storageVolume = mStorageManager.getPrimaryStorageVolume();
+                Intent intent = storageVolume.createAccessIntent(Environment.DIRECTORY_DOWNLOADS);
+                startActivityForResult(intent, REQUEST_CODE_GRAINT_URI);
+            }
+        } else {
+            Toast.makeText(this, "sdcard不存在", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -176,6 +218,46 @@ public class WriteToReadActivity extends BaseActivity implements View.OnClickLis
                 else
                     Toast.makeText(this, "拍照失败", Toast.LENGTH_SHORT).show();
                 break;
+            case REQUEST_CODE_GRAINT_URI:
+                updateDirectoryEntries(data.getData());
+                Log.d(TAG, "onActivityResult: " + data.getData());
+                break;
+
+        }
+    }
+
+    private static final String[] DIRECTORY_SELECTION = new String[]{
+            DocumentsContract.Document.COLUMN_DISPLAY_NAME,
+            DocumentsContract.Document.COLUMN_MIME_TYPE,
+            DocumentsContract.Document.COLUMN_DOCUMENT_ID,
+    };
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    private void updateDirectoryEntries(Uri uri) {
+        ContentResolver contentResolver = this.getContentResolver();
+        Uri docUri = DocumentsContract.buildDocumentUriUsingTree(uri,
+                DocumentsContract.getTreeDocumentId(uri));
+        Uri childrenUri = DocumentsContract.buildChildDocumentsUriUsingTree(uri,
+                DocumentsContract.getTreeDocumentId(uri));
+
+        try (Cursor docCursor = contentResolver
+                .query(docUri, DIRECTORY_SELECTION, null, null, null)) {
+            while (docCursor != null && docCursor.moveToNext()) {
+                mPath_tv.setText(docCursor.getString(docCursor.getColumnIndex(
+                        DocumentsContract.Document.COLUMN_DISPLAY_NAME)));
+            }
+        }
+
+        try (Cursor childCursor = contentResolver
+                .query(childrenUri, DIRECTORY_SELECTION, null, null, null)) {
+            while (childCursor != null && childCursor.moveToNext()) {
+                String fileName = childCursor.getString(childCursor.getColumnIndex(
+                        DocumentsContract.Document.COLUMN_DISPLAY_NAME));
+                String mimeType = childCursor.getString(childCursor.getColumnIndex(
+                        DocumentsContract.Document.COLUMN_MIME_TYPE));
+                Log.d(TAG, "updateDirectoryEntries: " + fileName + "\n" + mimeType);
+            }
+
         }
     }
 
@@ -186,7 +268,7 @@ public class WriteToReadActivity extends BaseActivity implements View.OnClickLis
         if (PackageManager.PERMISSION_GRANTED != flag) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, REQUEST_CODE_PERMISSION);
         } else {
-            goToTakePhoto();
+            takePhoto();
         }
     }
 
@@ -203,7 +285,7 @@ public class WriteToReadActivity extends BaseActivity implements View.OnClickLis
                         Toast.makeText(this, "拍照权限被禁用，请在权限管理修改", Toast.LENGTH_SHORT).show();
                     break;
                 case PackageManager.PERMISSION_GRANTED:
-                    goToTakePhoto();
+                    takePhoto();
                     break;
             }
         } else if (REQUEST_CODE_PERMISSION_READ_OR_WRITE == requestCode) {
@@ -216,8 +298,8 @@ public class WriteToReadActivity extends BaseActivity implements View.OnClickLis
                         Toast.makeText(this, "数据写入应用权限被禁用，请在权限管理修改", Toast.LENGTH_SHORT).show();
                     break;
                 case PackageManager.PERMISSION_GRANTED:
-                    if (mFileAPK != null)
-                        installApk(mFileAPK);
+                    if (mFileRoot != null)
+                        installApk(mFileRoot);
                     else
                         installApk(new File(mPath));
                     break;
