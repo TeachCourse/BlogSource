@@ -1,0 +1,6 @@
+<h2 id="-">摘要：</h2>
+<p>Android 6.0之后的版本增加了运行时权限，应用程序在执行每个需要系统权限的功能时，需要添加权限请求代码（默认权限禁止），否则应用程序无法响应；Android 7.0在Android 6.0的基础上，对系统权限进一步更改，这次的权限更改包括三个方面：</p>
+<ol>
+    <li>APP应用程序的私有文件不再向使用者放宽</li><li>Intent组件传递<code>file://URI</code>的方式可能给接收器留下无法访问的路径，触发<code>FileUriExposedException</code>异常，推荐使用<code>FileProvider</code></li><li><code>DownloadManager</code>不再按文件名分享私人存储的文件。旧版应用在访问<code>COLUMN_LOCAL_FILENAME</code>时可能出现无法访问的路径。面向 Android 7.0 或更高版本的应用在尝试访问 COLUMN_LOCAL_FILENAME 时会触发 SecurityException</li></ol>
+<p>简单的三句话，无法让TeachCourse真正理解Android 7.0系统权限更改的含义，如果不按照文档的方式去做，<em>API 24</em>开发的应用程序是否就用不了？</p>
+<p><img class="aligncenter" src="http://teachcourse.cn/wp-content/uploads/2017/03/20170314112609.png" alt="Android 7.0系统权限变更"></p>

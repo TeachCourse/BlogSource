@@ -1,54 +1,117 @@
 apply plugin: 'com.android.application'
 
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
 android {
     compileSdkVersion 24
     buildToolsVersion "25.0.2"
-
+    /**
+     * 一、默认产品偏好配置
+     */
     defaultConfig {
-        applicationId "cn.teachcourse.demos"
+        applicationId "cn.teachcourse"
         minSdkVersion 11
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-
+    /**
+     * 二、自定义签名配置
+     */
     signingConfigs {
         config {
-            keyAlias 'zhaolinit'
-            keyPassword '123456'
+            //安全自定义签名（1）
+//            keyAlias keystoreProperties['keyAlias']
+//            keyPassword keystoreProperties['keyPassword']
+//            storeFile file(keystoreProperties['storeFile'])
+//            storePassword keystoreProperties['storePassword']
+            //安全自定义签名（2）
+            keyAlias System.getenv("KEYALIAS")
+            keyPassword System.getenv("KEYPWD")
             storeFile file('release.jks')
-            storePassword 'dazhao?admin'
+            storePassword System.getenv("KSTOREPWD")
+            //安全自定义签名（3）
+//            keyAlias System.getenv("KEYALIAS")
+//            keyPassword System.console().readLine("\nKey password: ")
+//            storeFile file('release.jks')
+//            storePassword System.console().readLine("\nKeystore password: ")
+
         }
     }
-
+    /**
+     * 三、构建类型，分为release和debug两种
+     */
     buildTypes {
         release {
             shrinkResources true
             minifyEnabled true
+            useProguard true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.config
         }
         debug {
-            minifyEnabled true
+            shrinkResources false
+            minifyEnabled false
             useProguard false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'),
-                    'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
+    /**
+     * 四、自定义产品偏好配置，可以定义多个偏好产品
+     */
+    productFlavors {
+        demo {
+            applicationId "cn.teahcourse.demo"
+            versionName "1.0-demo"
+            signingConfig signingConfigs.config
+        }
+        personal {
+            versionCode 1
+            minSdkVersion 11
+            targetSdkVersion 24
+            versionNameSuffix '-personal'
+            applicationIdSuffix '-per'
+            signingConfig signingConfigs.config
+        }
+        enterprise {
+            versionCode 1000
+            minSdkVersion 11
+            targetSdkVersion 24
+            versionNameSuffix '-profession'
+            applicationIdSuffix 'full'
+            signingConfig signingConfigs.config
+        }
+    }
+    /**
+     * 五、DEX文件构建属性配置（加快构建速度）
+     */
     dexOptions {
-        // Sets the maximum number of DEX processes
-        // that can be started concurrently.
         maxProcessCount 8
-        // Sets the maximum memory allocation pool size
-        // for the dex operation.
         javaMaxHeapSize "2g"
-        // Enables Gradle to pre-dex library dependencies.
         preDexLibraries true
     }
+    /**
+     * 六、将一个apk拆分成多个相关配置（拆分依据：屏幕密度、系统架构）
+     */
+    splits {
+        density {
+            enable false
+            exclude "ldpi", "xxhdpi", "xxxhdpi"
+            compatibleScreens 'small', 'normal', 'large', 'xlarge'
+        }
+        abi {
+            enable false
+            reset()
+            include "x86", "mips"
+        }
+    }
 }
-
+/**
+ * 七、引入依赖包的秘密
+ */
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -56,6 +119,8 @@ dependencies {
     })
     compile files('libs/zxing.jar')
     compile 'com.loopj.android:android-async-http:1.4.9'
+    //compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+
     compile 'com.loopj.android:android-async-http:1.4.9'
     compile 'com.android.support:appcompat-v7:24.0.0'
     compile 'com.flaviofaria:kenburnsview:1.0.7'
@@ -65,8 +130,9 @@ dependencies {
     compile 'com.android.support:design:24.0.0'
     compile 'com.android.support:recyclerview-v7:24.0.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.1'
-    testCompile 'junit:junit:4.12'
+    //testCompile 'junit:junit:4.12'
 }
+
 
 
 

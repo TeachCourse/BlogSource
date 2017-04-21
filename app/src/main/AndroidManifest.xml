@@ -574,6 +574,33 @@
                 <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".tabhost.TabLayoutActivity"
+            android:label="tabhost/TabLayoutActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".packages.ApplicationIdAndPackageActivity"
+            android:label="packages/ApplicationIdAndPackageActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.WatchViewActivity"
+            android:label="view/WatchViewActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

@@ -9,17 +9,39 @@
 ### 1.1 onShowFileChooser或openFileChooser，效果图：
 ![](screenshot/201703131736.gif)
 
-源码存放路径：`view\webview\UploadImgForH5Activity.java`
+- 源码存放路径：`view\webview\UploadImgForH5Activity.java`
 
 ### 1.2 你或许理解错了Android系统权限管理的这两个概念，效果图：
 ![](screenshot/201703131740.gif)
 
-源码存放路径：`activity\AudioMainActivity.java`
+- 源码存放路径：`activity\AudioMainActivity.java`
 
 ### 1.3 Android开发之深入理解Android 7.0系统权限更改相关文档
 ![](screenshot/201703131736.gif)
 
-- FileProvider源码路径：nougat/WriteToReadActivity.java
-- DownloadManager源码路径：download/DownloadActivity.java
+- FileProvider源码路径：`nougat/WriteToReadActivity.java`
+- DownloadManager源码路径：`download/DownloadActivity.java`
 
+### 1.4 自定义漂亮的钟表视图（WatchView） ###
+简单使用：
+```
+    WatchView.Builder builder=new WatchView.Builder(this);
+    WatchView watchView=builder.create();
+```
+| 效果图 | 效果代码 |
+| ----- | ----- |
+| ![](screenshot/201704211514.gif) | ![](screenshot/201704211517.gif) |
+| ![](screenshot/201704211515.gif) | ![](screenshot/201704211516.gif) |
+
+样式修改：
+```
+        builder.setRadius(300f);
+        builder.setMinuteColor(Color.BLUE);
+        builder.setSecondColor(Color.RED);
+        builder.setHourColor(0xff999999);
+        builder.setPadding(10f);
+        builder.setShortScaleColor(Color.WHITE);
+```
+
+- `WatchView`源码路径：`view/WatchView.java`
 
