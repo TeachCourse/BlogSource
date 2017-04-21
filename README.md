@@ -28,6 +28,7 @@
     WatchView.Builder builder=new WatchView.Builder(this);
     WatchView watchView=builder.create();
 ```
+| 默认效果 | 修改样式 |
 | ----- | ----- |
 | ![](screenshot/201704211514.gif) | ![](screenshot/201704211517.gif) |
 | ![](screenshot/201704211515.gif) | ![](screenshot/201704211516.gif) |
