@@ -28,19 +28,19 @@
     WatchView.Builder builder=new WatchView.Builder(this);
     WatchView watchView=builder.create();
 ```
-| 效果图 | 效果代码 |
+| 默认效果 | 修改样式 |
 | ----- | ----- |
 | ![](screenshot/201704211514.gif) | ![](screenshot/201704211517.gif) |
 | ![](screenshot/201704211515.gif) | ![](screenshot/201704211516.gif) |
 
 样式修改：
 ```
-        builder.setRadius(300f);
-        builder.setMinuteColor(Color.BLUE);
-        builder.setSecondColor(Color.RED);
-        builder.setHourColor(0xff999999);
-        builder.setPadding(10f);
-        builder.setShortScaleColor(Color.WHITE);
+    builder.setRadius(300f);
+    builder.setMinuteColor(Color.BLUE);
+    builder.setSecondColor(Color.RED);
+    builder.setHourColor(0xff999999);
+    builder.setPadding(10f);
+    builder.setShortScaleColor(Color.WHITE);
 ```
 
 - `WatchView`源码路径：`view/WatchView.java`
