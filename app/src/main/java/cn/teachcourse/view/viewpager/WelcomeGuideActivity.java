@@ -15,9 +15,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.teachcourse.R;
+import cn.teachcourse.common.BaseActivity;
 import cn.teachcourse.view.viewpagercompat.RotateDownPageTransformer;
 
-public class WelcomeGuideActivity extends AppCompatActivity {
+public class WelcomeGuideActivity extends BaseActivity {
     private static final String TAG = "WelcomeGuideActivity";
     private ViewPager mViewPager;
     private static final int mImgIds[]=new int[]{R.drawable.background_one,R.drawable.background_two,R.drawable.background_three};
@@ -44,6 +45,7 @@ public class WelcomeGuideActivity extends AppCompatActivity {
      * 初始化布局
      */
     private void initView(){
+        initCommon(getWindow().getDecorView());
         mViewPager=(ViewPager) findViewById(R.id.welcome_guide_viewpager);
         mViewPager.setAdapter(new ViewPagerAdapter(mImgIds));
         mViewPager.setPageTransformer(false,new RotateDownPageTransformer());
@@ -61,6 +63,11 @@ public class WelcomeGuideActivity extends AppCompatActivity {
             imageView.setImageResource(imgId);
             mImageViews.add(imageView);
         }
+    }
+
+    @Override
+    public String getUrl() {
+        return null;
     }
 
     /**

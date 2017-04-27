@@ -330,7 +330,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".zxing.CaptureActivity"
+            android:name=".scancode.CaptureActivity"
             android:label="zxing/CaptureActivity">
             <intent-filter>
                 <action android:name="cn.teachcourse.action.MAIN" />

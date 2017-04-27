@@ -1,1 +1,1 @@
-include ':app','zXingProj'
+include ':app', ':app-clock', ':app-uploadpic', 'app-scancode'

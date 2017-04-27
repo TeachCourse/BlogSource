@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.viewpager.ViewPagerActivity">
+    tools:context=".view.viewpager.TabIndicatorActivity">
     <cn.teachcourse.view.viewpager.PagerSlidingTabStrip
         android:id="@+id/translate_pagertabstrip"
         xmlns:app="scheme.android.com/apk/res/cn.teachcourse.demoapp"

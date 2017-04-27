@@ -13,8 +13,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import cn.teachcourse.R;
+import cn.teachcourse.common.BaseActivity;
 
-public class TriangleMathActivity extends AppCompatActivity implements TextWatcher {
+public class TriangleMathActivity extends BaseActivity implements TextWatcher {
     private static final String TAG = "TriangleMathActivity";
     /**
      * 计算任何一个角度正弦、余弦和正切
@@ -46,6 +47,7 @@ public class TriangleMathActivity extends AppCompatActivity implements TextWatch
     }
 
     private void initView() {
+        initCommon(getWindow().getDecorView());
         mInputValue_et = (EditText) findViewById(R.id.input_angle_et);
         mOutputValue_tv = (TextView) findViewById(R.id.output_value_tv);
     }
@@ -107,5 +109,10 @@ public class TriangleMathActivity extends AppCompatActivity implements TextWatch
             return false;
         }
         return true;
+    }
+
+    @Override
+    public String getUrl() {
+        return null;
     }
 }

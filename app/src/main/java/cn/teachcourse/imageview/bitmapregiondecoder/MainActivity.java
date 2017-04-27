@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import cn.teachcourse.R;
+import cn.teachcourse.common.BaseActivity;
 
 
 /**
@@ -23,7 +24,7 @@ import cn.teachcourse.R;
  * 3、BitmapRegionDecoder
  * 4、RectF
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
     private static final String TAG = MainActivity.class.getName();
     private ImageView mImageView;
     private int width;//读取图片实际宽度
@@ -35,8 +36,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bitmapregiondecoder);
+        initCommon(getWindow().getDecorView());
         mImageView = (ImageView) findViewById(R.id.id_imageview);
         ll_view = (LinearLayout) findViewById(R.id.ll_view);
+        getWidthAndHeight();
+    }
+
+    private void getWidthAndHeight() {
         TranslateImageView mTranImageView = (TranslateImageView) findViewById(R.id.translate_view);
 //        LargeImageView mLargeView = (LargeImageView) findViewById(R.id.large_view);
 //        new LoadImageTask().execute("qm.jpg");
@@ -53,6 +59,11 @@ public class MainActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public String getUrl() {
+        return null;
     }
 
     private class LoadImageTask extends AsyncTask<String, Void, InputStream> {

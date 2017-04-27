@@ -6,8 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import cn.teachcourse.R;
+import cn.teachcourse.common.BaseActivity;
 
-public class PullableScrollViewActivity extends Activity
+public class PullableScrollViewActivity extends BaseActivity
 {
 	public static void start(Context context)
 	{
@@ -31,5 +32,11 @@ public class PullableScrollViewActivity extends Activity
 		setContentView(R.layout.activity_scrollview);
 		((PullToRefreshLayout) findViewById(R.id.refresh_view))
 		.setOnRefreshListener(new MyListener());
+		initCommon(getWindow().getDecorView());
+	}
+
+	@Override
+	public String getUrl() {
+		return null;
 	}
 }

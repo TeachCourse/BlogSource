@@ -13,8 +13,9 @@ import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
 
 import cn.teachcourse.R;
+import cn.teachcourse.common.BaseActivity;
 
-public class SwitchListViewActivity extends AppCompatActivity {
+public class SwitchListViewActivity extends BaseActivity {
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private RecyclerView mRecyclerView;
     private LinearLayoutManager mLayoutManager;
@@ -42,6 +43,7 @@ public class SwitchListViewActivity extends AppCompatActivity {
      *  初始化布局控件
      */
     private void initView(){
+        initCommon(getWindow().getDecorView());
         mSwipeRefreshLayout=(SwipeRefreshLayout)findViewById(R.id.swipe_refresh_layout);
         mRecyclerView=(RecyclerView)findViewById(R.id.recycler_view_list);
         mLayoutManager = new LinearLayoutManager(this);
@@ -110,4 +112,9 @@ public class SwitchListViewActivity extends AppCompatActivity {
             lastVisibleItem = mLayoutManager.findLastVisibleItemPosition();
         }
     };
+
+    @Override
+    public String getUrl() {
+        return null;
+    }
 }

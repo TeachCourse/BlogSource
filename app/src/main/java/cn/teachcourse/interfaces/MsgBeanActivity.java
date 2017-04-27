@@ -16,13 +16,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.teachcourse.R;
+import cn.teachcourse.common.BaseActivity;
 import cn.teachcourse.interfaces.util.MessageService;
 import cn.teachcourse.service.music.MusicService;
 
 /**
  * 功能：根据消息类型，实现接口doMsg()方法
  */
-public class MsgBeanActivity extends AppCompatActivity{
+public class MsgBeanActivity extends BaseActivity{
     private static final String TAG=MsgBeanActivity.class.getName();
     private TextView textView;
     private OnMsgChangeListener listener;
@@ -57,5 +58,10 @@ public class MsgBeanActivity extends AppCompatActivity{
                 textView.setText("收到的消息类型是："+listBean.get(0).getType()+"\n"+"消息内容是："+listBean.get(0).getMessage());
             }
         });
+    }
+
+    @Override
+    public String getUrl() {
+        return null;
     }
 }

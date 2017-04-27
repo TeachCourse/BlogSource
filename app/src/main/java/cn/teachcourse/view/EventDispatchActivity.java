@@ -12,10 +12,11 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import cn.teachcourse.R;
+import cn.teachcourse.common.BaseActivity;
 
 import static cn.teachcourse.R.id.dispatch_ll;
 
-public class EventDispatchActivity extends AppCompatActivity implements View.OnClickListener, View.OnTouchListener {
+public class EventDispatchActivity extends BaseActivity implements View.OnClickListener, View.OnTouchListener {
     private static final String TAG = "EventDispatchActivity";
     private RelativeLayout mParentView_rl;
     private ImageView mDispatch_iv;
@@ -60,6 +61,7 @@ public class EventDispatchActivity extends AppCompatActivity implements View.OnC
     }
 
     private void initView() {
+        initCommon(getWindow().getDecorView());
         mParentView_rl = (RelativeLayout) findViewById(R.id.activity_event_dispatch);
         mDispatch_iv = (ImageView) findViewById(R.id.dispatch_iv);
         mDispatchEvent_iv = (ImageView) findViewById(R.id.dispatch_event_iv);
@@ -123,5 +125,10 @@ public class EventDispatchActivity extends AppCompatActivity implements View.OnC
 
         }
         return false;
+    }
+
+    @Override
+    public String getUrl() {
+        return null;
     }
 }

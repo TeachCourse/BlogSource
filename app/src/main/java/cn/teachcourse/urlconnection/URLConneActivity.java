@@ -16,9 +16,10 @@ import java.net.URISyntaxException;
 import java.net.URL;
 
 import cn.teachcourse.R;
+import cn.teachcourse.common.BaseActivity;
 import cn.teachcourse.packages.Downloader;
 
-public class URLConneActivity extends AppCompatActivity {
+public class URLConneActivity extends BaseActivity {
     private TextView mTextView;
     public static void start(Context context) {
         start(context, null);
@@ -44,6 +45,7 @@ public class URLConneActivity extends AppCompatActivity {
      * 初始化布局控件
      */
     private void initView(){
+        initCommon(getWindow().getDecorView());
         mTextView=(TextView)findViewById(R.id.url_file_length_tv);
     }
     /**
@@ -78,4 +80,9 @@ public class URLConneActivity extends AppCompatActivity {
             }
         }
     };
+
+    @Override
+    public String getUrl() {
+        return null;
+    }
 }

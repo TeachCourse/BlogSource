@@ -36,5 +36,6 @@
             android:visibility="invisible" />
 
     </RelativeLayout>
-
+    <include layout="@layout/activity_common_layout"
+        style="@style/activity_common_style"/>
 </RelativeLayout>

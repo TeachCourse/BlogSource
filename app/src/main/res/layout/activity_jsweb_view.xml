@@ -19,4 +19,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/modify_btn"
         android:text="@string/modify_content"/>
+    <include layout="@layout/activity_common_layout"
+        style="@style/activity_common_style"/>
 </RelativeLayout>

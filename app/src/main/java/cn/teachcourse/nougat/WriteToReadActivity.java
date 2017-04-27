@@ -154,8 +154,8 @@ public class WriteToReadActivity extends BaseActivity implements View.OnClickLis
             /**Android 7.0以上的方式**/
             Uri contentUri = getUriForFile(this, getString(R.string.install_apk_path), file);
             /**请求授予的下面这句话等同于：intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);**/
-//            grantUriPermission("cn.teachcourse.demos", contentUri, Intent.FLAG_GRANT_READ_URI_PERMISSION);
-            intent.setDataAndType(contentUri, "application/vnd.android.package-archive");
+            grantUriPermission("cn.teachcourse", contentUri, Intent.FLAG_GRANT_READ_URI_PERMISSION);
+//            intent.setDataAndType(contentUri, "application/vnd.android.package-archive");
             intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
         } else {
             /**Android 7.0以前的方式**/

@@ -19,8 +19,9 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import cn.teachcourse.R;
+import cn.teachcourse.common.BaseActivity;
 
-public class WebViewActivity extends AppCompatActivity {
+public class WebViewActivity extends BaseActivity {
     private ImageView mError_iv;
     private WebView mWebview;
     private boolean isAll = false;
@@ -41,6 +42,7 @@ public class WebViewActivity extends AppCompatActivity {
      * 初始化数据
      */
     private void initView() {
+        initCommon(getWindow().getDecorView());
         mWebview = (WebView) findViewById(R.id.web_view_id);
         mError_iv=(ImageView)findViewById(R.id.widget_iv);
         set(mWebview);
@@ -159,5 +161,10 @@ public class WebViewActivity extends AppCompatActivity {
     }
 
     private void loadManager(String url) {
+    }
+
+    @Override
+    public String getUrl() {
+        return null;
     }
 }

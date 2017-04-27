@@ -9,8 +9,9 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import cn.teachcourse.R;
+import cn.teachcourse.common.BaseActivity;
 
-public class RefreshUIActivity extends AppCompatActivity {
+public class RefreshUIActivity extends BaseActivity {
     private TextView mTextView;//获取消息
     int i=0;
     public static void start(Context context){
@@ -30,6 +31,7 @@ public class RefreshUIActivity extends AppCompatActivity {
         setContentView(R.layout.activity_refresh_ui);
         mTextView=(TextView)findViewById(R.id.show_info);
         startAuto();
+        initCommon(getWindow().getDecorView());
     }
     private void startAuto(){
         Message message = mHandler.obtainMessage(0);
@@ -49,5 +51,10 @@ public class RefreshUIActivity extends AppCompatActivity {
     private void updateImageView() {
         i++;
         mTextView.setText(""+i);
+    }
+
+    @Override
+    public String getUrl() {
+        return null;
     }
 }

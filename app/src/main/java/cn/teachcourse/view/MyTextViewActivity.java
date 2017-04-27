@@ -9,9 +9,10 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import cn.teachcourse.R;
+import cn.teachcourse.common.BaseActivity;
 import cn.teachcourse.view.define.MyTextView;
 
-public class MyTextViewActivity extends AppCompatActivity {
+public class MyTextViewActivity extends BaseActivity {
     private static final String TAG = "MyTextViewActivity";
     private MyTextView myTextView;
     public static void start(Context context)
@@ -37,6 +38,7 @@ public class MyTextViewActivity extends AppCompatActivity {
     }
 
     private void initView() {
+        initCommon(getWindow().getDecorView());
         myTextView = (MyTextView) findViewById(R.id.my_textview);
         myTextView.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -55,5 +57,10 @@ public class MyTextViewActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public String getUrl() {
+        return null;
     }
 }

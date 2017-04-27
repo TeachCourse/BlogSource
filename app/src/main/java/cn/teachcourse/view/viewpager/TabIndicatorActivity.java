@@ -12,8 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.teachcourse.R;
+import cn.teachcourse.common.BaseActivity;
 
-public class TabIndicatorActivity extends AppCompatActivity {
+public class TabIndicatorActivity extends BaseActivity {
     private static final String TAG=TabIndicatorActivity.class.getName();
     private PagerSlidingTabStrip mTabs;
     private ViewPager mViewPager;
@@ -63,5 +64,10 @@ public class TabIndicatorActivity extends AppCompatActivity {
         mList.add("高考");
         mList.add("科技");
         mList.add("汽车");
+    }
+
+    @Override
+    public String getUrl() {
+        return null;
     }
 }

@@ -15,13 +15,14 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import cn.teachcourse.R;
+import cn.teachcourse.common.BaseActivity;
 import cn.teachcourse.utils.DensityUtil;
 
 /**
  * Created by postmaster@teachcourse.cn on 2017/1/6.
  */
 
-public class RectSimpleSummaryActivity extends AppCompatActivity {
+public class RectSimpleSummaryActivity extends BaseActivity {
     public static final int ANIM_WHAT = 0x110;
     private TextView mTextView;
     private Rect mRect = new Rect();
@@ -201,4 +202,8 @@ public class RectSimpleSummaryActivity extends AppCompatActivity {
         return mRect.toShortString();
     }
 
+    @Override
+    public String getUrl() {
+        return "http://teachcourse.cn/2268.html";
+    }
 }

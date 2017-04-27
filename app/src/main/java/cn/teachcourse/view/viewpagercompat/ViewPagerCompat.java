@@ -227,7 +227,7 @@ public class ViewPagerCompat extends ViewGroup {
          * This method will be invoked when the current page is scrolled, either as part
          * of a programmatically initiated smooth scroll or a user initiated touch scroll.
          *
-         * @param position Position index of the first page currently being displayed.
+         * @param position Position note of the first page currently being displayed.
          *                 Page position+1 will be visible if positionOffset is nonzero.
          * @param positionOffset Value from [0, 1) indicating the offset from the page at position.
          * @param positionOffsetPixels Value in pixels indicating the offset from position.
@@ -238,7 +238,7 @@ public class ViewPagerCompat extends ViewGroup {
          * This method will be invoked when a new page becomes selected. Animation is not
          * necessarily complete.
          *
-         * @param position Position index of the new selected page.
+         * @param position Position note of the new selected page.
          */
         public void onPageSelected(int position);
 
@@ -505,7 +505,7 @@ public class ViewPagerCompat extends ViewGroup {
      * layout with its current adapter there will be a smooth animated transition between
      * the current item and the specified item.
      *
-     * @param item Item index to select
+     * @param item Item note to select
      */
     public void setCurrentItem(int item) {
         mPopulatePending = false;
@@ -515,7 +515,7 @@ public class ViewPagerCompat extends ViewGroup {
     /**
      * Set the currently selected page.
      *
-     * @param item Item index to select
+     * @param item Item note to select
      * @param smoothScroll True to smoothly scroll to the new item, false to transition immediately
      */
     public void setCurrentItem(int item, boolean smoothScroll) {
@@ -1719,7 +1719,7 @@ public class ViewPagerCompat extends ViewGroup {
      * (e.g. super.onPageScrolled(position, offset, offsetPixels)) before onPageScrolled
      * returns.
      *
-     * @param position Position index of the first page currently being displayed.
+     * @param position Position note of the first page currently being displayed.
      *                 Page position+1 will be visible if positionOffset is nonzero.
      * @param offset Value from [0, 1) indicating the offset from the page at position.
      * @param offsetPixels Value in pixels indicating the offset from position.
@@ -1979,7 +1979,7 @@ public class ViewPagerCompat extends ViewGroup {
             case MotionEvent.ACTION_DOWN: {
                 /*
                  * Remember location of down touch.
-                 * ACTION_DOWN always refers to pointer index 0.
+                 * ACTION_DOWN always refers to pointer note 0.
                  */
                 mLastMotionX = mInitialMotionX = ev.getX();
                 mLastMotionY = mInitialMotionY = ev.getY();
@@ -2979,7 +2979,7 @@ public class ViewPagerCompat extends ViewGroup {
         int position;
 
         /**
-         * Current child index within the ViewPager that this view occupies
+         * Current child note within the ViewPager that this view occupies
          */
         int childIndex;
 

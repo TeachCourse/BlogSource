@@ -48,6 +48,9 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/beautiful_girl_001" />
             </LinearLayout>
+            <include
+                style="@style/activity_common_style"
+                layout="@layout/activity_common_layout" />
         </RelativeLayout>
     </cn.teachcourse.chenjing.PullableScrollView>
 

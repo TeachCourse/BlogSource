@@ -14,8 +14,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import cn.teachcourse.R;
+import cn.teachcourse.common.BaseActivity;
 
-public class RecyclerViewActivity extends AppCompatActivity {
+public class RecyclerViewActivity extends BaseActivity {
     private static final String TAG = RecyclerViewActivity.class.getName();
     private RecyclerView mRecyclerView;
     private static final String items[] = {"RecyclerView", "RecyclerView.Adapter", "RecyclerView.addOnItemTouchListener"};
@@ -42,6 +43,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
      * 初始化布局控件
      */
     private void initView() {
+        initCommon(getWindow().getDecorView());
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_list);
         mRecyclerView.setLayoutManager(mLayoutManager);//设置布局管理器
@@ -84,4 +86,9 @@ public class RecyclerViewActivity extends AppCompatActivity {
             }
         }
     };
+
+    @Override
+    public String getUrl() {
+        return null;
+    }
 }

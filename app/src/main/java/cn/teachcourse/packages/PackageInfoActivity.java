@@ -1,5 +1,6 @@
 package cn.teachcourse.packages;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -9,10 +10,16 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
+import android.os.storage.StorageManager;
+import android.os.storage.StorageVolume;
+import android.provider.MediaStore;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.TextView;
@@ -28,8 +35,11 @@ import java.util.Iterator;
 import java.util.List;
 
 import cn.teachcourse.R;
+import cn.teachcourse.common.BaseActivity;
 
-public class PackageInfoActivity extends Activity {
+import static android.support.v4.content.FileProvider.getUriForFile;
+
+public class PackageInfoActivity extends BaseActivity {
     private static final String TAG = PackageInfoActivity.class.getName();
     private static final String PATH = "/demo.apk";
     private File file;//下载apk文件保存路径
@@ -38,7 +48,6 @@ public class PackageInfoActivity extends Activity {
     private ProgressDialog mProgressDialog;//显示下载进度条
     private Downloader mDownloader;//下载器
     private String apkPath = "http://121.15.220.153/imtt.dd.qq.com/16891/518096D97EBE5888B390B854668C8A86.apk?mkey=587c4a68d293078c&f=8d5d&c=0&fsname=com.qzone_7.1.1.288_98.apk&csr=4d5s&p=.apk";
-
 
     public static void start(Context context) {
         start(context, null);
@@ -68,7 +77,7 @@ public class PackageInfoActivity extends Activity {
      * 初始化布局控件
      */
     private void initView() {
-
+        initCommon(getWindow().getDecorView());
         mTextView = (TextView) findViewById(R.id.package_info_tv);
         if (mProgressDialog == null) {
             mProgressDialog = new ProgressDialog(this);
@@ -83,34 +92,72 @@ public class PackageInfoActivity extends Activity {
      * 初始化数据
      */
     private void initData() {
-        loadPath();
+        initPermissionForReadOrWrite();
+    }
+
+    /**
+     * 读取sdcard请求码
+     **/
+    private static final int REQUEST_CODE_PERMISSION_READ_OR_WRITE = 0x111;
+
+    private void initPermissionForReadOrWrite() {
+        int flag = ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        if (PackageManager.PERMISSION_GRANTED != flag) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_CODE_PERMISSION_READ_OR_WRITE);
+        } else {
+            loadPath();
+        }
     }
 
     /**
      * 下载服务器的apk文件到本地
      */
     private void loadPath() {
-        if (Environment.getExternalStorageState().equals(
-                Environment.MEDIA_MOUNTED)) {
-            File rootPath = getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS);
-            file = new File(rootPath, PATH);
-
-            if (file.exists()) {
-                file.delete();
-            }
-//            mThread.start();
-//            mProgressDialog.show();
-            try {
-                URL url1 = new URL(apkPath);
-                new LoadAPKTask().execute(new URL[]{url1});
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            }
-
-        } else {
+        if (Environment.getExternalStorageState().equals(Environment.MEDIA_UNMOUNTED)) {
             Toast.makeText(this, "未检测到SDcard，请检查是否插入SDcard", Toast.LENGTH_SHORT).show();
             return;
         }
+        File rootPath = getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS);
+        file = new File(rootPath, PATH);
+        if (file.exists()) {
+            file.delete();
+        }
+        if (Build.VERSION.SDK_INT > 23) {
+            /**Android 7.0以上的方式**/
+            Uri contentUri = getUriForFile(this, getString(R.string.install_apk_path), file);
+            grantUriPermission(getPackageName(), contentUri, Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+        }
+        try {
+            URL url = new URL(apkPath);
+            new LoadAPKTask().execute(new URL[]{url});
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (REQUEST_CODE_PERMISSION_READ_OR_WRITE == requestCode) {
+            switch (grantResults[0]) {
+                case PackageManager.PERMISSION_DENIED:
+                    boolean isSecondRequest = ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_EXTERNAL_STORAGE);
+                    if (isSecondRequest)
+                        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_CODE_PERMISSION_READ_OR_WRITE);
+                    else
+                        Toast.makeText(this, "权限被禁用，请在权限管理修改", Toast.LENGTH_SHORT).show();
+                    break;
+                case PackageManager.PERMISSION_GRANTED:
+                    loadPath();
+                    break;
+            }
+        }
+    }
+
+    @Override
+    public String getUrl() {
+        return null;
     }
 
     /**
@@ -192,10 +239,9 @@ public class PackageInfoActivity extends Activity {
     private void openFile(File file) {
         Log.e("OpenFile", file.getName());
         Intent intent = new Intent();
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.setAction(android.content.Intent.ACTION_VIEW);
-        intent.setDataAndType(Uri.fromFile(file),
-                "application/vnd.android.package-archive");
+        intent.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
         startActivity(intent);
     }
 

@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="cn.teachcourse.view.webview.ZXingJSWebViewActivity">
-
+    <include layout="@layout/activity_common_layout"
+        style="@style/activity_common_style"/>
     <LinearLayout
         android:id="@+id/common_head_ll"
         android:layout_width="match_parent"

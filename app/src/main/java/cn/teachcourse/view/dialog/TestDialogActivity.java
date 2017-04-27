@@ -23,12 +23,13 @@ import java.util.List;
 import cn.teachcourse.R;
 import cn.teachcourse.adapter.TestDialogAdapter;
 import cn.teachcourse.bean.TestDialogBean;
+import cn.teachcourse.common.BaseActivity;
 
 /**
  * Created by postmaster@teachcourse.cn on 2017/1/3.
  */
 
-public class TestDialogActivity extends FragmentActivity {
+public class TestDialogActivity extends BaseActivity {
     private static final String TAG = "TestDialogActivity";
     private ListView mListView;
     private List mList;
@@ -68,6 +69,7 @@ public class TestDialogActivity extends FragmentActivity {
     }
 
     private void initView() {
+        initCommon(getWindow().getDecorView());
         mListView = (ListView) findViewById(R.id.widget_listview);
     }
 
@@ -136,4 +138,8 @@ public class TestDialogActivity extends FragmentActivity {
     }
 
 
+    @Override
+    public String getUrl() {
+        return null;
+    }
 }

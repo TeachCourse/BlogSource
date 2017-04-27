@@ -3,7 +3,6 @@ package cn.teachcourse.view.webview;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.JavascriptInterface;
@@ -13,9 +12,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import cn.teachcourse.R;
-import cn.teachcourse.zxing.CaptureActivity;
+import cn.teachcourse.common.BaseActivity;
+import cn.teachcourse.scancode.CaptureActivity;
 
-public class ZXingJSWebViewActivity extends AppCompatActivity {
+public class ZXingJSWebViewActivity extends BaseActivity {
     private static final String TAG = "ZXingJSWebViewActivity";
     private ImageView mPersonCentral_iv;//个人中心
     private ImageView mRadarScan_iv;//扫描图标
@@ -50,6 +50,7 @@ public class ZXingJSWebViewActivity extends AppCompatActivity {
      * 初始化布局文件
      */
     private void initView() {
+        initCommon(getWindow().getDecorView());
         mPersonCentral_iv = (ImageView) findViewById(R.id.person_central_iv);
         mRadarScan_iv = (ImageView) findViewById(R.id.radar_scan_iv);
         mWebView = (WebView) findViewById(R.id.webView);
@@ -89,6 +90,11 @@ public class ZXingJSWebViewActivity extends AppCompatActivity {
         mOnClickListener = new MyOnClickListener();
         mRadarScan_iv.setOnClickListener(mOnClickListener);
         mPersonCentral_iv.setOnClickListener(mOnClickListener);
+    }
+
+    @Override
+    public String getUrl() {
+        return null;
     }
 
     private class MyOnClickListener implements View.OnClickListener {

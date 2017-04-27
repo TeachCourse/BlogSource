@@ -23,8 +23,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.teachcourse.R;
+import cn.teachcourse.common.BaseActivity;
 
-public class ListViewActivity extends AppCompatActivity implements View.OnTouchListener, GestureDetector.OnGestureListener {
+public class ListViewActivity extends BaseActivity implements View.OnTouchListener, GestureDetector.OnGestureListener {
     private static final String TAG = ListViewActivity.class.getName();
     private ListView mListView;
     private View mStatuBar;//状态栏
@@ -78,6 +79,7 @@ public class ListViewActivity extends AppCompatActivity implements View.OnTouchL
      * 初始化数据
      */
     private void initView() {
+        initCommon(getWindow().getDecorView());
         mStatuBar = findViewById(R.id.custom_action_bar);
         mListView = (ListView) findViewById(R.id.widget_listview);
         imageView = new ImageView(this);
@@ -311,5 +313,10 @@ public class ListViewActivity extends AppCompatActivity implements View.OnTouchL
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         return mGestureDetector.onTouchEvent(event);
+    }
+
+    @Override
+    public String getUrl() {
+        return null;
     }
 }

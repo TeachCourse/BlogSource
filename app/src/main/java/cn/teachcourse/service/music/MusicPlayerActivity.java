@@ -22,13 +22,14 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import cn.teachcourse.R;
+import cn.teachcourse.common.BaseActivity;
 
 
 /**
  * Created by Administrator on 2016/4/25.
  */
 
-public class MusicPlayerActivity extends Activity implements OnClickListener{
+public class MusicPlayerActivity extends BaseActivity implements OnClickListener{
     ImageButton start;//播放、暂停按钮
     ImageButton stop;//停止按钮
     ActivityReceiver activityReceiver;
@@ -51,7 +52,7 @@ public class MusicPlayerActivity extends Activity implements OnClickListener{
     public void onCreate(Bundle savedInstanceState) {       //重写的onCreate方法
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music_service);                      //设置当前的用户界面
-
+        initCommon(getWindow().getDecorView());
         lv = (ListView)findViewById(R.id.singtext); 		//获得ListView对象的引用
         BaseAdapter myAdapter=new BaseAdapter(){//为ListView准备内容适配器
             //定义歌词字符串的数组
@@ -91,6 +92,11 @@ public class MusicPlayerActivity extends Activity implements OnClickListener{
         registerReceiver(activityReceiver, filter);         //注册监听
         Intent intent = new Intent(this, MusicService.class);  //创建Intent
         startService(intent);                               //启动后台Service
+    }
+
+    @Override
+    public String getUrl() {
+        return null;
     }
 
     /*自定义的BroadcastReceiver*/

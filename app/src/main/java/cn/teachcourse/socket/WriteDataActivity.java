@@ -9,8 +9,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import cn.teachcourse.R;
+import cn.teachcourse.common.BaseActivity;
 
-public class WriteDataActivity extends AppCompatActivity implements View.OnClickListener {
+public class WriteDataActivity extends BaseActivity implements View.OnClickListener {
     private EditText mInputContent_et;
     private Button mSendContent_btn;
     private ConnetionClientThread connectionClient;
@@ -35,6 +36,7 @@ public class WriteDataActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void initView() {
+        initCommon(getWindow().getDecorView());
         mInputContent_et = (EditText) findViewById(R.id.send_content_et);
         mSendContent_btn = (Button) findViewById(R.id.send_content_btn);
     }
@@ -61,5 +63,10 @@ public class WriteDataActivity extends AppCompatActivity implements View.OnClick
             Toast.makeText(this, "请输入发送内容", Toast.LENGTH_SHORT).show();
         }
 
+    }
+
+    @Override
+    public String getUrl() {
+        return null;
     }
 }

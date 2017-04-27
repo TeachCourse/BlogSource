@@ -5,11 +5,14 @@
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="$APPLICATION_HOME_DIR$/gradle/gradle-3.2" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/zXingProj" />
+            <option value="$PROJECT_DIR$/app-clock" />
+            <option value="$PROJECT_DIR$/app-scancode" />
+            <option value="$PROJECT_DIR$/app-uploadpic" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

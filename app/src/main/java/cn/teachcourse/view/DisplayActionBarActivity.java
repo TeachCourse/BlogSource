@@ -6,11 +6,13 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
+import cn.teachcourse.common.BaseActivity;
+
 /**
  * Created by postmaster@teachcourse.cn on 2016/12/6.
  */
 
-public class DisplayActionBarActivity extends AppCompatActivity {
+public class DisplayActionBarActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,5 +44,10 @@ public class DisplayActionBarActivity extends AppCompatActivity {
                             .setTabListener(tabListener));
         }
 
+    }
+
+    @Override
+    public String getUrl() {
+        return null;
     }
 }

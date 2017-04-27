@@ -11,11 +11,12 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import cn.teachcourse.R;
+import cn.teachcourse.common.BaseActivity;
 
 /**
  * Created by postmaster@teachcourse.cn on 2016/5/5.
  */
-public class PhoneNameActivity extends ActionBarActivity {
+public class PhoneNameActivity extends BaseActivity {
     private static final String TAG = PhoneNameActivity.class.getSimpleName();
     private EditText et;
 
@@ -39,6 +40,7 @@ public class PhoneNameActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phone_name);
         et = (EditText) this.findViewById(R.id.mobile);
+        initCommon(getWindow().getDecorView());
     }
 
     /**
@@ -79,4 +81,8 @@ public class PhoneNameActivity extends ActionBarActivity {
         }
     }
 
+    @Override
+    public String getUrl() {
+        return null;
+    }
 }

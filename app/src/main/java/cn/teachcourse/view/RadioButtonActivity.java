@@ -16,8 +16,9 @@ import android.widget.Toast;
 
 import cn.teachcourse.R;
 import cn.teachcourse.chenjing.PullableScrollViewActivity;
+import cn.teachcourse.common.BaseActivity;
 
-public class RadioButtonActivity extends AppCompatActivity {
+public class RadioButtonActivity extends BaseActivity {
     private static final String TAG = "RadioButtonActivity";
     private RadioGroup mRadioGroup;
     public static void start(Context context)
@@ -57,6 +58,7 @@ public class RadioButtonActivity extends AppCompatActivity {
 
         // 为提交按钮添加监视器
         ((Button) findViewById(R.id.button1)).setOnClickListener(lick);
+        initCommon(getWindow().getDecorView());
     }
 
     // 创建OnCheckedChangeListener对象并实例化，然后重写onCheckedChanged方法
@@ -91,4 +93,9 @@ public class RadioButtonActivity extends AppCompatActivity {
         }
 
     };
+
+    @Override
+    public String getUrl() {
+        return null;
+    }
 }

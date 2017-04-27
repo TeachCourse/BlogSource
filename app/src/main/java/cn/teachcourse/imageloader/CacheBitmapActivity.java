@@ -14,12 +14,14 @@ import java.util.List;
 
 import cn.teachcourse.R;
 import cn.teachcourse.api.DownloadImageApi;
+import cn.teachcourse.common.BaseActivity;
 import cn.teachcourse.view.viewholder.MyViewHolder;
 
-public class CacheBitmapActivity extends AppCompatActivity {
+public class CacheBitmapActivity extends BaseActivity {
     private static final String TAG = "CacheBitmapActivity";
     private GridView mGridView;//从缓存加载图片
     private CacheBitmapAdapter mAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,20 +29,28 @@ public class CacheBitmapActivity extends AppCompatActivity {
         initView();
         initData();
     }
+
     /**
      * 初始化布局控件
      */
-    private void initView(){
-        mGridView=(GridView)findViewById(R.id.cache_grideview);
+    private void initView() {
+        initCommon(getWindow().getDecorView());
+        mGridView = (GridView) findViewById(R.id.cache_grideview);
     }
 
     /**
      * 初始化数据
      */
-    private void initData(){
+    private void initData() {
 
     }
-    private class CacheBitmapAdapter extends BaseAdapter{
+
+    @Override
+    public String getUrl() {
+        return null;
+    }
+
+    private class CacheBitmapAdapter extends BaseAdapter {
         private Context mContext;
         private List<String> mList;
 
@@ -51,7 +61,7 @@ public class CacheBitmapActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            if(mList!=null){
+            if (mList != null) {
                 return mList.size();
             }
             return 0;
@@ -59,7 +69,7 @@ public class CacheBitmapActivity extends AppCompatActivity {
 
         @Override
         public Object getItem(int position) {
-            if(mList!=null){
+            if (mList != null) {
                 return mList.get(position);
             }
             return null;
@@ -73,18 +83,18 @@ public class CacheBitmapActivity extends AppCompatActivity {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            MyViewHolder viewHolder=null;
-            if(convertView==null){
-                convertView= LayoutInflater.from(mContext).inflate(R.layout.list_item_text_img,parent,false);
-                viewHolder=new MyViewHolder();
+            MyViewHolder viewHolder = null;
+            if (convertView == null) {
+                convertView = LayoutInflater.from(mContext).inflate(R.layout.list_item_text_img, parent, false);
+                viewHolder = new MyViewHolder();
                 viewHolder.textView.setVisibility(View.GONE);
-                viewHolder.imageView=(ImageView)convertView.findViewById(R.id.img);
+                viewHolder.imageView = (ImageView) convertView.findViewById(R.id.img);
                 convertView.setTag(viewHolder);
-            }else{
-                viewHolder=(MyViewHolder) convertView.getTag();
+            } else {
+                viewHolder = (MyViewHolder) convertView.getTag();
             }
-            ImageView imageView=viewHolder.imageView;
-            DownloadImageApi.setImageViewSync(imageView,mList.get(position));
+            ImageView imageView = viewHolder.imageView;
+            DownloadImageApi.setImageViewSync(imageView, mList.get(position));
             return convertView;
         }
     }

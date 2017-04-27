@@ -12,8 +12,9 @@ import android.widget.TextView;
 import java.util.Locale;
 
 import cn.teachcourse.R;
+import cn.teachcourse.common.BaseActivity;
 
-public class AddressActivity extends AppCompatActivity {
+public class AddressActivity extends BaseActivity {
     private static final String TAG=AddressActivity.class.getName();
     private TextView mTextView;//展示Address类使用
     public static void start(Context context){
@@ -40,6 +41,7 @@ public class AddressActivity extends AppCompatActivity {
      * 初始化布局控件
      */
     private void initView(){
+        initCommon(getWindow().getDecorView());
         mTextView=(TextView)findViewById(R.id.address_des_tv);
         Address address=getAddress();
         address.setCountryName("中国");
@@ -55,5 +57,10 @@ public class AddressActivity extends AppCompatActivity {
     private Address getAddress(){
 
         return new Address(new Locale(Locale.CHINA.getLanguage()));
+    }
+
+    @Override
+    public String getUrl() {
+        return null;
     }
 }

@@ -8,18 +8,23 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="cn.teachcourse.view.webview.WebViewActivity">
+
     <WebView
+        android:id="@+id/web_view_id"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/web_view_id"
+        android:layout_above="@+id/screen_btn" />
 
-        android:layout_above="@+id/screen_btn"/>
-    <include
-        layout="@layout/widget_imageview"/>
+    <include layout="@layout/widget_imageview" />
+
     <Button
         android:id="@+id/screen_btn"
-        android:text="@string/screen_big"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentBottom="true"
+        android:text="@string/screen_big" />
+
+    <include
+        style="@style/activity_common_style"
+        layout="@layout/activity_common_layout" />
 </RelativeLayout>

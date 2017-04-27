@@ -19,8 +19,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.teachcourse.R;
+import cn.teachcourse.common.BaseActivity;
 
-public class GridViewActivity extends AppCompatActivity {
+public class GridViewActivity extends BaseActivity {
     private static final String TAG=GridViewActivity.class.getName();
     private static final String toItems[]={"头条","财经","热点","政务","直播","社会","娱乐","健康","历史","军事"};
     private static final String fromItems[]={"博客","彩票","段子","轻松一刻","房产","论坛","时尚","体育","移动互联"};
@@ -59,6 +60,12 @@ public class GridViewActivity extends AppCompatActivity {
         }
         fromGridView.setAdapter(new GridAdapter(this,list));
     }
+
+    @Override
+    public String getUrl() {
+        return null;
+    }
+
     /**
      * 创建绑定数据的GridAdapter
      */

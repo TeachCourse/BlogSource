@@ -13,11 +13,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import cn.teachcourse.R;
+import cn.teachcourse.common.BaseActivity;
 
 /**
  * Created by Administrator on 2016/4/26.
  */
-public class CoordinateActivity extends Activity {
+public class CoordinateActivity extends BaseActivity {
     private String[] items;
     private ListView mListView;
     @Override
@@ -107,4 +108,9 @@ public class CoordinateActivity extends Activity {
             return ll;
         }
     };
+
+    @Override
+    public String getUrl() {
+        return null;
+    }
 }

@@ -43,7 +43,7 @@ public class UniqueDevId {
              *通过手机的Wifi或者蓝牙设备获取MAC ADDRESS作为DEVICE ID
              */
             case MAC_ADDRESS_ID:
-                WifiManager wm = (WifiManager) mContext.getSystemService(Context.WIFI_SERVICE);
+                WifiManager wm = (WifiManager) mContext.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
                 devId = wm.getConnectionInfo().getMacAddress();
                 break;
             /**

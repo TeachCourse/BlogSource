@@ -4,7 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TeachCourseDemos.iml" filepath="$PROJECT_DIR$/TeachCourseDemos.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/zXingProj/zXingProj.iml" filepath="$PROJECT_DIR$/zXingProj/zXingProj.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app-clock/app-clock.iml" filepath="$PROJECT_DIR$/app-clock/app-clock.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app-scancode/app-scancode.iml" filepath="$PROJECT_DIR$/app-scancode/app-scancode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app-uploadpic/app-uploadpic.iml" filepath="$PROJECT_DIR$/app-uploadpic/app-uploadpic.iml" />
     </modules>
   </component>
 </project>

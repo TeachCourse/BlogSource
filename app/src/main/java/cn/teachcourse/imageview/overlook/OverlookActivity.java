@@ -10,12 +10,13 @@ import com.flaviofaria.kenburnsview.KenBurnsView;
 import com.flaviofaria.kenburnsview.Transition;
 
 import cn.teachcourse.R;
+import cn.teachcourse.common.BaseActivity;
 
 
 /**
  * Created by Administrator on 2016/4/27.
  */
-public class OverlookActivity extends Activity {
+public class OverlookActivity extends BaseActivity {
     private KenBurnsView mKenBurnsView;//俯瞰的自定义View
     private int drawables[]=new int[]{R.drawable.background_one,R.drawable.background_two,R.drawable.background_three};
     private int which=0;//默认展示的背景图片
@@ -40,6 +41,7 @@ public class OverlookActivity extends Activity {
     }
 
     private void initView() {
+        initCommon(getWindow().getDecorView());
         mKenBurnsView=(KenBurnsView)findViewById(R.id.ken_image);
 
         //添加过渡监听器
@@ -58,5 +60,10 @@ public class OverlookActivity extends Activity {
                 mKenBurnsView.setImageDrawable(mDrawable);
             }
         });
+    }
+
+    @Override
+    public String getUrl() {
+        return null;
     }
 }

@@ -17,9 +17,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.teachcourse.R;
+import cn.teachcourse.common.BaseActivity;
 import cn.teachcourse.json.bean.DistrictBean;
 
-public class ResolveJSONActivity extends AppCompatActivity {
+public class ResolveJSONActivity extends BaseActivity {
     private ListView mListView;//地区选择列表
     private List<DistrictBean> mList;//存放地区数据的List
     private DistrictBaseAdapter mAdapter;//适配器
@@ -48,6 +49,7 @@ public class ResolveJSONActivity extends AppCompatActivity {
      * 初始化布局控件
      */
     private void initView(){
+        initCommon(getWindow().getDecorView());
         mListView=(ListView)findViewById(R.id.district_select_lv);
         mListView.setOnItemSelectedListener(mOnItemSelected);
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -141,4 +143,9 @@ public class ResolveJSONActivity extends AppCompatActivity {
             }
         }
     };
+
+    @Override
+    public String getUrl() {
+        return null;
+    }
 }

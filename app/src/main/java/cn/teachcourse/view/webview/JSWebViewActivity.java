@@ -3,6 +3,7 @@ package cn.teachcourse.view.webview;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Binder;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,8 +15,10 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import cn.teachcourse.R;
+import cn.teachcourse.common.BaseActivity;
+import cn.teachcourse.utils.LogUtils;
 
-public class JSWebViewActivity extends AppCompatActivity {
+public class JSWebViewActivity extends BaseActivity {
     private WebView mWebView;
     private Button mButton;
     public boolean isModify = false;
@@ -46,6 +49,7 @@ public class JSWebViewActivity extends AppCompatActivity {
      */
     @SuppressLint("JavascriptInterface")
     private void initView() {
+        initCommon(getWindow().getDecorView());
         mWebView = (WebView) findViewById(R.id.webView);
         mButton = (Button) findViewById(R.id.modify_btn);
         WebSettings webSettings = mWebView.getSettings();
@@ -56,7 +60,15 @@ public class JSWebViewActivity extends AppCompatActivity {
         * Java Object与JavaScript交互
         */
         mWebView.addJavascriptInterface(this, "myObj");
-        mWebView.loadUrl("file:///android_asset/js_interative.html");
+
+//        mWebView.loadUrl("file:///android_asset/js_interative.html");
+        /**
+         * 验证为什么application ID不同于package name提示ClassNotFoundException
+         */
+        String callingApp = getPackageManager().getNameForUid(Binder.getCallingUid());
+        mWebView.loadUrl("file:///android_res/raw/note.html");
+        LogUtils.d(callingApp);
+        LogUtils.d(getPackageName());
         /**
          * JavaScript与Java Object交互
          */
@@ -82,5 +94,10 @@ public class JSWebViewActivity extends AppCompatActivity {
     @JavascriptInterface
     public void dispatchJavaMethod(String name) {
         Toast.makeText(this, name, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public String getUrl() {
+        return null;
     }
 }

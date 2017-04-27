@@ -8,9 +8,10 @@ import android.os.Bundle;
 import android.widget.ProgressBar;
 
 import cn.teachcourse.R;
+import cn.teachcourse.common.BaseActivity;
 import cn.teachcourse.view.MyTextViewActivity;
 
-public class ProgressActivity extends AppCompatActivity {
+public class ProgressActivity extends BaseActivity {
     private ProgressBar mProgressBar;
     private static final int MAX_VALUE=50000;//进度条的最大值
     private int mProgressStatus=0;//当前进度
@@ -63,6 +64,12 @@ public class ProgressActivity extends AppCompatActivity {
     }
 
     private void initView() {
+        initCommon(getWindow().getDecorView());
         mProgressBar= (ProgressBar) findViewById(R.id.progressBar);
+    }
+
+    @Override
+    public String getUrl() {
+        return null;
     }
 }

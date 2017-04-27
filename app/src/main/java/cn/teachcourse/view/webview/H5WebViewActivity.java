@@ -12,8 +12,9 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import cn.teachcourse.R;
+import cn.teachcourse.common.BaseActivity;
 
-public class H5WebViewActivity extends AppCompatActivity {
+public class H5WebViewActivity extends BaseActivity {
     private VideoEnabledWebView webView;
     private VideoEnabledWebChromeClient webChromeClient;
     private String url="http://192.168.11.105:8080/recycle/f/recycle/laundry/detail?id=1";
@@ -97,6 +98,7 @@ public class H5WebViewActivity extends AppCompatActivity {
         });
         // Navigate everywhere you want, this classes have only been tested on YouTube's mobile site
         webView.loadUrl(url);
+        initCommon(getWindow().getDecorView());
 
     }
     /**
@@ -118,5 +120,10 @@ public class H5WebViewActivity extends AppCompatActivity {
                 super.onBackPressed();
             }
         }
+    }
+
+    @Override
+    public String getUrl() {
+        return null;
     }
 }
