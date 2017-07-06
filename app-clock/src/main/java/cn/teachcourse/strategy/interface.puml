@@ -1,0 +1,13 @@
+@startuml
+
+interface IClock <<interface>>{
+   paint(Canvas canvas):void
+}
+
+class WatchView{
+   onDraw(Canvas canvas):void
+}
+
+IClock <|... WatchView
+
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+
+abstract class WatchView{
+   {abstract} paint(Canvas canvas):void
+}
+
+class DefaultWatchViewImpl {
+paint(Canvas canvas):void
+}
+
+class NormalWatchViewImpl {
+paint(Canvas canvas):void
+}
+
+class DesignWatchViewImpl {
+paint(Canvas canvas):void
+}
+
+WatchView <|--- DefaultWatchViewImpl
+WatchView <|--- NormalWatchViewImpl
+WatchView <|--- DesignWatchViewImpl
+
+@enduml

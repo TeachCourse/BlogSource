@@ -1,0 +1,31 @@
+@startuml
+
+interface Strategy <<interface>>{
++algorithm:void
+}
+
+class ConcreteStrategyA {
++algorithm:void
+}
+
+class ConcreteStrategyB {
++algorithm:void
+}
+
+class ConcreteStrategyC {
++algorithm:void
+}
+
+Strategy <|... ConcreteStrategyA
+Strategy <|... ConcreteStrategyB
+Strategy <|... ConcreteStrategyC
+
+class Context{
+strategy:Strategy
+lookAlgorithm():void
+}
+
+Strategy <--- Context
+note "void lookAlgorithm(){ strategy.algorithm(); }" as N2
+Context . N2
+@enduml

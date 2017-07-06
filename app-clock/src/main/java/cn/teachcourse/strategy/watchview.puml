@@ -1,0 +1,24 @@
+@startuml
+
+interface IClock{
+void paint(Canvas canvas)
+}
+
+class WatchViewImpl {
+setIClock(IClock iClock):void
+onMeasure():void
+onDraw():void
+}
+
+class WatchViewActivity {
+onCreate():void
+}
+
+WatchViewImpl <--- WatchViewActivity
+IClock <--- WatchViewImpl
+
+IClock <|... DefaultClockImpl
+IClock <|... NormalClockImpl
+IClock <|... DesignClockImpl
+
+@enduml
