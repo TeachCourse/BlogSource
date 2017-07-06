@@ -45,3 +45,10 @@
 
 - `WatchView`源码路径：`view/WatchView.java`
 
+### 1.5 使用*策略模式*重构钟表视图（WatchView） ###
+重构钟表视图Demo源码，存放在独立的app-clock，包含构建设计模式、策略设计模式。
+
+目录结构：
+
+![策略模式](screenshot/20170706102428.jpg)
+
