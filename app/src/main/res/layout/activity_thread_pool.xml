@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="cn.teachcourse.designpattern.factory.ThreadPoolActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="显示线程的名字"
+        android:id="@+id/display_thread_name_tv"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="开启线程"
+        android:id="@+id/launch_thread_btn"
+        android:onClick="launchThread"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>
