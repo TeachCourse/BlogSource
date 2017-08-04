@@ -52,3 +52,10 @@
 
 ![策略模式](screenshot/20170706102428.jpg)
 
+### 1.6 深入理解工厂模式 ###
+源码存放路径：`designpattern/factory`
+
+目录结构：
+
+![工厂模式](screenshot/20170804151154.jpg)
+
