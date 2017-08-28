@@ -59,3 +59,12 @@
 
 ![工厂模式](screenshot/20170804151154.jpg)
 
+### 1.7 Android Studio集成greenDAO 3.0基础教程 ###
+1. greenDAO框架demo存放路径：`app-greendao`
+2. 自定义Gradle Plugin存放路径：`app-groovy`
+3. 应用自定义Gradle Plugin例子存放路径：`sample`
+
+![](screenshot/20170828160736.jpg)
+
+
+
