@@ -66,5 +66,10 @@
 
 ![](screenshot/20170828160736.jpg)
 
+### 1.7 Android开发之混淆基础教程 ###
+新建项目`app-obfuscated`存放混淆相关demo，如下图：
+
+
+
 
 
