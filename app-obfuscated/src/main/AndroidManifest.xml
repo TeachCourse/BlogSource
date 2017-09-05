@@ -15,7 +15,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BaseActivity"></activity>
+        <activity android:name=".BaseActivity" />
+        <activity android:name="cn.teachcourse.advancedcourse_1.AdvancedCourseActivity">
+
+        </activity>
     </application>
 
 </manifest>

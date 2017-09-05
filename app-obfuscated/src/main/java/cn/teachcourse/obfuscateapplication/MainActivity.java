@@ -1,9 +1,12 @@
 package cn.teachcourse.obfuscateapplication;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
+import cn.teachcourse.advancedcourse_1.AdvancedCourseActivity;
 import cn.teachcourse.bean.City;
 import cn.teachcourse.bean.Student;
 import cn.teachcourse.bean.User;
@@ -50,5 +53,8 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "initData: foreign girl="+items[0]+"；local girl="+items[1]);
         Log.d(TAG, "initData: name="+student.getName()+"；age="+student.getAge()+"；college="+student.getCollege());
         Log.d(TAG, "initData: All cities is from "+City.from());
+    }
+    public void advancedCourse_1(View view){
+        startActivity(new Intent(this, AdvancedCourseActivity.class));
     }
 }
