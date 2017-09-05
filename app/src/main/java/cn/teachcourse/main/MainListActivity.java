@@ -1,4 +1,4 @@
-package cn.teachcourse;
+package cn.teachcourse.main;
 
 import android.app.ListActivity;
 import android.os.Bundle;
@@ -6,6 +6,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
+import org.json.JSONObject;
+
+import cn.teachcourse.R;
 import cn.teachcourse.service.music.MusicPlayerActivity;
 import cn.teachcourse.view.MyTextViewActivity;
 import cn.teachcourse.view.progress.ProgressActivity;
@@ -21,7 +24,6 @@ public class MainListActivity extends ListActivity implements AdapterView.OnItem
         ArrayAdapter mAdapter=ArrayAdapter.createFromResource(this, R.array.items,android.R.layout.simple_spinner_item);
         setListAdapter(mAdapter);
         getListView().setOnItemClickListener(this);
-
     }
 
     @Override

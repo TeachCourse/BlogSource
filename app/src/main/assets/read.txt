@@ -27,14 +27,14 @@ public class MainActivity extends ActionBarActivity {
 
 		InputStream is = null;
 		AssetManager manager = getResources().getAssets();
-		List<NewsInfoBean> list;
+		List<NewsInfoBean> beanB;
 		try {
 			is = manager.open("newsbean.xml"); // newsbean.xml保存在assets文件夹下
-			list = NewsService.getNewsBean(is);
-			if (list != null)
-				mdiplayInfoTV.setText(list.size() + "");
+			beanB = NewsService.getNewsBean(is);
+			if (beanB != null)
+				mdiplayInfoTV.setText(beanB.size() + "");
 			else
-				Toast.makeText(this, list.size(), Toast.LENGTH_LONG).show();
+				Toast.makeText(this, beanB.size(), Toast.LENGTH_LONG).show();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally{

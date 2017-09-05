@@ -37,5 +37,17 @@
     <string name="button">按钮</string>
     <string name="install_apk_path">cn.teachcourse.fileprovider</string>
     <string name="install_apk_path_pub">cn.teachcourse.fileprovider.pub</string>
+    <string name="bundle_process_communication">
+        想要启动不同应用内的组件（Activity、Service、ContentProvider），
+        隐式Intent集合Bundle存储数据，实现不同进程间的通信，该demo将演示这样的一个过程
+    </string>
+    <string name="bundle_process_communication_file">
+        共享文件也是一种不错的进程间通信方式，同一个应用不同进程间文件共享比较简单，这里演示不同应用间文件共享的过程
+    </string>
+    <string name="bundle_process_communication_service">
+         启动不同应用程序的Service组件，Bundle存储数据，实现不同进程间的通信
+    </string>
+    <string name="process_communication_btn">进程通信</string>
+    <string name="launch_app_B">启动应用B</string>
 
 </resources>

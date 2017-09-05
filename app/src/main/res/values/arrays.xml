@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="seasons">
+        <item>春天</item>
+        <item>夏天</item>
+        <item>秋天</item>
+        <item>冬天</item>
+    </string-array>
+    <string-array name="season_description">
+        <item>春天，春来江水绿如蓝</item>
+        <item>夏天，牧童骑黄牛，歌声振林樾</item>
+        <item>秋天，夕阳西下，断肠人在天涯</item>
+        <item>冬天，遥知不是雪，为有暗香来</item>
+    </string-array>
+</resources>

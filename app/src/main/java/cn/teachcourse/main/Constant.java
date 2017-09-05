@@ -1,4 +1,4 @@
-package cn.teachcourse;
+package cn.teachcourse.main;
 
 /**
  * Created by postmaster@teachcourse.cn on 2016/5/9.

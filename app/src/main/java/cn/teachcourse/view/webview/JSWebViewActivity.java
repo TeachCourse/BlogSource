@@ -62,11 +62,13 @@ public class JSWebViewActivity extends BaseActivity {
         mWebView.addJavascriptInterface(this, "myObj");
 
 //        mWebView.loadUrl("file:///android_asset/js_interative.html");
+        mWebView.loadUrl("file:///android_asset/launcher_myapp.html");
         /**
          * 验证为什么application ID不同于package name提示ClassNotFoundException
          */
         String callingApp = getPackageManager().getNameForUid(Binder.getCallingUid());
-        mWebView.loadUrl("file:///android_res/raw/note.html");
+//        mWebView.loadUrl("file:///android_res/raw/note.html");
+
         LogUtils.d(callingApp);
         LogUtils.d(getPackageName());
         /**
@@ -78,8 +80,15 @@ public class JSWebViewActivity extends BaseActivity {
                 mWebView.loadUrl("javascript:modifyContent()");
                 isModify = !isModify;
                 Toast.makeText(JSWebViewActivity.this,""+isModify,Toast.LENGTH_SHORT).show();
+                startBrowser();
             }
         });
+    }
+
+    private void startBrowser() {
+        Intent intent=new Intent(Intent.ACTION_VIEW);
+        intent.addCategory(Intent.CATEGORY_APP_BROWSER);
+        startActivity(intent);
     }
 
     /**

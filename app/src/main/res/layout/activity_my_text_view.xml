@@ -10,7 +10,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="cn.teachcourse.view.MyTextViewActivity">
 
-    <cn.teachcourse.view.define.MyTextView
+    <cn.teachcourse.view.custom.MyTextView
         android:id="@+id/my_textview"
         android:layout_width="wrap_content"
         android:text="触摸时候监听OnClickListener接口"

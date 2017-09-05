@@ -1,4 +1,4 @@
-package cn.teachcourse.view.define;
+package cn.teachcourse.view.custom;
 
 import android.content.Context;
 import android.util.AttributeSet;

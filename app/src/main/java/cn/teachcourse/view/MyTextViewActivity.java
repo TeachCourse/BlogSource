@@ -2,7 +2,6 @@ package cn.teachcourse.view;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -10,7 +9,7 @@ import android.view.View;
 
 import cn.teachcourse.R;
 import cn.teachcourse.common.BaseActivity;
-import cn.teachcourse.view.define.MyTextView;
+import cn.teachcourse.view.custom.MyTextView;
 
 public class MyTextViewActivity extends BaseActivity {
     private static final String TAG = "MyTextViewActivity";

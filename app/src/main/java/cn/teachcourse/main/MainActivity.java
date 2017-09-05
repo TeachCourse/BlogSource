@@ -1,9 +1,8 @@
-package cn.teachcourse;
+package cn.teachcourse.main;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,6 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import cn.teachcourse.R;
 import cn.teachcourse.common.BaseActivity;
 
 public class MainActivity extends BaseActivity {

@@ -33,6 +33,7 @@ public class ThreadPoolActivity extends AppCompatActivity {
         /**第二种方式：*/
         product=new ChildrenSweater();
 
+
     }
 
     private void initView() {

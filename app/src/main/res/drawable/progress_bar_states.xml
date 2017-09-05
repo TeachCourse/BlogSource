@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- 层叠 -->
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+<layer-beanB xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item android:id="@android:id/background">
         <shape>
@@ -26,4 +26,4 @@
         </clip>
     </item>
 
-</layer-list>
+</layer-beanB>

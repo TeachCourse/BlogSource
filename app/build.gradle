@@ -12,7 +12,7 @@ android {
      */
     defaultConfig {
         applicationId "cn.teachcourse"
-        minSdkVersion 11
+        minSdkVersion 19
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
@@ -46,9 +46,9 @@ android {
      */
     buildTypes {
         release {
-            shrinkResources true
-            minifyEnabled true
-            useProguard true
+            shrinkResources false
+            minifyEnabled false
+            useProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.config
         }
@@ -62,65 +62,64 @@ android {
     /**
      * 四、自定义产品偏好配置，可以定义多个偏好产品
      */
-    productFlavors {
-        demo {
-            applicationId "cn.teahcourse.demo"
-            versionName "1.0-demo"
-            signingConfig signingConfigs.config
-        }
-        personal {
-            versionCode 1
-            minSdkVersion 11
-            targetSdkVersion 24
-            versionNameSuffix '-personal'
-            applicationIdSuffix '-per'
-            signingConfig signingConfigs.config
-        }
-        enterprise {
-            versionCode 1000
-            minSdkVersion 11
-            targetSdkVersion 24
-            versionNameSuffix '-profession'
-            applicationIdSuffix 'full'
-            signingConfig signingConfigs.config
-        }
-    }
+//    productFlavors {
+//        demo {
+//            applicationId "cn.teahcourse.demo"
+//            versionName "1.0-demo"
+//            signingConfig signingConfigs.config
+//        }
+//        personal {
+//            versionCode 1
+//            minSdkVersion 11
+//            targetSdkVersion 24
+//            versionNameSuffix '-personal'
+//            applicationIdSuffix '-per'
+//            signingConfig signingConfigs.config
+//        }
+//        enterprise {
+//            versionCode 1000
+//            minSdkVersion 11
+//            targetSdkVersion 24
+//            versionNameSuffix '-profession'
+//            applicationIdSuffix 'full'
+//            signingConfig signingConfigs.config
+//        }
+//    }
     /**
      * 五、DEX文件构建属性配置（加快构建速度）
      */
-    dexOptions {
-        maxProcessCount 8
-        javaMaxHeapSize "2g"
-        preDexLibraries true
-    }
+//    dexOptions {
+//        maxProcessCount 8
+//        javaMaxHeapSize "2g"
+//        preDexLibraries true
+//    }
     /**
      * 六、将一个apk拆分成多个相关配置（拆分依据：屏幕密度、系统架构）
      */
-    splits {
-        density {
-            enable false
-            exclude "ldpi", "xxhdpi", "xxxhdpi"
-            compatibleScreens 'small', 'normal', 'large', 'xlarge'
-        }
-        abi {
-            enable false
-            reset()
-            include "x86", "mips"
-        }
-    }
+//    splits {
+//        density {
+//            enable false
+//            exclude "ldpi", "xxhdpi", "xxxhdpi"
+//            compatibleScreens 'small', 'normal', 'large', 'xlarge'
+//        }
+//        abi {
+//            enable false
+//            reset()
+//            include "x86", "mips"
+//        }
+//    }
 }
 /**
  * 七、引入依赖包的秘密
  */
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
+
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile files('libs/zxing.jar')
-    compile 'com.loopj.android:android-async-http:1.4.9'
-    //compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
 
+    compile files('libs/zxing.jar')
     compile 'com.loopj.android:android-async-http:1.4.9'
     compile 'com.android.support:appcompat-v7:24.0.0'
     compile 'com.flaviofaria:kenburnsview:1.0.7'
@@ -130,7 +129,13 @@ dependencies {
     compile 'com.android.support:design:24.0.0'
     compile 'com.android.support:recyclerview-v7:24.0.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.1'
-    //testCompile 'junit:junit:4.12'
+    compile 'com.alibaba:fastjson:1.2.32'
+    compile 'com.google.code.gson:gson:2.8.1'
+    compile 'com.koushikdutta.async:androidasync:2.+'
+    compile 'com.squareup.okhttp3:okhttp:3.8.1'
+    compile 'com.hannesdorfmann:adapterdelegates3:3.0.1'
+    compile 'com.zhy:okhttputils:2.6.2'
+    testCompile 'junit:junit:4.12'
 }
 
 
