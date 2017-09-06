@@ -75,3 +75,10 @@
 目录结构如下图：
 
 ![](screenshot/20170903162658.jpg)
+
+### 1.9 Android开发之枚举（Enum）在实际项目中的应用 ###
+目录结构如下图：
+
+![](screenshot/20170906170356.jpg)
+
+源码路径：`app\src\main\java\cn\teachcourse\enums`
