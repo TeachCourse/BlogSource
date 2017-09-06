@@ -31,13 +31,13 @@ public enum ExcellentStudentEnum {
         return profession;
     }
 
-    public static String query(int num){
-        for (ExcellentStudentEnum student:values()){
-            if(student.getNum()==num)
-                return "姓名："+student.getName()+"，"+
-                        "专业："+student.getProfession();
+    public static String query(int num) {
+        for (ExcellentStudentEnum student : values()) {
+            if (student.getNum() == num)
+                return "姓名：" + student.getName() + "，" +
+                        "专业：" + student.getProfession();
         }
-        return "姓名："+NONE.getName()+"，"+
-                "专业："+NONE.getProfession();
+        return "姓名：" + NONE.getName() + "，" +
+                "专业：" + NONE.getProfession();
     }
 }
