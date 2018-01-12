@@ -1,0 +1,4 @@
+#Tue Apr 25 14:13:25 CST 2017
+base.0=E\:\\AndroidStudio\\TeachCourseDemos\\app-scancode\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\zxing_ae25c801ea8071ac223ff53d3771256f69cf2640
+renamed.0=classes.dex
+file.0=E\:\\AndroidStudio\\TeachCourseDemos\\app-scancode\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\zxing_ae25c801ea8071ac223ff53d3771256f69cf2640\\classes.dex

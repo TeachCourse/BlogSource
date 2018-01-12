@@ -1,9 +1,18 @@
+## 忽略符合规则的所有文件
 *.iml
-.gradle
+
+## 忽略指定文件夹
+/.gradle
+
+## 忽略当前根目录下指定文件
 /local.properties
+/keystore.properties
+
+## 忽略指定文件
 /.idea/workspace.xml
+
+## 忽略指定文件夹
 /.idea/libraries
-.DS_Store
+
+## 忽略指定文件夹
 /build
-/captures
-.externalNativeBuild
