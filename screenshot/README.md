@@ -1,9 +1,9 @@
 ## 2.3 封装`upversion-library`库，快速接入版本更新功能 ##
 `upversion-library`包含自定义通知栏样式，自定义Dialog样式，在`MainActivity`快速接入版本更新功能，[详情文档参考](../upversion/README.md)，效果图：
 
-<img src="20180111102322.jpg" width=300/>
-<img src="20180111102507.jpg" width=300/>
-<img src="20180111102542.jpg" width="300px"/>
+| 通知栏提示 | 弹窗提示 | 版本更新 |
+| ----- | ----- | ----- |
+| <img src="20180111102322.jpg" width=300/> | <img src="20180111102507.jpg" width=300/> | <img src="20180111102542.jpg" width="300px"/> |
 
 ## 2.2 场景动画：Activity之间过渡效果 ##
 Activity A启动Activity B，将A中某个View设置为共享元素，并将元素的位置信息保存到Bundle对象中，传递给B，以共享元素为中心点开始动画，实现Activity之间过渡效果，demo存放路径`app\ActivityTransition`
@@ -14,6 +14,7 @@ Activity A启动Activity B，将A中某个View设置为共享元素，并将元�
 
 ## 2.1 添加质量压缩、尺寸压缩图片工具类CompressImg ##
 工具类`CompressImg`支持图片质量压缩、尺寸压缩，质量压缩需要注意指定图片压缩后存储的位置，质量压缩没有把图片写入文件，然后重新读取，压缩后的图片不但没有变小，反而大概等于：*原图大小+压缩次数x压缩后大小*，也就是变大了，存放在`utils\CompressImg`。
+
 ![](20171223213731.jpg)
 
 ## 2.0 解决ViewPager删除数据，更新没反应的问题 ##
