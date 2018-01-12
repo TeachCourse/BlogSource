@@ -1,0 +1,27 @@
+@startuml
+
+class Animal {
+
+}
+
+class Cat {
+
+}
+class HelloKitty {
+
+}
+
+class CuteHelloKitty {
+
+}
+
+class WhiteCuteHelloKitty {
+
+}
+
+Animal <|-- Cat
+Cat <|-- HelloKitty
+HelloKitty <|-- CuteHelloKitty
+CuteHelloKitty <|-- WhiteCuteHelloKitty
+
+@enduml
