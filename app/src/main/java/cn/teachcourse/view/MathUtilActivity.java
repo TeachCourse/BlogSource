@@ -2,7 +2,6 @@ package cn.teachcourse.view;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import cn.teachcourse.common.BaseActivity;
@@ -19,7 +18,7 @@ public class MathUtilActivity extends BaseActivity {
     }
 
     private void initView() {
-        initCommon(getWindow().getDecorView());
+        initButton(getWindow().getDecorView());
         TextView tv=new TextView(this);
         tv.setText(calculateDegrees(1.0,1.0)+"");
         setContentView(tv);

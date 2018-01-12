@@ -1,7 +1,5 @@
 package cn.teachcourse.view;
 
-import android.media.Image;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -13,8 +11,6 @@ import android.widget.RelativeLayout;
 
 import cn.teachcourse.R;
 import cn.teachcourse.common.BaseActivity;
-
-import static cn.teachcourse.R.id.dispatch_ll;
 
 public class EventDispatchActivity extends BaseActivity implements View.OnClickListener, View.OnTouchListener {
     private static final String TAG = "EventDispatchActivity";
@@ -61,7 +57,7 @@ public class EventDispatchActivity extends BaseActivity implements View.OnClickL
     }
 
     private void initView() {
-        initCommon(getWindow().getDecorView());
+        initButton(getWindow().getDecorView());
         mParentView_rl = (RelativeLayout) findViewById(R.id.activity_event_dispatch);
         mDispatch_iv = (ImageView) findViewById(R.id.dispatch_iv);
         mDispatchEvent_iv = (ImageView) findViewById(R.id.dispatch_event_iv);

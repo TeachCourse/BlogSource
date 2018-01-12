@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.ContactsContract;
-import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -40,7 +39,7 @@ public class PhoneNameActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phone_name);
         et = (EditText) this.findViewById(R.id.mobile);
-        initCommon(getWindow().getDecorView());
+        initButton(getWindow().getDecorView());
     }
 
     /**

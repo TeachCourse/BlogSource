@@ -135,7 +135,7 @@ public class VideoEnabledWebChromeClient extends WebChromeClient implements OnPr
             this.videoViewContainer = frameLayout;
             this.videoViewCallback = callback;
 
-            // Hide the non-video view, add the video view, and show it
+            // Hide the non-video view, add the video view, and prepare it
             activityNonVideoView.setVisibility(View.INVISIBLE);
             activityVideoView.addView(videoViewContainer, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
             activityVideoView.setVisibility(View.VISIBLE);
@@ -202,7 +202,7 @@ public class VideoEnabledWebChromeClient extends WebChromeClient implements OnPr
 
         if (isVideoFullscreen)
         {
-            // Hide the video view, remove it, and show the non-video view
+            // Hide the video view, remove it, and prepare the non-video view
             activityVideoView.setVisibility(View.INVISIBLE);
             activityVideoView.removeView(videoViewContainer);
             activityNonVideoView.setVisibility(View.VISIBLE);

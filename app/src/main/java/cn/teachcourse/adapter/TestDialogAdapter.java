@@ -10,8 +10,8 @@ import android.widget.TextView;
 import java.util.List;
 
 import cn.teachcourse.bean.TestDialogBean;
-import cn.teachcourse.utils.DensityUtil;
-import cn.teachcourse.view.viewholder.MyViewHolder;
+import cn.teahcourse.baseutil.DensityUtil;
+import cn.teachcourse.support.v4.viewholder.MyViewHolder;
 
 /**
  * Created by postmaster@teachcourse.cn on 2017/1/3.

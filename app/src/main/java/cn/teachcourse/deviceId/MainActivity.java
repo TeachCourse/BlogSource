@@ -1,6 +1,5 @@
 package cn.teachcourse.deviceId;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -34,7 +33,7 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initView() {
-        initCommon(getWindow().getDecorView());
+        initButton(getWindow().getDecorView());
         mTextView = (TextView) findViewById(R.id.dev_id);
     }
 

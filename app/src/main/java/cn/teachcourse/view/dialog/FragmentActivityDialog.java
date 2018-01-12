@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import cn.teachcourse.R;
 import cn.teachcourse.bean.TestDialogBean;
-import cn.teachcourse.utils.DensityUtil;
+import cn.teahcourse.baseutil.DensityUtil;
 
 /**
  * Created by postmaster@teachcourse.cn on 2017/1/3.

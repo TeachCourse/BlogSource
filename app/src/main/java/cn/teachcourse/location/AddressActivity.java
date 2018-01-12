@@ -3,9 +3,6 @@ package cn.teachcourse.location;
 import android.content.Context;
 import android.content.Intent;
 import android.location.Address;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -41,7 +38,7 @@ public class AddressActivity extends BaseActivity {
      * 初始化布局控件
      */
     private void initView(){
-        initCommon(getWindow().getDecorView());
+        initButton(getWindow().getDecorView());
         mTextView=(TextView)findViewById(R.id.address_des_tv);
         Address address=getAddress();
         address.setCountryName("中国");

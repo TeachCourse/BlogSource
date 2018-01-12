@@ -1,7 +1,6 @@
 package cn.teachcourse.packages;
 
 import android.Manifest;
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -15,9 +14,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
-import android.os.storage.StorageManager;
-import android.os.storage.StorageVolume;
-import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.text.TextUtils;
@@ -77,7 +73,7 @@ public class PackageInfoActivity extends BaseActivity {
      * 初始化布局控件
      */
     private void initView() {
-        initCommon(getWindow().getDecorView());
+        initButton(getWindow().getDecorView());
         mTextView = (TextView) findViewById(R.id.package_info_tv);
         if (mProgressDialog == null) {
             mProgressDialog = new ProgressDialog(this);
@@ -124,7 +120,7 @@ public class PackageInfoActivity extends BaseActivity {
         }
         if (Build.VERSION.SDK_INT > 23) {
             /**Android 7.0以上的方式**/
-            Uri contentUri = getUriForFile(this, getString(R.string.install_apk_path), file);
+            Uri contentUri = getUriForFile(this, getString(R.string.file_provider), file);
             grantUriPermission(getPackageName(), contentUri, Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
         }
         try {

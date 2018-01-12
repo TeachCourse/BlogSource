@@ -1,6 +1,5 @@
 package cn.teachcourse.socket;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -36,7 +35,7 @@ public class WriteDataActivity extends BaseActivity implements View.OnClickListe
     }
 
     private void initView() {
-        initCommon(getWindow().getDecorView());
+        initButton(getWindow().getDecorView());
         mInputContent_et = (EditText) findViewById(R.id.send_content_et);
         mSendContent_btn = (Button) findViewById(R.id.send_content_btn);
     }

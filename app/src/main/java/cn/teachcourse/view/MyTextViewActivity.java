@@ -37,7 +37,7 @@ public class MyTextViewActivity extends BaseActivity {
     }
 
     private void initView() {
-        initCommon(getWindow().getDecorView());
+        initButton(getWindow().getDecorView());
         myTextView = (MyTextView) findViewById(R.id.my_textview);
         myTextView.setOnTouchListener(new View.OnTouchListener() {
             @Override

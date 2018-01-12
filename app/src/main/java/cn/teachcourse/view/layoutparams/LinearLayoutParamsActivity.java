@@ -96,7 +96,7 @@ public class LinearLayoutParamsActivity extends BaseActivity {
     }
 
     private void initView() {
-        initCommon(getWindow().getDecorView());
+        initButton(getWindow().getDecorView());
         mParentView_rl = (RelativeLayout) findViewById(R.id.activity_linear_layout_params_rl);
         mParentView_ll = (LinearLayout) findViewById(R.id.activity_linear_layout_params);
         mMultipleProperties_tv = (TextView) findViewById(R.id.multiple_properties_tv);

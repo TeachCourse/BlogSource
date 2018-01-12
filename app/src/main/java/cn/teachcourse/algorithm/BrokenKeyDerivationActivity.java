@@ -16,7 +16,6 @@ package cn.teachcourse.algorithm;
  * limitations under the License.
  */
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
@@ -40,7 +39,7 @@ import javax.crypto.spec.SecretKeySpec;
 
 import cn.teachcourse.R;
 import cn.teachcourse.common.BaseActivity;
-import cn.teachcourse.utils.InsecureSHA1PRNGKeyDerivator;
+import cn.teahcourse.baseutil.InsecureSHA1PRNGKeyDerivator;
 
 /**
  * Example showing how to decrypt data that was encrypted using SHA1PRNG.
@@ -146,7 +145,7 @@ public class BrokenKeyDerivationActivity extends BaseActivity {
         String firstResult = retrieveData(password);
         String secondResult = retrieveData(password);
         mEditor.setText("First result: " + firstResult + "\nSecond result: " + secondResult);
-        initCommon(getWindow().getDecorView());
+        initButton(getWindow().getDecorView());
     }
 
     private static byte[] encryptOrDecrypt(

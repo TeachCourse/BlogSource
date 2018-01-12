@@ -20,8 +20,6 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import java.security.GeneralSecurityException;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
@@ -37,8 +35,7 @@ import javax.crypto.spec.SecretKeySpec;
 
 import cn.teachcourse.R;
 import cn.teachcourse.common.BaseActivity;
-import cn.teachcourse.utils.AESWrapper;
-import cn.teachcourse.utils.HexUtil;
+import cn.teahcourse.baseutil.AESWrapper;
 
 import static cn.teachcourse.R.id.input_content_et;
 
@@ -67,7 +64,7 @@ public class SharedPreferencesActivity extends BaseActivity {
     }
 
     private void initView() {
-        initCommon(getWindow().getDecorView());
+        initButton(getWindow().getDecorView());
         et = (EditText) findViewById(input_content_et);
         tv = (TextView) findViewById(R.id.display_content_tv);
         btn = (Button) findViewById(R.id.save_to_xml_btn);

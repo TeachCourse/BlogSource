@@ -7,17 +7,14 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.SweepGradient;
 import android.view.View;
 
 import cn.teachcourse.R;
-import cn.teachcourse.utils.DisplayUtil;
+import cn.teahcourse.baseutil.DisplayUtil;
 
 /**
  * Created by http://teachcourse.cn on 2017/5/25.

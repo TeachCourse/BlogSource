@@ -6,7 +6,7 @@ import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 
-import cn.teachcourse.utils.PickPhotoUtil;
+import cn.teachcourse.util.PickPhotoUtil;
 
 /**
  * Created by postmaster@teachcourse.cn on 2017/3/4.

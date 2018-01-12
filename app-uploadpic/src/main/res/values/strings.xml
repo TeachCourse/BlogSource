@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">UploadPic</string>
+    <string name="install_apk_path">cn.teachcourse.fileprovider</string>
+    <string name="install_apk_path_pub">cn.teachcourse.fileprovider.pub</string>
+</resources>

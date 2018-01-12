@@ -3,13 +3,11 @@ package cn.teachcourse.view.progress;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ProgressBar;
 
 import cn.teachcourse.R;
 import cn.teachcourse.common.BaseActivity;
-import cn.teachcourse.view.MyTextViewActivity;
 
 public class ProgressActivity extends BaseActivity {
     private ProgressBar mProgressBar;
@@ -64,7 +62,7 @@ public class ProgressActivity extends BaseActivity {
     }
 
     private void initView() {
-        initCommon(getWindow().getDecorView());
+        initButton(getWindow().getDecorView());
         mProgressBar= (ProgressBar) findViewById(R.id.progressBar);
     }
 

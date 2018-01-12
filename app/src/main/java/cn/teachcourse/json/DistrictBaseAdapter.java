@@ -9,7 +9,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import cn.teachcourse.json.bean.DistrictBean;
-import cn.teachcourse.view.viewholder.MyViewHolder;
+import cn.teachcourse.support.v4.viewholder.MyViewHolder;
 
 /**
  * Created by postmaster@teachcourse.cn on 2016/5/11.

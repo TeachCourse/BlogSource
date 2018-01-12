@@ -1,6 +1,5 @@
 package cn.teachcourse.service.music;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.BroadcastReceiver;
@@ -52,7 +51,7 @@ public class MusicPlayerActivity extends BaseActivity implements OnClickListener
     public void onCreate(Bundle savedInstanceState) {       //重写的onCreate方法
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music_service);                      //设置当前的用户界面
-        initCommon(getWindow().getDecorView());
+        initButton(getWindow().getDecorView());
         lv = (ListView)findViewById(R.id.singtext); 		//获得ListView对象的引用
         BaseAdapter myAdapter=new BaseAdapter(){//为ListView准备内容适配器
             //定义歌词字符串的数组

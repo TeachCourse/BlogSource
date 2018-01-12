@@ -2,17 +2,12 @@ package cn.teachcourse.urlconnection;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import java.io.File;
 import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.URL;
 
 import cn.teachcourse.R;
@@ -45,7 +40,7 @@ public class URLConneActivity extends BaseActivity {
      * 初始化布局控件
      */
     private void initView(){
-        initCommon(getWindow().getDecorView());
+        initButton(getWindow().getDecorView());
         mTextView=(TextView)findViewById(R.id.url_file_length_tv);
     }
     /**

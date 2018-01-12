@@ -20,23 +20,13 @@
     <string name="code_notice">将二维码放入框内，即可自动扫描</string>
     <string name="teachcourse_blog">TeachCourse</string>
     <string name="scan_zxing_login">扫描二维码登录</string>
-    <!--jingchen Demo学习-->
-    <string name="pull_to_refresh">下拉刷新</string>
-    <string name="release_to_refresh">释放立即刷新</string>
-    <string name="refreshing">正在刷新...</string>
-    <string name="refresh_succeed">刷新成功</string>
-    <string name="refresh_fail">刷新失败</string>
-    <string name="pullup_to_load">上拉加载更多</string>
-    <string name="release_to_load">释放立即加载</string>
-    <string name="loading">正在加载...</string>
-    <string name="load_succeed">加载成功</string>
-    <string name="load_fail">加载失败</string>
+
     <string name="title_activity_radio_button">RadioButtonActivity</string>
     <string name="man">男人</string>
     <string name="woman">女人</string>
     <string name="button">按钮</string>
-    <string name="install_apk_path">cn.teachcourse.fileprovider</string>
-    <string name="install_apk_path_pub">cn.teachcourse.fileprovider.pub</string>
+    <string name="file_provider">cn.teachcourse.fileprovider</string>
+    <string name="file_provider_pub">cn.teachcourse.fileprovider.pub</string>
     <string name="bundle_process_communication">
         想要启动不同应用内的组件（Activity、Service、ContentProvider），
         隐式Intent集合Bundle存储数据，实现不同进程间的通信，该demo将演示这样的一个过程

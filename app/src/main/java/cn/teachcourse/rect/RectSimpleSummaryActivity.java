@@ -3,10 +3,7 @@ package cn.teachcourse.rect;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +13,7 @@ import android.widget.TextView;
 
 import cn.teachcourse.R;
 import cn.teachcourse.common.BaseActivity;
-import cn.teachcourse.utils.DensityUtil;
+import cn.teahcourse.baseutil.DensityUtil;
 
 /**
  * Created by postmaster@teachcourse.cn on 2017/1/6.

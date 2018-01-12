@@ -26,6 +26,6 @@ public abstract class FragmentActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragment);
-        initCommon(getWindow().getDecorView());
+        initButton(getWindow().getDecorView());
     }
 }

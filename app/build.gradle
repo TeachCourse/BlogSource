@@ -12,7 +12,7 @@ android {
      */
     defaultConfig {
         applicationId "cn.teachcourse"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
@@ -47,7 +47,7 @@ android {
     buildTypes {
         release {
             shrinkResources false
-            minifyEnabled false
+            minifyEnabled true
             useProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.config
@@ -56,7 +56,6 @@ android {
             shrinkResources false
             minifyEnabled false
             useProguard false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
     /**
@@ -113,28 +112,29 @@ android {
  * 七、引入依赖包的秘密
  */
 dependencies {
+    //    compile files('libs/zxing.jar')
     compile fileTree(include: ['*.jar'], dir: 'libs')
-
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-
-    compile files('libs/zxing.jar')
+    compile project(':pullable')
+    compile project(':upversion')
+    compile project(':baseutil')
     compile 'com.loopj.android:android-async-http:1.4.9'
     compile 'com.android.support:appcompat-v7:24.0.0'
-    compile 'com.flaviofaria:kenburnsview:1.0.7'
-    compile 'me.neavo:volley:2014.12.09'
-    compile 'com.nineoldandroids:library:2.4.0'
-    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
     compile 'com.android.support:design:24.0.0'
     compile 'com.android.support:recyclerview-v7:24.0.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.1'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    compile 'com.flaviofaria:kenburnsview:1.0.7'
+    compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.alibaba:fastjson:1.2.32'
     compile 'com.google.code.gson:gson:2.8.1'
     compile 'com.koushikdutta.async:androidasync:2.+'
     compile 'com.squareup.okhttp3:okhttp:3.8.1'
-    compile 'com.hannesdorfmann:adapterdelegates3:3.0.1'
+    compile 'me.neavo:volley:2014.12.09'
     compile 'com.zhy:okhttputils:2.6.2'
+    compile 'com.zhy:autolayout:1.4.5'
     testCompile 'junit:junit:4.12'
 }
 

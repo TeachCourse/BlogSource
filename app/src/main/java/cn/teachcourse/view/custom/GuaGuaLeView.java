@@ -18,7 +18,7 @@ import android.view.View;
 import java.util.Random;
 
 import cn.teachcourse.R;
-import cn.teachcourse.utils.DisplayUtil;
+import cn.teahcourse.baseutil.DisplayUtil;
 
 /**
  * Created by http://teachcourse.cn on 2017/5/25.

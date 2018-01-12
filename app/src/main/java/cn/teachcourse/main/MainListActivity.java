@@ -6,9 +6,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
-import org.json.JSONObject;
-
 import cn.teachcourse.R;
+import cn.teachcourse.app.RecordAudioActivity;
+import cn.teachcourse.graphics.PicTranslation;
 import cn.teachcourse.service.music.MusicPlayerActivity;
 import cn.teachcourse.view.MyTextViewActivity;
 import cn.teachcourse.view.progress.ProgressActivity;
@@ -30,10 +30,10 @@ public class MainListActivity extends ListActivity implements AdapterView.OnItem
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         switch (position+1){
             case Constant.RECORDER_VIDEO:
-                 cn.teachcourse.activity.MainActivity.start(this);
+                 RecordAudioActivity.start(this);
                 break;
             case Constant.RECORDER_AUDIO:
-                 cn.teachcourse.activity.AudioMainActivity.start(this);
+                 cn.teachcourse.app.AudioMainActivity.start(this);
                 break;
             case Constant.ENUM_DEMO:
                  cn.teachcourse.enums.MainActivity.start(this);
@@ -48,7 +48,7 @@ public class MainListActivity extends ListActivity implements AdapterView.OnItem
                  MusicPlayerActivity.start(this);
                 break;
             case Constant.KENBURNSVIEW_DEMO:
-                 cn.teachcourse.imageview.overlook.OverlookActivity.start(this);
+                 cn.teachcourse.view.imageview.overlook.OverlookActivity.start(this);
                 break;
             case Constant.HANDLER_RECYCLE_SEND_MESSAGE_DEMO:
                  cn.teachcourse.handler.RefreshUIActivity.start(this);
@@ -87,7 +87,7 @@ public class MainListActivity extends ListActivity implements AdapterView.OnItem
                  cn.teachcourse.tabhost.OneTabActivity.start(this);
                 break;
             case Constant.VIEWPAGER_DEMO:
-                 cn.teachcourse.view.viewpager.TabIndicatorActivity.start(this);
+                 cn.teachcourse.support.v4.viewpager.TabIndicatorActivity.start(this);
                 break;
             case Constant.DOWNLOAD_BY_NETWORK_DEMO:
                  cn.teachcourse.packages.PackageInfoActivity.start(this);
@@ -96,10 +96,10 @@ public class MainListActivity extends ListActivity implements AdapterView.OnItem
                  cn.teachcourse.urlconnection.URLConneActivity.start(this);
                 break;
             case Constant.TRANSITION_DRAWABLE_DEMO:
-                 cn.teachcourse.transition.TransitionActivity.start(this);
+                 PicTranslation.start(this);
                 break;
             case Constant.WELCOME_GUIDE_VIEWPAGER_DEMO:
-                 cn.teachcourse.view.viewpager.WelcomeGuideActivity.start(this);
+                 cn.teachcourse.support.v4.viewpager.WelcomeGuideActivity.start(this);
                 break;
             case Constant.H5_FULLCREEN_WEBVIEW:
                  cn.teachcourse.view.webview.H5WebViewActivity.start(this);
@@ -111,7 +111,7 @@ public class MainListActivity extends ListActivity implements AdapterView.OnItem
                  cn.teachcourse.view.webview.ZXingJSWebViewActivity.start(this);
                 break;
             case Constant.PULLABLE_SCROLL_VIEW:
-                 cn.teachcourse.chenjing.PullableScrollViewActivity.start(this);
+                 cn.teachcourse.pullable.PullableScrollViewActivity.start(this);
                 break;
             case Constant.RADIO_BUTTON_EXAMPLE:
                  cn.teachcourse.view.RadioButtonActivity.start(this);

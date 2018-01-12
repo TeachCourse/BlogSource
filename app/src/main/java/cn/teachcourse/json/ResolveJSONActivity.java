@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -49,7 +48,7 @@ public class ResolveJSONActivity extends BaseActivity {
      * 初始化布局控件
      */
     private void initView(){
-        initCommon(getWindow().getDecorView());
+        initButton(getWindow().getDecorView());
         mListView=(ListView)findViewById(R.id.district_select_lv);
         mListView.setOnItemSelectedListener(mOnItemSelected);
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

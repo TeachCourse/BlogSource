@@ -2,7 +2,6 @@ package cn.teachcourse.view;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,7 +14,6 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import cn.teachcourse.R;
-import cn.teachcourse.chenjing.PullableScrollViewActivity;
 import cn.teachcourse.common.BaseActivity;
 
 public class RadioButtonActivity extends BaseActivity {
@@ -58,7 +56,7 @@ public class RadioButtonActivity extends BaseActivity {
 
         // 为提交按钮添加监视器
         ((Button) findViewById(R.id.button1)).setOnClickListener(lick);
-        initCommon(getWindow().getDecorView());
+        initButton(getWindow().getDecorView());
     }
 
     // 创建OnCheckedChangeListener对象并实例化，然后重写onCheckedChanged方法

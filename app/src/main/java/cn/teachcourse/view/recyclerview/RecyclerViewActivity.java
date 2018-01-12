@@ -2,7 +2,6 @@ package cn.teachcourse.view.recyclerview;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -43,7 +42,7 @@ public class RecyclerViewActivity extends BaseActivity {
      * 初始化布局控件
      */
     private void initView() {
-        initCommon(getWindow().getDecorView());
+        initButton(getWindow().getDecorView());
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_list);
         mRecyclerView.setLayoutManager(mLayoutManager);//设置布局管理器

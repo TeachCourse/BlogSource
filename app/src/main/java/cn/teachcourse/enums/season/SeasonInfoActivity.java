@@ -84,7 +84,7 @@ public class SeasonInfoActivity extends AppCompatActivity {
         Log.d(TAG, "test: " + ExcellentStudentEnum.valueOf(ExcellentStudentEnum.LIUBEI.getDeclaringClass(), "ZHANGFEI"));
         Log.d(TAG, "test: " + ExcellentStudentEnum.valueOf(ExcellentStudentEnum.LIUBEI.getDeclaringClass(), "ZHAOYUN"));
         /*抛出异常：xiaosan is not a constant in cn.teachcourse.enums.original.ExcellentStudentEnum*/
-//        Log.d(TAG, "test: "+ExcellentStudentEnum.valueOf(ExcellentStudentEnum.ZHAOYUN.getDeclaringClass(),"xiaosan"));
+//        LogUtil.d(TAG, "test: "+ExcellentStudentEnum.valueOf(ExcellentStudentEnum.ZHAOYUN.getDeclaringClass(),"xiaosan"));
         /*9、测试values()方法，返回当前枚举数组*/
         for (ExcellentStudentEnum student : ExcellentStudentEnum.values()) {
             Log.d(TAG, "test: " +student.getProfession());
@@ -93,7 +93,7 @@ public class SeasonInfoActivity extends AppCompatActivity {
         Log.d(TAG, "test: "+ExcellentStudentEnum.valueOf("LIUBEI").getNum());
         Log.d(TAG, "test: "+ExcellentStudentEnum.valueOf("ZHAOYUN").getProfession());
         /*抛出异常：xiaosan is not a constant in cn.teachcourse.enums.original.ExcellentStudentEnum*/
-//        Log.d(TAG, "test: "+ExcellentStudentEnum.valueOf("xiaosan"));
+//        LogUtil.d(TAG, "test: "+ExcellentStudentEnum.valueOf("xiaosan"));
     }
 
     private void testExcellent(){

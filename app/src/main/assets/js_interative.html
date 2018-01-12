@@ -10,10 +10,10 @@
         btn.innerHTML="修改后。。。HelloWebView,i'm from js";
     }
         var aTag = document.getElementsByTagName('a')[0];
-        aTag.addEventListener('click', function(){
-        myObj.dispatchJavaMethod("调用android本地方法fun1FromAndroid(String name)！！");//调用android本地方法
-        return false;
-    }, false);
+        aTag.addEventListener('click',
+        function(){
+            myObj.dispatchJavaMethod("调用android本地方法fun1FromAndroid(String name)！！");
+        }, false);
 
 </script>
 <p></p>

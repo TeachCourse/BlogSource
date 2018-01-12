@@ -50,7 +50,7 @@ public class ZXingJSWebViewActivity extends BaseActivity {
      * 初始化布局文件
      */
     private void initView() {
-        initCommon(getWindow().getDecorView());
+        initButton(getWindow().getDecorView());
         mPersonCentral_iv = (ImageView) findViewById(R.id.person_central_iv);
         mRadarScan_iv = (ImageView) findViewById(R.id.radar_scan_iv);
         mWebView = (WebView) findViewById(R.id.webView);

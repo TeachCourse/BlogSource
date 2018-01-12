@@ -5,14 +5,21 @@
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="$APPLICATION_HOME_DIR$/gradle/gradle-3.2" />
+        <option name="gradleHome" value="$APPLICATION_HOME_DIR$/gradle/gradle-3.3" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/app-clock" />
+            <option value="$PROJECT_DIR$/app-greendao" />
+            <option value="$PROJECT_DIR$/app-obfuscated" />
+            <option value="$PROJECT_DIR$/app-reboot" />
             <option value="$PROJECT_DIR$/app-scancode" />
             <option value="$PROJECT_DIR$/app-uploadpic" />
+            <option value="$PROJECT_DIR$/baseutil" />
+            <option value="$PROJECT_DIR$/pullable" />
+            <option value="$PROJECT_DIR$/pulltofresh" />
+            <option value="$PROJECT_DIR$/upversion" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

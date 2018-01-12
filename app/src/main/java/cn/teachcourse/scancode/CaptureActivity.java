@@ -82,7 +82,7 @@ public class CaptureActivity extends BaseActivity implements Callback,
 	 * 初始化布局控件
 	 */
 	private void initView() {
-		initCommon(getWindow().getDecorView());
+		initButton(getWindow().getDecorView());
 		surfaceView = (SurfaceView) findViewById(R.id.surfaceview);
 		viewfinderView = (ViewfinderView) findViewById(R.id.viewfinderview);
 		switchUI = (UISwitchButton) findViewById(R.id.switch12);

@@ -15,8 +15,8 @@ import java.io.File;
 
 import cn.teachcourse.R;
 import cn.teachcourse.common.BaseActivity;
-import cn.teachcourse.utils.GetPathFromUri4kitkat;
-import cn.teachcourse.utils.PickPhotoUtil;
+import cn.teahcourse.baseutil.GetPathFromUri4kitkat;
+import cn.teachcourse.util.PickPhotoUtil;
 
 public class UploadImgForH5Activity extends BaseActivity {
     private static final String TAG = "UploadImgForH5Activity";
@@ -65,7 +65,7 @@ public class UploadImgForH5Activity extends BaseActivity {
     }
 
     private void initView() {
-        initCommon(getWindow().getDecorView());
+        initButton(getWindow().getDecorView());
         mWebView= (WebView) findViewById(R.id.widget_wv);
         mWebChromeClient=new MyWebChromeClient(new PickPhotoUtil(this));
     }
@@ -90,7 +90,6 @@ public class UploadImgForH5Activity extends BaseActivity {
                 break;
             case PickPhotoUtil.REQUEST_CODE_TAKE_PHOTO:
                 takePhotoResult(resultCode);
-
                 break;
             case PickPhotoUtil.REQUEST_CODE_PREVIEW_PHOTO:
                 cancelFilePathCallback();

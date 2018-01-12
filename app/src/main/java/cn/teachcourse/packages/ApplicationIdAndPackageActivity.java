@@ -28,7 +28,7 @@ public class ApplicationIdAndPackageActivity extends BaseActivity {
     }
 
     private void initView() {
-        initCommon(getWindow().getDecorView());
+        initButton(getWindow().getDecorView());
         mTextView = (TextView) findViewById(R.id.textview);
     }
 

@@ -96,7 +96,7 @@ public class WriteToReadActivity extends BaseActivity implements View.OnClickLis
     }
 
     private void initView() {
-        initCommon(getWindow().getDecorView());
+        initButton(getWindow().getDecorView());
         mPath_tv = (TextView) findViewById(R.id.apk_path_tv);
         mInstall_btn = (Button) findViewById(R.id.install_apk_btn);
         mTakPhoto_btn = (Button) findViewById(R.id.take_photo_btn);
@@ -115,9 +115,11 @@ public class WriteToReadActivity extends BaseActivity implements View.OnClickLis
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.install_apk_btn:
+
                 initPermissionForReadOrWrite();
                 break;
             case R.id.take_photo_btn:
+
                 initPermissionForCamera();
                 break;
         }
@@ -147,12 +149,13 @@ public class WriteToReadActivity extends BaseActivity implements View.OnClickLis
      * @param file apk文件存放的路径
      */
     private void installApk(File file) {
-        file = new File(file, "download/");
+        file = new File(file, "load/");
         file = new File(file, "92Recycle-release.apk");
         Intent intent = new Intent(Intent.ACTION_VIEW);
         if (Build.VERSION.SDK_INT > 23) {
             /**Android 7.0以上的方式**/
-            Uri contentUri = getUriForFile(this, getString(R.string.install_apk_path), file);
+            String authority = getApplicationContext().getPackageName() + ".fileProvider";
+            Uri contentUri = getUriForFile(this, authority, file);
             /**请求授予的下面这句话等同于：intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);**/
             grantUriPermission("cn.teachcourse", contentUri, Intent.FLAG_GRANT_READ_URI_PERMISSION);
 //            intent.setDataAndType(contentUri, "application/vnd.android.package-archive");
@@ -176,7 +179,7 @@ public class WriteToReadActivity extends BaseActivity implements View.OnClickLis
             Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             if (Build.VERSION.SDK_INT > 23) {
                 /**Android 7.0以上的方式**/
-                Uri contentUri = getUriForFile(this, getString(R.string.install_apk_path), file);
+                Uri contentUri = getUriForFile(this, getString(R.string.file_provider), file);
                 grantUriPermission(getPackageName(), contentUri, Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
                 intent.putExtra(MediaStore.EXTRA_OUTPUT, contentUri);
             } else {
@@ -213,12 +216,14 @@ public class WriteToReadActivity extends BaseActivity implements View.OnClickLis
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
             case RESULT_CAPTURE_IMAGE:
+
                 if (resultCode == RESULT_OK)
                     Toast.makeText(this, "拍照成功", Toast.LENGTH_SHORT).show();
                 else
                     Toast.makeText(this, "拍照失败", Toast.LENGTH_SHORT).show();
                 break;
             case REQUEST_CODE_GRAINT_URI:
+
                 updateDirectoryEntries(data.getData());
                 Log.d(TAG, "onActivityResult: " + data.getData());
                 break;

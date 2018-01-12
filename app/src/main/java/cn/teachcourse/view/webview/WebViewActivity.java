@@ -2,8 +2,6 @@ package cn.teachcourse.view.webview;
 
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
-import android.graphics.Bitmap;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.KeyEvent;
@@ -42,7 +40,7 @@ public class WebViewActivity extends BaseActivity {
      * 初始化数据
      */
     private void initView() {
-        initCommon(getWindow().getDecorView());
+        initButton(getWindow().getDecorView());
         mWebview = (WebView) findViewById(R.id.web_view_id);
         mError_iv=(ImageView)findViewById(R.id.widget_iv);
         set(mWebview);

@@ -1,5 +1,7 @@
 package cn.teachcourse.adapter;
 
+import android.content.Context;
+import android.view.LayoutInflater;
 import android.widget.BaseAdapter;
 
 import java.util.List;
@@ -9,23 +11,30 @@ import java.util.List;
  */
 
 public abstract class MyBaseAdapter extends BaseAdapter {
-    /**
-     * 获取需要绑定的数据
-     * @return
-     */
+    protected LayoutInflater inflater;
+    protected Context context;
+    protected List list;
     public abstract List getData();
+    public MyBaseAdapter() {
+    }
+
+    public MyBaseAdapter(Context context, List list) {
+        this.context = context;
+        this.list = list;
+        inflater=LayoutInflater.from(context);
+    }
 
     @Override
     public int getCount() {
-        if (getData()!=null)
-            return getData().size();
+        if (list!=null)
+            return list.size();
         return 0;
     }
 
     @Override
     public Object getItem(int position) {
-        if (getData()!=null)
-            return getData().get(position);
+        if (list!=null)
+            return list.get(position);
         return null;
     }
 
@@ -33,4 +42,5 @@ public abstract class MyBaseAdapter extends BaseAdapter {
     public long getItemId(int position) {
         return position;
     }
+
 }

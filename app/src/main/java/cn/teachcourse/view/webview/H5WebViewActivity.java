@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -98,7 +97,7 @@ public class H5WebViewActivity extends BaseActivity {
         });
         // Navigate everywhere you want, this classes have only been tested on YouTube's mobile site
         webView.loadUrl(url);
-        initCommon(getWindow().getDecorView());
+        initButton(getWindow().getDecorView());
 
     }
     /**

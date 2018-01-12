@@ -72,7 +72,7 @@ public final class CaptureActivityHandler extends Handler {
   public void handleMessage(Message message) {
     switch (message.what) {
       case MessageIDs.auto_focus:
-        //Log.d(TAG, "Got auto-focus message");
+        //LogUtil.d(TAG, "Got auto-focus message");
         // When one auto focus pass finishes, start another. This is the closest thing to
         // continuous AF. It does seem to hunt a bit, but I'm not sure what else to do.
         if (state == State.PREVIEW) {

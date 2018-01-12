@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -43,7 +42,7 @@ public class SwitchListViewActivity extends BaseActivity {
      *  初始化布局控件
      */
     private void initView(){
-        initCommon(getWindow().getDecorView());
+        initButton(getWindow().getDecorView());
         mSwipeRefreshLayout=(SwipeRefreshLayout)findViewById(R.id.swipe_refresh_layout);
         mRecyclerView=(RecyclerView)findViewById(R.id.recycler_view_list);
         mLayoutManager = new LinearLayoutManager(this);

@@ -4,8 +4,6 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Binder;
-import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.JavascriptInterface;
@@ -16,7 +14,7 @@ import android.widget.Toast;
 
 import cn.teachcourse.R;
 import cn.teachcourse.common.BaseActivity;
-import cn.teachcourse.utils.LogUtils;
+import cn.teahcourse.baseutil.LogUtil;
 
 public class JSWebViewActivity extends BaseActivity {
     private WebView mWebView;
@@ -49,7 +47,7 @@ public class JSWebViewActivity extends BaseActivity {
      */
     @SuppressLint("JavascriptInterface")
     private void initView() {
-        initCommon(getWindow().getDecorView());
+        initButton(getWindow().getDecorView());
         mWebView = (WebView) findViewById(R.id.webView);
         mButton = (Button) findViewById(R.id.modify_btn);
         WebSettings webSettings = mWebView.getSettings();
@@ -57,8 +55,8 @@ public class JSWebViewActivity extends BaseActivity {
         webSettings.setDefaultTextEncodingName("utf-8");
         webSettings.setDomStorageEnabled(true);
         /**
-        * Java Object与JavaScript交互
-        */
+         * Java Object与JavaScript交互
+         */
         mWebView.addJavascriptInterface(this, "myObj");
 
 //        mWebView.loadUrl("file:///android_asset/js_interative.html");
@@ -69,8 +67,8 @@ public class JSWebViewActivity extends BaseActivity {
         String callingApp = getPackageManager().getNameForUid(Binder.getCallingUid());
 //        mWebView.loadUrl("file:///android_res/raw/note.html");
 
-        LogUtils.d(callingApp);
-        LogUtils.d(getPackageName());
+        LogUtil.d(callingApp);
+        LogUtil.d(getPackageName());
         /**
          * JavaScript与Java Object交互
          */
@@ -79,17 +77,19 @@ public class JSWebViewActivity extends BaseActivity {
             public void onClick(View v) {
                 mWebView.loadUrl("javascript:modifyContent()");
                 isModify = !isModify;
-                Toast.makeText(JSWebViewActivity.this,""+isModify,Toast.LENGTH_SHORT).show();
+                Toast.makeText(JSWebViewActivity.this, "" + isModify, Toast.LENGTH_SHORT).show();
                 startBrowser();
             }
         });
     }
 
     private void startBrowser() {
-        Intent intent=new Intent(Intent.ACTION_VIEW);
+        Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.addCategory(Intent.CATEGORY_APP_BROWSER);
         startActivity(intent);
     }
+
+    private boolean isLogin;
 
     /**
      * 在Android 4.2以前不需要添加注释：@JavascriptInterface，WebView和JS可以正常交互；在Android 4.2以后需要手动添加注释：@JavascriptInterface，WebView和JS交互成功，否则提示 “ uncaught typeerror object has no method ”
@@ -103,6 +103,14 @@ public class JSWebViewActivity extends BaseActivity {
     @JavascriptInterface
     public void dispatchJavaMethod(String name) {
         Toast.makeText(this, name, Toast.LENGTH_LONG).show();
+    }
+
+    @JavascriptInterface
+    public boolean isLogin() {
+        if (isLogin) {
+            return true;
+        }
+        return false;
     }
 
     @Override

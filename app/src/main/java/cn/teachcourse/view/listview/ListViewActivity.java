@@ -3,7 +3,6 @@ package cn.teachcourse.view.listview;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.GestureDetector;
@@ -79,7 +78,7 @@ public class ListViewActivity extends BaseActivity implements View.OnTouchListen
      * 初始化数据
      */
     private void initView() {
-        initCommon(getWindow().getDecorView());
+        initButton(getWindow().getDecorView());
         mStatuBar = findViewById(R.id.custom_action_bar);
         mListView = (ListView) findViewById(R.id.widget_listview);
         imageView = new ImageView(this);

@@ -12,7 +12,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.MEDIA_CONTENT_CONTROL" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <!-- 添加录制视频权限 -->
     <uses-permission android:name="android.permission.CAPTURE_VIDEO_OUTPUT" />
     <!-- 使用摄像头权限 -->
@@ -31,15 +32,16 @@
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         <!-- 定义FileProvider -->
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="@string/install_apk_path"
+            android:authorities="${applicationId}.fileProvider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
@@ -49,7 +51,7 @@
 
         <!-- 定义Activity -->
         <activity
-            android:name=".main.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -67,8 +69,8 @@
 
         <!-- 添加activity组件 -->
         <activity
-            android:name=".activity.MainActivity"
-            android:label="activity/MainActivity">
+            android:name=".app.RecordAudioActivity"
+            android:label="app/RecordAudioActivity">
             <intent-filter>
                 <action android:name="cn.teachcourse.action.MAIN" />
 
@@ -76,8 +78,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.AudioMainActivity"
-            android:label="activity/AudioMainActivity">
+            android:name=".app.AudioMainActivity"
+            android:label="app/AudioMainActivity">
             <intent-filter>
                 <action android:name="cn.teachcourse.action.MAIN" />
 
@@ -94,8 +96,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.VideoMainActivity"
-            android:label="activity/VideoMainActivity">
+            android:name=".app.VideoMainActivity"
+            android:label="app/VideoMainActivity">
             <intent-filter>
                 <action android:name="cn.teachcourse.action.MAIN" />
 
@@ -130,8 +132,26 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".imageview.overlook.OverlookActivity"
-            android:label="imageview/overlook/OverlookActivity">
+            android:name=".view.imageview.overlook.OverlookActivity"
+            android:label="view/imageview/overlook/OverlookActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.imageview.bitmapregiondecoder.CoordinateActivity"
+            android:label="view/imageview/bitmapregiondecoder/CoordinateActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.imageview.bitmapregiondecoder.MainActivity"
+            android:label="view/imageview/bitmapregiondecoder/MainActivity">
             <intent-filter>
                 <action android:name="cn.teachcourse.action.MAIN" />
 
@@ -255,7 +275,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.viewpager.TabIndicatorActivity"
+            android:name=".support.v4.viewpager.TabIndicatorActivity"
             android:label="view/viewpager/TabIndicatorActivity">
             <intent-filter>
                 <action android:name="cn.teachcourse.action.MAIN" />
@@ -283,8 +303,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".transition.TransitionActivity"
-            android:label="transition/TransitionActivity">
+            android:name=".graphics.PicTranslation"
+            android:label="graphics/PicTranslation">
             <intent-filter>
                 <action android:name="cn.teachcourse.action.MAIN" />
 
@@ -292,7 +312,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.viewpager.WelcomeGuideActivity"
+            android:name=".support.v4.viewpager.WelcomeGuideActivity"
             android:label="view/viewpager/WelcomeGuideActivity">
             <intent-filter>
                 <action android:name="cn.teachcourse.action.MAIN" />
@@ -301,7 +321,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".imageloader.CacheBitmapActivity"
+            android:name=".framework.imageloader.CacheBitmapActivity"
             android:label="imageloader/CacheBitmapActivity">
             <intent-filter>
                 <action android:name="cn.teachcourse.action.MAIN" />
@@ -355,8 +375,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".chenjing.PullableScrollViewActivity"
-            android:label="chenjing/PullableScrollViewActivity">
+            android:name=".pullable.PullableScrollViewActivity"
+            android:label="pullable/PullableScrollViewActivity">
             <intent-filter>
                 <action android:name="cn.teachcourse.action.MAIN" />
 
@@ -419,7 +439,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.viewpager.ActionBarTabsPager"
+            android:name=".support.v4.viewpager.ActionBarTabsPager"
             android:label="view/viewpager/ActionBarTabsPager"
             android:theme="@style/Base.Widget.AppCompat.ActionBar">
             <intent-filter>
@@ -637,8 +657,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".animator.AnimatorXActivity"
-            android:label="animator/AnimatorXActivity">
+            android:name=".animation.ChangeTextAnimation"
+            android:label="animation/ChangeTextAnimation">
             <intent-filter>
                 <action android:name="cn.teachcourse.action.MAIN" />
 
@@ -646,8 +666,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.Bean2JsonActivity"
-            android:label="activity/Bean2JsonActivity">
+            android:name=".app.Bean2JsonActivity"
+            android:label="app/Bean2JsonActivity">
             <intent-filter>
                 <action android:name="cn.teachcourse.action.MAIN" />
 
@@ -663,8 +683,71 @@
                 <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
             </intent-filter>
         </activity>
-        <activity android:name=".enums.season.SeasonInfoActivity"
+        <activity
+            android:name=".enums.season.SeasonInfoActivity"
             android:label="enums/season/SeasonInfoActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".location.LocationActivity"
+            android:label="location/LocationActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".animation.TranslateInAnimation"
+            android:label="animation/TranslateInAnimation">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.animation.TranslateInAnim"
+            android:label="view/animation/TranslateInAnim">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.PreviewPicture"
+            android:label="view/PreviewPicture">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".app.ActivityTransition"
+            android:label="app/ActivityTransition">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".app.ActivityTransitionDetails"
+            android:label="app/ActivityTransitionDetails">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".app.UpVersionActivity"
+            android:label="app/UpVersionActivity">
             <intent-filter>
                 <action android:name="cn.teachcourse.action.MAIN" />
 

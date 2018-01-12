@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -31,7 +30,7 @@ public class RefreshUIActivity extends BaseActivity {
         setContentView(R.layout.activity_refresh_ui);
         mTextView=(TextView)findViewById(R.id.show_info);
         startAuto();
-        initCommon(getWindow().getDecorView());
+        initButton(getWindow().getDecorView());
     }
     private void startAuto(){
         Message message = mHandler.obtainMessage(0);

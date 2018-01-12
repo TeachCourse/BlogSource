@@ -1,6 +1,5 @@
 package cn.teachcourse.view.triangle;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -47,7 +46,7 @@ public class TriangleMathActivity extends BaseActivity implements TextWatcher {
     }
 
     private void initView() {
-        initCommon(getWindow().getDecorView());
+        initButton(getWindow().getDecorView());
         mInputValue_et = (EditText) findViewById(R.id.input_angle_et);
         mOutputValue_tv = (TextView) findViewById(R.id.output_value_tv);
     }

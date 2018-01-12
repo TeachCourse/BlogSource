@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--
+    1、name对应的属性值，开发者可以自由定义；
+    2、path对应的属性值，当前external-path标签下的相对路径
+    比如：/storage/emulated/0/92Recycle-release.apk
+    sdcard路径：/storage/emulated/0(WriteToReadActivity.java:176)
+                      at cn.teachcourse.nougat.WriteToReadActivity.onClick(WriteToReadActivity.java:97)
+                      at android.view.View.performClick(View.java:5610)
+                      at android.view.View$PerformClick.run(View.java:22265)
+    相对路径：/
+    -->
+    <!--1、对应内部内存卡根目录：Context.getFileDir()-->
+    <files-path
+        name="int_root"
+        path="/" />
+    <!--2、对应应用默认缓存根目录：Context.getCacheDir()-->
+    <cache-path
+        name="app_cache"
+        path="/" />
+    <!--3、对应外部内存卡根目录：Environment.getExternalStorageDirectory()-->
+    <external-path
+        name="ext_root"
+        path="/" />
+    <!--4、对应外部内存卡根目录下的APP公共目录：Context.getExternalFileDir(String)-->
+    <external-files-path
+        name="ext_pub"
+        path="/" />
+    <!--5、对应外部内存卡根目录下的APP缓存目录：Context.getExternalCacheDir()-->
+    <external-cache-path
+        name="ext_cache"
+        path="/" />
+</paths>
