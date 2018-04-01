@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">PullToFresh</string>
+    <string name="pull_to_refresh">下拉刷新</string>
+    <string name="pullup_to_load">上拉加载更多</string>
+    <string name="pull_to_refresh_pull_label">刷新中，请稍等…</string>
+    <string name="pull_to_refresh_release_label">放开以刷新…</string>
+    <string name="pull_to_refresh_refreshing_label">正在载入…</string>
+    <string name="pull_to_refresh_from_bottom_pull_label">加载中，请稍等…</string>
+    <string name="pull_to_refresh_from_bottom_release_label">加载更多…</string>
+    <string name="pull_to_refresh_from_bottom_refreshing_label">@string/pull_to_refresh_refreshing_label</string>
+</resources>
