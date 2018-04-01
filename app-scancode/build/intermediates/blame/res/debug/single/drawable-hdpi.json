@@ -2,9 +2,5 @@
     {
         "merged": "D:\\GitHub\\BlogSource\\app-scancode\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_launcher.png",
         "source": "D:\\GitHub\\BlogSource\\app-scancode\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "E:\\AndroidStudio\\TeachCourseDemos\\app-scancode\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_launcher.png",
-        "source": "E:\\AndroidStudio\\TeachCourseDemos\\app-scancode\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
     }
 ]

@@ -28,10 +28,6 @@
         "source": "C:\\Users\\lin\\.android\\build-cache\\a1e263213e47ae3ab284359a0f96f70060a2f409\\output\\res\\layout\\abc_list_menu_item_checkbox.xml"
     },
     {
-        "merged": "E:\\AndroidStudio\\TeachCourseDemos\\app-scancode\\build\\intermediates\\res\\merged\\debug\\layout\\activity_result.xml",
-        "source": "E:\\AndroidStudio\\TeachCourseDemos\\app-scancode\\src\\main\\res\\layout\\activity_result.xml"
-    },
-    {
         "merged": "D:\\GitHub\\BlogSource\\app-scancode\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
         "source": "C:\\Users\\lin\\.android\\build-cache\\a1e263213e47ae3ab284359a0f96f70060a2f409\\output\\res\\layout\\abc_action_mode_bar.xml"
     },
@@ -72,16 +68,16 @@
         "source": "C:\\Users\\lin\\.android\\build-cache\\a1e263213e47ae3ab284359a0f96f70060a2f409\\output\\res\\layout\\abc_action_menu_item_layout.xml"
     },
     {
-        "merged": "D:\\GitHub\\BlogSource\\app-scancode\\build\\intermediates\\res\\merged\\debug\\layout\\activity_capture.xml",
-        "source": "D:\\GitHub\\BlogSource\\app-scancode\\src\\main\\res\\layout\\activity_capture.xml"
-    },
-    {
         "merged": "D:\\GitHub\\BlogSource\\app-scancode\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
         "source": "C:\\Users\\lin\\.android\\build-cache\\a1e263213e47ae3ab284359a0f96f70060a2f409\\output\\res\\layout\\abc_expanded_menu_layout.xml"
     },
     {
         "merged": "D:\\GitHub\\BlogSource\\app-scancode\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
         "source": "C:\\Users\\lin\\.android\\build-cache\\a1e263213e47ae3ab284359a0f96f70060a2f409\\output\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "D:\\GitHub\\BlogSource\\app-scancode\\build\\intermediates\\res\\merged\\debug\\layout\\activity_capture.xml",
+        "source": "D:\\GitHub\\BlogSource\\app-scancode\\src\\main\\res\\layout\\activity_capture.xml"
     },
     {
         "merged": "D:\\GitHub\\BlogSource\\app-scancode\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
@@ -110,10 +106,6 @@
     {
         "merged": "D:\\GitHub\\BlogSource\\app-scancode\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
         "source": "C:\\Users\\lin\\.android\\build-cache\\a1e263213e47ae3ab284359a0f96f70060a2f409\\output\\res\\layout\\abc_activity_chooser_view.xml"
-    },
-    {
-        "merged": "E:\\AndroidStudio\\TeachCourseDemos\\app-scancode\\build\\intermediates\\res\\merged\\debug\\layout\\activity_capture.xml",
-        "source": "E:\\AndroidStudio\\TeachCourseDemos\\app-scancode\\src\\main\\res\\layout\\activity_capture.xml"
     },
     {
         "merged": "D:\\GitHub\\BlogSource\\app-scancode\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",

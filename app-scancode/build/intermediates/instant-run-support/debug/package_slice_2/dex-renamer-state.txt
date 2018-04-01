@@ -1,4 +1,0 @@
-#Sun Apr 01 10:53:27 CST 2018
-base.0=D\:\\GitHub\\BlogSource\\app-scancode\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_2
-renamed.0=classes.dex
-file.0=D\:\\GitHub\\BlogSource\\app-scancode\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_2\\classes.dex
