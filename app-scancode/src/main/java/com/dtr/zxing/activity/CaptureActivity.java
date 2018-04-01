@@ -18,6 +18,7 @@ package com.dtr.zxing.activity;
 import java.io.IOException;
 import java.lang.reflect.Field;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -42,6 +43,8 @@ import com.dtr.zxing.utils.BeepManager;
 import com.dtr.zxing.utils.CaptureActivityHandler;
 import com.dtr.zxing.utils.InactivityTimer;
 import com.google.zxing.Result;
+
+import cn.teahcourse.baseutil.PermissionsUtils;
 
 /**
  * This activity opens the camera and does the actual scanning on a background
@@ -90,16 +93,19 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
 		scanContainer = (RelativeLayout) findViewById(R.id.capture_container);
 		scanCropView = (RelativeLayout) findViewById(R.id.capture_crop_view);
 		scanLine = (ImageView) findViewById(R.id.capture_scan_line);
+		//检查打开相机权限以及写入数据权限
+		if(!PermissionsUtils.hasPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.CAMERA})) {
+			PermissionsUtils.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA});
+			inactivityTimer = new InactivityTimer(this);
+			beepManager = new BeepManager(this);
 
-		inactivityTimer = new InactivityTimer(this);
-		beepManager = new BeepManager(this);
-
-		TranslateAnimation animation = new TranslateAnimation(Animation.RELATIVE_TO_PARENT, 0.0f, Animation.RELATIVE_TO_PARENT, 0.0f, Animation.RELATIVE_TO_PARENT, 0.0f, Animation.RELATIVE_TO_PARENT,
-				0.9f);
-		animation.setDuration(4500);
-		animation.setRepeatCount(-1);
-		animation.setRepeatMode(Animation.RESTART);
-		scanLine.startAnimation(animation);
+			TranslateAnimation animation = new TranslateAnimation(Animation.RELATIVE_TO_PARENT, 0.0f, Animation.RELATIVE_TO_PARENT, 0.0f, Animation.RELATIVE_TO_PARENT, 0.0f, Animation.RELATIVE_TO_PARENT,
+					0.9f);
+			animation.setDuration(4500);
+			animation.setRepeatCount(-1);
+			animation.setRepeatMode(Animation.RESTART);
+			scanLine.startAnimation(animation);
+		}
 	}
 
 	@Override

@@ -21,3 +21,17 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext {
+    recyclerView = 'com.android.support:recyclerview-v7:25.3.1'
+    appCompat = 'com.android.support:appcompat-v7:25.3.1'
+    design = 'com.android.support:design:25.3.1'
+
+    javaSourceCompatibility = JavaVersion.VERSION_1_8
+    javaTargetCompatibility = JavaVersion.VERSION_1_8
+
+    compileSdk=25
+    buildTools = '25.0.2'
+    minSdk=10
+    targetSdk=24
+}

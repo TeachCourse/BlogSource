@@ -1,5 +1,13 @@
 [
     {
+        "merged": "D:\\GitHub\\BlogSource\\app-scancode\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\shadow.png",
+        "source": "D:\\GitHub\\BlogSource\\app-scancode\\src\\main\\res\\drawable-xhdpi\\shadow.png"
+    },
+    {
+        "merged": "D:\\GitHub\\BlogSource\\app-scancode\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_launcher.png",
+        "source": "D:\\GitHub\\BlogSource\\app-scancode\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png"
+    },
+    {
         "merged": "E:\\AndroidStudio\\TeachCourseDemos\\app-scancode\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\shadow.png",
         "source": "E:\\AndroidStudio\\TeachCourseDemos\\app-scancode\\src\\main\\res\\drawable-xhdpi\\shadow.png"
     },
@@ -8,8 +16,16 @@
         "source": "E:\\AndroidStudio\\TeachCourseDemos\\app-scancode\\src\\main\\res\\drawable-xhdpi\\qr_code_bg.9.png"
     },
     {
+        "merged": "D:\\GitHub\\BlogSource\\app-scancode\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\qr_code_bg.9.png",
+        "source": "D:\\GitHub\\BlogSource\\app-scancode\\src\\main\\res\\drawable-xhdpi\\qr_code_bg.9.png"
+    },
+    {
         "merged": "E:\\AndroidStudio\\TeachCourseDemos\\app-scancode\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\scan_line.png",
         "source": "E:\\AndroidStudio\\TeachCourseDemos\\app-scancode\\src\\main\\res\\drawable-xhdpi\\scan_line.png"
+    },
+    {
+        "merged": "D:\\GitHub\\BlogSource\\app-scancode\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\scan_line.png",
+        "source": "D:\\GitHub\\BlogSource\\app-scancode\\src\\main\\res\\drawable-xhdpi\\scan_line.png"
     },
     {
         "merged": "E:\\AndroidStudio\\TeachCourseDemos\\app-scancode\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_launcher.png",

@@ -5,8 +5,8 @@ def keystoreProperties = new Properties()
 keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "25.0.2"
+    compileSdkVersion rootProject.ext.compileSdk
+    buildToolsVersion rootProject.ext.buildTools
     /**
      * 一、默认产品偏好配置
      */
@@ -121,10 +121,10 @@ dependencies {
     compile project(':upversion')
     compile project(':baseutil')
     compile 'com.loopj.android:android-async-http:1.4.9'
-    compile 'com.android.support:appcompat-v7:24.0.0'
-    compile 'com.android.support:design:24.0.0'
-    compile 'com.android.support:recyclerview-v7:24.0.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.1'
+    compile rootProject.ext.appCompat
+    compile rootProject.ext.design
+    compile rootProject.ext.recyclerView
+//    compile 'com.android.support.constraint:constraint-layout:1.0.1'
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
     compile 'com.flaviofaria:kenburnsview:1.0.7'
     compile 'com.nineoldandroids:library:2.4.0'
