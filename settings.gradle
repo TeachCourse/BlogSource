@@ -1,4 +1,4 @@
 include ':app', ':app-clock', ':app-uploadpic', ':baseutil', ':app-greendao'
-include ':app-reboot', ':app-obfuscated'
+include ':app-obfuscated'
 include ':pulltofresh', ':pullable'
 include ':upversion', 'app-scancode'
