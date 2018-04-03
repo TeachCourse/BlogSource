@@ -29,12 +29,14 @@ public class ActionBarTabsPager extends AppCompatActivity {
 //        mViewPager.setId(R.id.pager);
         setContentView(R.layout.activity_actionbar_tabs);
         mViewPager= (ViewPager) findViewById(R.id.viewpager);
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+//        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
 //        setSupportActionBar(myToolbar);
 
         final ActionBar bar =getSupportActionBar() ;
+        bar.setHomeButtonEnabled(false);
         bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-        bar.setDisplayOptions(0, ActionBar.DISPLAY_SHOW_TITLE);
+        bar.setDisplayShowTitleEnabled(false);
+        bar.setDisplayShowHomeEnabled(false);
 
         mTabsAdapter = new TabsAdapter(this, mViewPager);
         mTabsAdapter.addTab(bar.newTab().setText("Simple"),

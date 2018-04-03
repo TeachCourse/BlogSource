@@ -441,7 +441,7 @@
         <activity
             android:name=".support.v4.viewpager.ActionBarTabsPager"
             android:label="view/viewpager/ActionBarTabsPager"
-            android:theme="@style/Base.Widget.AppCompat.ActionBar">
+            android:theme="@style/Theme.AppCompat.Light">
             <intent-filter>
                 <action android:name="cn.teachcourse.action.MAIN" />
 
