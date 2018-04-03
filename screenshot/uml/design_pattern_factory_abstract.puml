@@ -1,0 +1,29 @@
+@startuml
+
+interface AbstractFactory
+interface AbstractProductA
+interface AbstractProductB
+
+class ConcreteFactoryA
+class ConcreteFactoryB
+
+AbstractFactory <|.. ConcreteFactoryA
+AbstractFactory <|.. ConcreteFactoryB
+
+class ConcreteProductA1
+class ConcreteProductA2
+class ConcreteProductB1
+class ConcreteProductB2
+
+AbstractProductA <|.. ConcreteProductA1
+AbstractProductA <|.. ConcreteProductA2
+ConcreteProductA1 <-- ConcreteFactoryA
+ConcreteProductB1 <-- ConcreteFactoryA
+
+AbstractProductB <|.. ConcreteProductB1
+AbstractProductB <|.. ConcreteProductB2
+ConcreteProductA2 <-- ConcreteFactoryB
+ConcreteProductB2 <-- ConcreteFactoryB
+
+
+@enduml

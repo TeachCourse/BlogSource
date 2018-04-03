@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="cn.teachcourse.app.FlingImageViewActivity">
+
+    <cn.teachcourse.view.imageview.large.FlingImageView
+        android:id="@+id/fling_iv"
+        android:layout_width="match_parent"
+        android:clickable="true"
+        android:background="@color/color_Pink"
+        android:layout_height="match_parent" />
+</FrameLayout>

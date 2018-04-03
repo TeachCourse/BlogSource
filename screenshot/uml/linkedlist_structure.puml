@@ -1,0 +1,23 @@
+@startuml
+
+abstract class AbstractList
+abstract AbstractCollection
+abstract AbstractSequentialList
+interface List
+interface Collection
+
+List <|.. AbstractList
+Collection <|.. AbstractCollection
+
+Collection <|- List
+AbstractCollection <|- AbstractList
+AbstractList <|-- AbstractSequentialList
+AbstractSequentialList <|-- LinkedList
+
+class LinkedList {
+Object[] elementData
+size()
+}
+
+
+@enduml

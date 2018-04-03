@@ -1,0 +1,11 @@
+@startuml
+
+interface Command
+class ConcreteCommand
+class Invoker
+class Receiver
+Command <|.. ConcreteCommand
+Command <-- Invoker
+Receiver <-- ConcreteCommand
+
+@enduml

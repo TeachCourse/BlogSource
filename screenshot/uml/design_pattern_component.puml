@@ -1,0 +1,10 @@
+@startuml
+
+abstract Component
+class Leaf
+class Composite
+
+Component <|-- Leaf
+Component <|-- Composite
+
+@enduml

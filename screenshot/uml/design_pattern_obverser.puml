@@ -1,0 +1,15 @@
+@startuml
+
+interface Subject
+interface Observer
+
+class ConcreteSubject
+class ConcreteObserver
+
+Subject <|.. ConcreteSubject
+Observer <|.. ConcreteObserver
+
+Observer <.. Subject
+Subject <-- ConcreteObserver
+
+@enduml

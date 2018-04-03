@@ -1,0 +1,24 @@
+@startuml
+
+class PriorityQueue{
+
+}
+abstract AbstractQueue
+interface Serializable
+
+AbstractQueue <|- PriorityQueue
+Serializable <|.. PriorityQueue
+
+abstract AbstractCollection
+interface Queue
+
+AbstractCollection <|- AbstractQueue
+Queue <|.. AbstractQueue
+
+interface Collection
+
+Collection <|.. AbstractCollection
+
+Collection <|- Queue
+
+@enduml

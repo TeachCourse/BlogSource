@@ -1,0 +1,20 @@
+@startuml
+
+interface Collection
+interface Set
+abstract class AbstractCollection
+abstract class AbstractSet
+
+class HashSet{
+
+}
+
+Collection <|.. AbstractCollection
+AbstractCollection <|- AbstractSet
+Set <|.. AbstractSet
+AbstractSet <|- HashSet
+Set <|.. HashSet
+
+Collection <|- Set
+
+@enduml

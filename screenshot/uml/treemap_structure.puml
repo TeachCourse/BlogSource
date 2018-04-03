@@ -1,0 +1,18 @@
+@startuml
+
+interface Map
+interface NavigableMap
+interface SortedMap
+abstract AbstractMap
+
+class TreeMap{
+
+}
+
+Map <|.. AbstractMap
+Map <|- SortedMap
+SortedMap <|- NavigableMap
+NavigableMap <|.. TreeMap
+AbstractMap <|- TreeMap
+
+@enduml

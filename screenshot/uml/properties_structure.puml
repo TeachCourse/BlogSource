@@ -1,0 +1,19 @@
+@startuml
+
+class Properties{
+
+}
+
+class HashTable{
+
+}
+
+abstract Dictionary
+interface Map
+
+Dictionary <|- HashTable
+Map <|.. HashTable
+
+HashTable <|- Properties
+
+@enduml

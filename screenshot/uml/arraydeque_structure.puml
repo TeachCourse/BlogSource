@@ -1,0 +1,22 @@
+@startuml
+
+abstract AbstractCollection
+interface Deque
+
+class ArrayDeque{
+
+}
+
+AbstractCollection <|- ArrayDeque
+Deque <|.. ArrayDeque
+
+interface Collection
+
+Collection <|.. AbstractCollection
+
+interface Queue
+
+Queue <|- Deque
+Collection <|- Queue
+
+@enduml

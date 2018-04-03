@@ -1,0 +1,31 @@
+@startuml
+
+class LinkedHashSet{
+
+}
+class HashSet{
+
+ }
+
+interface Set
+
+HashSet <|- LinkedHashSet
+Set <|.. LinkedHashSet
+
+abstract class AbstractSet
+
+AbstractSet <|- HashSet
+Set <|.. HashSet
+
+abstract AbstractCollection
+
+AbstractCollection <|- AbstractSet
+Set <|.. AbstractSet
+
+interface Collection
+
+Collection <|.. AbstractCollection
+
+Collection <|- Set
+
+@enduml

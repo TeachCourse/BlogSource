@@ -1,0 +1,22 @@
+@startuml
+
+interface Map
+abstract class AbstractMap
+
+class HashMap {
+Object[] elementData
+size()
+}
+
+class LinkedHashMap {
+Object[] elementData
+size()
+}
+
+Map <|.. AbstractMap
+AbstractMap <|- HashMap
+Map <|.. HashMap
+HashMap <|- LinkedHashMap
+Map <|.. LinkedHashMap
+
+@enduml

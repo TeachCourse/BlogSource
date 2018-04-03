@@ -1,0 +1,19 @@
+@startuml
+
+abstract State
+class ConcreteStateA
+class ConcreteStateB
+
+State <|-- ConcreteStateA
+State <|-- ConcreteStateB
+
+class Context{
+    request()
+}
+note right :state.handle
+
+State <-- Context
+
+
+
+@enduml

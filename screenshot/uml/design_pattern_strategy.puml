@@ -1,0 +1,30 @@
+@startuml
+
+interface FlyBehavior
+interface QuackBehavior
+
+class FlyWithWings
+class FlyNoWay
+
+FlyBehavior <|.. FlyWithWings
+FlyBehavior <|.. FlyNoWay
+
+class Quack
+class Squeak
+class MuteQuack
+
+QuackBehavior <|.. Quack
+QuackBehavior <|.. Squeak
+QuackBehavior <|.. MuteQuack
+
+abstract class Duck{
+FlyBehavior flyBehavior
+QuackBehavior quackBehavior
+}
+
+FlyBehavior <-- Duck
+QuackBehavior <-- Duck
+
+
+
+@enduml

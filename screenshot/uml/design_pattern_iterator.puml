@@ -1,0 +1,12 @@
+@startuml
+
+interface Iterator
+interface Aggregate
+class ConcreteIterator
+class ConcreteAggregate
+
+Iterator <|.. ConcreteIterator
+Aggregate <|.. ConcreteAggregate
+ConcreteIterator <-- ConcreteAggregate
+
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+
+abstract AbstractList
+interface List
+
+class Vector{
+
+}
+
+AbstractList <|- Vector
+List <|.. Vector
+
+abstract AbstractCollection
+
+AbstractCollection <|- AbstractList
+List <|.. AbstractList
+
+interface Collection
+
+Collection <|.. AbstractCollection
+Collection <|- List
+
+@enduml

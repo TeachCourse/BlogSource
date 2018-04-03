@@ -1,0 +1,29 @@
+@startuml
+
+interface Set
+interface NavigableSet
+interface Collection
+
+abstract AbstractSet
+abstract AbstractCollection
+
+interface SortedSet
+
+class TreeSet{
+
+}
+
+AbstractSet <|- TreeSet
+NavigableSet <|.. TreeSet
+
+AbstractCollection <|- AbstractSet
+Set <|.. AbstractSet
+
+SortedSet <|- NavigableSet
+
+Collection <|.. AbstractCollection
+
+Set <|- SortedSet
+Collection <|- Set
+
+@enduml

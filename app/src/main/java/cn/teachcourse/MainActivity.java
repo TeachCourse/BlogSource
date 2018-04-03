@@ -156,6 +156,6 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public String getUrl() {
-        return null;
+        return URL;
     }
 }

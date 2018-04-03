@@ -1,0 +1,23 @@
+@startuml
+
+abstract Component
+
+class ConcreteComponent{
+
+}
+
+class Decorator{
+
+}
+
+class ConcreteDecoratorA
+class ConcreteDecoratorB
+class ConcreteDecoratorC
+
+Component <|-- ConcreteComponent
+Component <|-- Decorator
+Decorator <|-- ConcreteDecoratorA
+Decorator <|-- ConcreteDecoratorB
+Decorator <|-- ConcreteDecoratorC
+
+@enduml

@@ -746,8 +746,44 @@
                 <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
             </intent-filter>
         </activity>
-        <activity android:name=".app.UpVersionActivity"
+        <activity
+            android:name=".app.UpVersionActivity"
             android:label="app/UpVersionActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".app.FlingRemovedActivity"
+            android:label="app/FlingRemovedActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".app.FlingRemovedToLeftActivity"
+            android:label="app/FlingRemovedToLeftActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".app.FlingImageViewActivity"
+            android:label="app/FlingImageViewActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".app.ReflectUsingActivity"
+            android:label="app/ReflectUsingActivity">
             <intent-filter>
                 <action android:name="cn.teachcourse.action.MAIN" />
 
