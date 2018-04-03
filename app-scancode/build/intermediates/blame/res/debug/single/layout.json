@@ -20,12 +20,12 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\6e8531f5c9be82df1fbc089becd84496e2e4c783\\output\\res\\layout\\abc_activity_chooser_view_list_item.xml"
     },
     {
-        "merged": "E:\\AndroidStudio\\BlogSource\\app-scancode\\build\\intermediates\\res\\merged\\debug\\layout\\activity_capture.xml",
-        "source": "E:\\AndroidStudio\\BlogSource\\app-scancode\\src\\main\\res\\layout\\activity_capture.xml"
-    },
-    {
         "merged": "E:\\AndroidStudio\\BlogSource\\app-scancode\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\6e8531f5c9be82df1fbc089becd84496e2e4c783\\output\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudio\\BlogSource\\app-scancode\\build\\intermediates\\res\\merged\\debug\\layout\\activity_capture.xml",
+        "source": "E:\\AndroidStudio\\BlogSource\\app-scancode\\src\\main\\res\\layout\\activity_capture.xml"
     },
     {
         "merged": "E:\\AndroidStudio\\BlogSource\\app-scancode\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
