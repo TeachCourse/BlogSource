@@ -746,8 +746,7 @@
                 <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".app.UpVersionActivity"
+        <activity android:name=".app.UpVersionActivity"
             android:label="app/UpVersionActivity">
             <intent-filter>
                 <action android:name="cn.teachcourse.action.MAIN" />
@@ -784,6 +783,15 @@
         </activity>
         <activity android:name=".app.ReflectUsingActivity"
             android:label="app/ReflectUsingActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".app.ChangeScreenStateActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="app/ChangeScreenStateActivity">
             <intent-filter>
                 <action android:name="cn.teachcourse.action.MAIN" />
 
