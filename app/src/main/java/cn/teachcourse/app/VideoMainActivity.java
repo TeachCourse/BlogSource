@@ -1,7 +1,9 @@
 package cn.teachcourse.app;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Environment;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,8 +19,9 @@ import java.io.File;
 import cn.teachcourse.R;
 import cn.teachcourse.api.MediaUtilAPI;
 import cn.teachcourse.common.BaseActivity;
+import cn.teahcourse.baseutil.PermissionsUtils;
 
-public class VideoMainActivity extends BaseActivity implements View.OnClickListener {
+public class VideoMainActivity extends BaseActivity implements View.OnClickListener, SurfaceHolder.Callback {
     private static final String LOG_TAG = "VideoMainActivity";
 
     private Button mStartRecording_btn;
@@ -31,9 +34,6 @@ public class VideoMainActivity extends BaseActivity implements View.OnClickListe
     private boolean mStartPlaying = true;
 
     private SurfaceHolder mSurfaceHolder;
-
-    private Camera mCamera;
-    boolean previewing = false;
 
     private VideoView mPlayer;
     private File mRootPath;
@@ -60,7 +60,7 @@ public class VideoMainActivity extends BaseActivity implements View.OnClickListe
         setContentView(R.layout.activity_video_main);
 
         initView();
-        getSurfaceHolder();
+
         saveAudioFiles();
     }
 
@@ -83,7 +83,9 @@ public class VideoMainActivity extends BaseActivity implements View.OnClickListe
         mStartRecording_btn.setOnClickListener(this);
         mStartPlaying_btn.setOnClickListener(this);
 
-
+        mSurfaceHolder = mSurfaceView.getHolder();
+        mSurfaceHolder.addCallback(this);
+        mSurfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
     }
 
     @Override
@@ -91,23 +93,11 @@ public class VideoMainActivity extends BaseActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.video_start_record:
                 onRecord(mStartRecording);
-                if (mStartRecording) {
-                    mStartRecording_btn.setText("正在拍摄。。。");
-                } else {
-                    mStartRecording_btn.setText("点击拍摄");
-                }
-                mStartRecording = !mStartRecording;
-                Log.e(LOG_TAG, mStartRecording + "");
+
                 break;
             case R.id.video_play_record:
                 onPlay(mStartPlaying);
-                if (mStartPlaying) {
-                    mStartPlaying_btn.setText("正在播放。。。");
-                } else {
-                    mStartPlaying_btn.setText("点击播放");
-                }
-                mStartPlaying = !mStartPlaying;
-                Log.e(LOG_TAG, mStartPlaying + "");
+
                 break;
         }
     }
@@ -117,17 +107,25 @@ public class VideoMainActivity extends BaseActivity implements View.OnClickListe
         mPlayer.setVisibility(View.GONE);
         if (start) {
             startRecording();
+            mStartRecording_btn.setText("正在拍摄。。。");
         } else {
             stopRecording();
+            mStartRecording_btn.setText("点击拍摄");
         }
+        mStartRecording = !mStartRecording;
+        Log.e(LOG_TAG, mStartRecording + "");
     }
 
     private void onPlay(boolean start) {
         if (start) {
             startPlaying();
+            mStartPlaying_btn.setText("正在播放。。。");
         } else {
             stopPlaying();
+            mStartPlaying_btn.setText("点击播放");
         }
+        mStartPlaying = !mStartPlaying;
+        Log.e(LOG_TAG, mStartPlaying + "");
     }
 
     private void startPlaying() {
@@ -145,6 +143,10 @@ public class VideoMainActivity extends BaseActivity implements View.OnClickListe
 
 
     private void startRecording() {
+        //添加权限检查
+        if (Build.VERSION.SDK_INT >= 23 && !PermissionsUtils.hasPermissions(this, new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE})) {
+            PermissionsUtils.requestPermissions(this, new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE});
+        }
         mediaUtilAPI = MediaUtilAPI.getInstance();
         mediaUtilAPI.setSurfaceView(mSurfaceHolder);
         mediaUtilAPI.startVideo(mSavePath);
@@ -162,33 +164,25 @@ public class VideoMainActivity extends BaseActivity implements View.OnClickListe
         stopRecording();
     }
 
-    private void getSurfaceHolder() {
-        mSurfaceHolder = mSurfaceView.getHolder();
 
-        mSurfaceHolder.addCallback(new SurfaceHolder.Callback() {
-            @Override
-            public void surfaceCreated(SurfaceHolder holder) {
-                // 将holder，这个holder为开始在oncreat里面取得的holder，将它赋给surfaceHolder
-                mSurfaceHolder = holder;
+    @Override
+    public void surfaceCreated(SurfaceHolder holder) {
+        // 将holder，这个holder为开始在oncreat里面取得的holder，将它赋给surfaceHolder
+        mSurfaceHolder = holder;
 
-            }
+    }
 
-            @Override
-            public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-                // 将holder，这个holder为开始在oncreat里面取得的holder，将它赋给surfaceHolder
-                mSurfaceHolder = holder;
+    @Override
+    public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
+        // 将holder，这个holder为开始在oncreat里面取得的holder，将它赋给surfaceHolder
+        mSurfaceHolder = holder;
 
-            }
+    }
 
-            @Override
-            public void surfaceDestroyed(SurfaceHolder holder) {
-                mSurfaceHolder = null;
-                mSurfaceView = null;
-                stopRecording();
-            }
-        });
-
-        mSurfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
+    @Override
+    public void surfaceDestroyed(SurfaceHolder holder) {
+        mSurfaceHolder = null;
+        stopRecording();
     }
 
     @Override
