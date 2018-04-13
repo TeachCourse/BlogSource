@@ -9,8 +9,8 @@
     <string name="song_author">歌手:庄心妍</string>
     <string name="song_from">专辑:2016酷音乐亚洲盛典</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="to_gridview_tab">切换栏目</string>
-    <string name="from_gridview_addtabs">点击添加更多栏目</string>
+    <string name="to_gridview_tab">长按拖拽栏目</string>
+    <string name="from_gridview_addtabs">点击添加栏目</string>
     <string name="hello">你好</string>
     <string name="screen_big">全屏</string>
     <string name="modify_content">修改内容</string>
