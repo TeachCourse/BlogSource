@@ -7,9 +7,13 @@
     android:orientation="vertical"
     tools:context="cn.teahcourse.rebootlaunchapp.HomeActivity">
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="自定义手机启动器"/>
+        android:layout_gravity="center"
+        android:text="开机或重启进入的界面"/>
 
+    <WebView
+        android:id="@+id/load_web_wv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </LinearLayout>
