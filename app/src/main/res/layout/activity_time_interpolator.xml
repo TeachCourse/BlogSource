@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="cn.teachcourse.animation.TimeInterpolatorActivity">
+
+    <cn.teachcourse.view.custom.DrawCircle
+        android:id="@+id/draw_circle_view"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+
+    <LinearLayout
+        android:id="@+id/container_ll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/accelerate_decelerate_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="先加速再减速" />
+
+            <Button
+                android:id="@+id/accelerate_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="仅加速" />
+
+            <Button
+                android:id="@+id/anticipate_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="先向后再向前最后碰撞" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/anticipate_over_shoot_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="先向后再向前最后晃动" />
+
+            <Button
+                android:id="@+id/bounce_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="小球弹跳效果" />
+
+            <Button
+                android:id="@+id/cycle_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="循环播放效果" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/decelerate_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="减速" />
+
+            <Button
+                android:id="@+id/linear_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="线性" />
+
+            <Button
+                android:id="@+id/over_shoot_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="晃动效果" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
