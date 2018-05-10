@@ -30,8 +30,8 @@ ext {
     javaSourceCompatibility = JavaVersion.VERSION_1_8
     javaTargetCompatibility = JavaVersion.VERSION_1_8
 
-    compileSdk=25
-    buildTools = '25.0.2'
+    compileSdk=26
+    buildTools = '27.0.3'
     minSdk=10
     targetSdk=24
 }

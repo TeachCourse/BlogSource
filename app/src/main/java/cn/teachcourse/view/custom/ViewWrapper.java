@@ -8,7 +8,6 @@ import android.view.View;
 
 public class ViewWrapper {
     private View view;
-    private float x = 0, y = 0;
 
     public ViewWrapper(View view) {
         this.view = view;
@@ -20,6 +19,15 @@ public class ViewWrapper {
 
     public void setWidth(int width) {
         view.getLayoutParams().width = width;
+        view.requestLayout();
+    }
+
+    public int getHeight() {
+        return view.getLayoutParams().height;
+    }
+
+    public void setHeight(int height) {
+        view.getLayoutParams().height = height;
         view.requestLayout();
     }
 
@@ -37,5 +45,9 @@ public class ViewWrapper {
 
     public float getY() {
         return view.getY();
+    }
+
+    public View getView() {
+        return view;
     }
 }

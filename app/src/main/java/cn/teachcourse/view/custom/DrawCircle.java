@@ -4,8 +4,11 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Point;
+import android.graphics.PointF;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 import cn.teahcourse.baseutil.DimensionUtil;
@@ -15,9 +18,11 @@ import cn.teahcourse.baseutil.DimensionUtil;
  */
 
 public class DrawCircle extends View {
+    private static final String TAG = "DrawCircle";
     private Paint mPaint;
     private Context mContext;
     private int mRadius = 50;
+    private PointF mPointF;
 
     public DrawCircle(Context context) {
         this(context, null);
@@ -34,11 +39,14 @@ public class DrawCircle extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        int circleX = getWidth() / 2;
-        int circleY = getHeight() / 2;
-
-
-        canvas.drawCircle(circleX, circleY, circleX >= circleY ? circleY : circleX, mPaint);
+        if(mPointF==null) {
+            int circleX = getWidth() / 2;
+            int circleY = getHeight() / 2;
+            canvas.drawCircle(circleX, circleY, mRadius, mPaint);
+        }else{
+            canvas.drawCircle(mPointF.x, mPointF.y, mRadius, mPaint);
+            Log.d(TAG,"------> Point.x="+mPointF.x);
+        }
     }
 
     @Override
@@ -59,5 +67,9 @@ public class DrawCircle extends View {
             width = (int) DimensionUtil.getUnitDip(mContext, mRadius);
         }
         return width;
+    }
+
+    public void setPointF(PointF pointF) {
+        this.mPointF = pointF;
     }
 }

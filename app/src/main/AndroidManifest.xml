@@ -801,8 +801,18 @@
                 <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
             </intent-filter>
         </activity>
-        <activity android:name=".animation.TimeInterpolatorActivity"
+        <activity
+            android:name=".animation.TimeInterpolatorActivity"
             android:label="animation/TimeInterpolatorActivity">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".animation.TypeEvaluatorActivity"
+            android:label="animation/TypeEvaluatorActivity">
             <intent-filter>
                 <action android:name="cn.teachcourse.action.MAIN" />
 
