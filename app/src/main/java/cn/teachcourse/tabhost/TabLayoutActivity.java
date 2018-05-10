@@ -4,6 +4,8 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,7 +23,7 @@ public class TabLayoutActivity extends AppCompatActivity {
     private TabLayout mTabLayout;
     private List<BaseFragment> fragmentList;
     private List<String> titleList;
-    private ViewPagerAdapter mAdapter;
+    private PagerAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +38,8 @@ public class TabLayoutActivity extends AppCompatActivity {
      * 初始化事件
      */
     private void addEvent() {
-        mAdapter = new ViewPagerAdapter(getSupportFragmentManager(), fragmentList, titleList);
+//        mAdapter = new ViewPagerAdapter(getSupportFragmentManager(), fragmentList, titleList);
+        mAdapter = new ViewPagerAdapter2(getSupportFragmentManager());
         mViewPager.setAdapter(mAdapter);
         //关联 viewpager 和 tabLayout。后面的 true 是是否自动刷新 fragment 的布尔值
         mTabLayout.setupWithViewPager(mViewPager,true);
@@ -67,7 +70,7 @@ public class TabLayoutActivity extends AppCompatActivity {
 
     }
 
-    protected class ViewPagerAdapter extends FragmentPagerAdapter {
+    protected static class ViewPagerAdapter extends FragmentPagerAdapter {
         private List<BaseFragment> fragmentList;
         private List<String> titleList;
 
@@ -79,18 +82,35 @@ public class TabLayoutActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            if (fragmentList == null)
-                return null;
             return fragmentList.get(position);
         }
 
         @Override
         public int getCount() {
-            if (fragmentList == null)
-                return 0;
             return fragmentList.size();
         }
 
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return titleList.get(position);
+        }
+    }
+
+    private class ViewPagerAdapter2 extends FragmentStatePagerAdapter{
+
+        public ViewPagerAdapter2(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int i) {
+            return BaseFragment.newInstance(titleList.get(i));
+        }
+
+        @Override
+        public int getCount() {
+            return titleList.size();
+        }
         @Override
         public CharSequence getPageTitle(int position) {
             return titleList.get(position);

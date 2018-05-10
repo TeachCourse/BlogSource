@@ -168,10 +168,12 @@ public class RecordAudioActivity extends BaseActivity implements OnClickListener
     }
 
     private void stopRecording() {
-        mMediaRecorder.stop();
-        mMediaRecorder.release();
-        mMediaRecorder = null;
-        mSysTime_TV.setText("保存的路径：" + mSavePath);
+        if (mMediaRecorder != null) {
+            mMediaRecorder.stop();
+            mMediaRecorder.release();
+            mMediaRecorder = null;
+            mSysTime_TV.setText("保存的路径：" + mSavePath);
+        }
     }
 
     @Override
