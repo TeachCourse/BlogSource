@@ -121,10 +121,11 @@ dependencies {
     compile project(':upversion')
     compile project(':baseutil')
     compile project(':pulltofresh')
+    compile project(':fileprovider24')
     //    compile 'com.koushikdutta.async:androidasync:2.+'
-    compile rootProject.ext.appCompat
-    compile rootProject.ext.design
-    compile rootProject.ext.recyclerView
+    compile "com.android.support:appcompat-v7:$rootProject.ext.appCompat"
+    compile "com.android.support:design:$rootProject.ext.appCompat"
+    compile "com.android.support:recyclerview-v7:$rootProject.ext.appCompat"
 //    compile 'com.android.support.constraint:constraint-layout:1.0.1'
     compile 'com.loopj.android:android-async-http:1.4.9'
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'

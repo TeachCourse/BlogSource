@@ -40,7 +40,7 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile rootProject.ext.appCompat
+    compile "com.android.support:appcompat-v7:$rootProject.ext.appCompat"
     // 添加greenDAO依赖包
     compile 'org.greenrobot:greendao:3.2.2'
 //    compile 'com.android.support.constraint:constraint-layout:1.0.1'

@@ -26,6 +26,7 @@ import java.io.File;
 
 import cn.teachcourse.R;
 import cn.teachcourse.common.BaseActivity;
+import cn.teachcourse.fileprovider24.FileProvider24;
 
 import static android.support.v4.content.FileProvider.getUriForFile;
 
@@ -152,20 +153,10 @@ public class WriteToReadActivity extends BaseActivity implements View.OnClickLis
         file = new File(file, "load/");
         file = new File(file, "92Recycle-release.apk");
         Intent intent = new Intent(Intent.ACTION_VIEW);
-        if (Build.VERSION.SDK_INT > 23) {
-            /**Android 7.0以上的方式**/
-            String authority = getApplicationContext().getPackageName() + ".fileProvider";
-            Uri contentUri = getUriForFile(this, authority, file);
-            /**请求授予的下面这句话等同于：intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);**/
-            grantUriPermission("cn.teachcourse", contentUri, Intent.FLAG_GRANT_READ_URI_PERMISSION);
-//            intent.setDataAndType(contentUri, "application/vnd.android.package-archive");
-            intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-        } else {
-            /**Android 7.0以前的方式**/
-            intent.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
-        }
+        Uri contentUri = FileProvider24.getUriForFile(this, file);
+        FileProvider24.grantUriReadPermission(this, intent, contentUri);
 
-
+        intent.setDataAndType(contentUri, "application/vnd.android.package-archive");
         startActivity(intent);
     }
 
@@ -177,15 +168,10 @@ public class WriteToReadActivity extends BaseActivity implements View.OnClickLis
         if (Environment.MEDIA_MOUNTED.equals(state)) {
             File file = new File(mFileRoot, System.currentTimeMillis() + ".jpg");
             Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            if (Build.VERSION.SDK_INT > 23) {
-                /**Android 7.0以上的方式**/
-                Uri contentUri = getUriForFile(this, getString(R.string.file_provider), file);
-                grantUriPermission(getPackageName(), contentUri, Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
-                intent.putExtra(MediaStore.EXTRA_OUTPUT, contentUri);
-            } else {
-                /**Android 7.0以前的方式**/
-                intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(file));
-            }
+            Uri contentUri = FileProvider24.getUriForFile(this, file);
+            FileProvider24.grantUriWritePermission(this, intent, contentUri);
+
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, contentUri);
             startActivityForResult(intent, RESULT_CAPTURE_IMAGE);
         } else {
             Toast.makeText(this, "sdcard不存在", Toast.LENGTH_SHORT).show();
@@ -273,7 +259,7 @@ public class WriteToReadActivity extends BaseActivity implements View.OnClickLis
         if (PackageManager.PERMISSION_GRANTED != flag) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, REQUEST_CODE_PERMISSION);
         } else {
-            takePhoto();
+            goToTakePhoto();
         }
     }
 
@@ -283,6 +269,7 @@ public class WriteToReadActivity extends BaseActivity implements View.OnClickLis
         if (REQUEST_CODE_PERMISSION == requestCode) {
             switch (grantResults[0]) {
                 case PackageManager.PERMISSION_DENIED:
+
                     boolean isSecondRequest = ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA);
                     if (isSecondRequest)
                         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, REQUEST_CODE_PERMISSION);
@@ -290,7 +277,8 @@ public class WriteToReadActivity extends BaseActivity implements View.OnClickLis
                         Toast.makeText(this, "拍照权限被禁用，请在权限管理修改", Toast.LENGTH_SHORT).show();
                     break;
                 case PackageManager.PERMISSION_GRANTED:
-                    takePhoto();
+
+                    goToTakePhoto();
                     break;
             }
         } else if (REQUEST_CODE_PERMISSION_READ_OR_WRITE == requestCode) {

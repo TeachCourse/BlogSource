@@ -93,6 +93,32 @@
                 android:text="晃动效果" />
 
         </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray" />
+
+
+
+            <Button
+                android:id="@+id/custom_time_interpolator_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="自定义插值器效果1" />
+
+            <Button
+                android:id="@+id/custom_time_interpolator_btn2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="自定义插值器效果2" />
+
+            <Button
+                android:id="@+id/custom_time_interpolator_btn3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="自定义插值器效果3" />
+
     </LinearLayout>
 
 </LinearLayout>

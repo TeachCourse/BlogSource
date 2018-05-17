@@ -39,15 +39,15 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         <!-- 定义FileProvider -->
-        <provider
-            android:name="android.support.v4.content.FileProvider"
-            android:authorities="${applicationId}.fileProvider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_provider" />
-        </provider>
+        <!--<provider-->
+            <!--android:name="android.support.v4.content.FileProvider"-->
+            <!--android:authorities="${applicationId}.fileProvider"-->
+            <!--android:exported="false"-->
+            <!--android:grantUriPermissions="true">-->
+            <!--<meta-data-->
+                <!--android:name="android.support.FILE_PROVIDER_PATHS"-->
+                <!--android:resource="@xml/file_provider" />-->
+        <!--</provider>-->
 
         <!-- 定义Activity -->
         <activity
@@ -441,7 +441,7 @@
         <activity
             android:name=".support.v4.viewpager.ActionBarTabsPager"
             android:label="view/viewpager/ActionBarTabsPager"
-            android:theme="@style/Base.Widget.AppCompat.ActionBar">
+            android:theme="@style/Theme.AppCompat.Light">
             <intent-filter>
                 <action android:name="cn.teachcourse.action.MAIN" />
 
@@ -802,8 +802,19 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".app.LifecycleHomePressedActivity"
+            android:label="app/LifecycleHomePressedActivity"
+            android:launchMode="standard">
+            <intent-filter>
+                <action android:name="cn.teachcourse.action.MAIN" />
+
+                <category android:name="cn.teachcourse.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".animation.TimeInterpolatorActivity"
             android:label="animation/TimeInterpolatorActivity">
+
             <intent-filter>
                 <action android:name="cn.teachcourse.action.MAIN" />
 
