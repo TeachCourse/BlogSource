@@ -1,0 +1,14 @@
+@startuml
+
+class A{
+      B b;
+      methodA()
+}
+
+class B{
+      A a;
+      methodB()
+}
+A <-- B
+B <-- A
+@enduml

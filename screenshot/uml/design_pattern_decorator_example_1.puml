@@ -1,0 +1,27 @@
+@startuml
+
+abstract Beverage
+abstract CondimentDecorator
+
+class DarkRoast
+class Decaf
+class Espresso
+class HouseBlend
+
+class Milk
+class Mocha
+class Soy
+class Whip
+
+Beverage <|-- CondimentDecorator
+Beverage <|-- DarkRoast
+Beverage <|-- Decaf
+Beverage <|-- Espresso
+Beverage <|-- HouseBlend
+
+CondimentDecorator <|-- Milk
+CondimentDecorator <|-- Mocha
+CondimentDecorator <|-- Soy
+CondimentDecorator <|-- Whip
+
+@enduml

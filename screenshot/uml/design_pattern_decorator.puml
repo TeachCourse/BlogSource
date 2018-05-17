@@ -6,7 +6,7 @@ class ConcreteComponent{
 
 }
 
-class Decorator{
+abstract Decorator{
 
 }
 
@@ -19,5 +19,6 @@ Component <|-- Decorator
 Decorator <|-- ConcreteDecoratorA
 Decorator <|-- ConcreteDecoratorB
 Decorator <|-- ConcreteDecoratorC
+
 
 @enduml

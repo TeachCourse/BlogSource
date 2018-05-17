@@ -1,4 +1,4 @@
-include ':app', ':app-clock', ':app-uploadpic', ':flinglistview', ':red-packet-plug'
+include ':app', ':app-clock', ':app-uploadpic', ':flinglistview', ':red-packet-plug', ':fileprovider24'
 include ':baseutil', ':app-greendao'
 include ':app-reboot', ':app-obfuscated'
 include ':pulltofresh', ':pullable'

@@ -8,12 +8,15 @@
       <module fileurl="file://$PROJECT_DIR$/app-greendao/app-greendao.iml" filepath="$PROJECT_DIR$/app-greendao/app-greendao.iml" />
       <module fileurl="file://$PROJECT_DIR$/app-obfuscated/app-obfuscated.iml" filepath="$PROJECT_DIR$/app-obfuscated/app-obfuscated.iml" />
       <module fileurl="file://$PROJECT_DIR$/app-reboot/app-reboot.iml" filepath="$PROJECT_DIR$/app-reboot/app-reboot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app-reboot/app-reboot.iml" filepath="$PROJECT_DIR$/app-reboot/app-reboot.iml" />
       <module fileurl="file://$PROJECT_DIR$/app-scancode/app-scancode.iml" filepath="$PROJECT_DIR$/app-scancode/app-scancode.iml" />
       <module fileurl="file://$PROJECT_DIR$/app-uploadpic/app-uploadpic.iml" filepath="$PROJECT_DIR$/app-uploadpic/app-uploadpic.iml" />
       <module fileurl="file://$PROJECT_DIR$/baseutil/baseutil.iml" filepath="$PROJECT_DIR$/baseutil/baseutil.iml" />
       <module fileurl="file://$PROJECT_DIR$/flinglistview/flinglistview.iml" filepath="$PROJECT_DIR$/flinglistview/flinglistview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flinglistview/flinglistview.iml" filepath="$PROJECT_DIR$/flinglistview/flinglistview.iml" />
       <module fileurl="file://$PROJECT_DIR$/pullable/pullable.iml" filepath="$PROJECT_DIR$/pullable/pullable.iml" />
       <module fileurl="file://$PROJECT_DIR$/pulltofresh/pulltofresh.iml" filepath="$PROJECT_DIR$/pulltofresh/pulltofresh.iml" />
+      <module fileurl="file://$PROJECT_DIR$/red-packet-plug/red-packet-plug.iml" filepath="$PROJECT_DIR$/red-packet-plug/red-packet-plug.iml" />
       <module fileurl="file://$PROJECT_DIR$/red-packet-plug/red-packet-plug.iml" filepath="$PROJECT_DIR$/red-packet-plug/red-packet-plug.iml" />
       <module fileurl="file://$PROJECT_DIR$/upversion/upversion.iml" filepath="$PROJECT_DIR$/upversion/upversion.iml" />
     </modules>

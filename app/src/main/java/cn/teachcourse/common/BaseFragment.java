@@ -2,6 +2,7 @@ package cn.teachcourse.common;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.TextView;
  */
 
 public class BaseFragment extends Fragment {
+    private static final String TAG = "BaseFragment";
     private String  mType;
 
     public BaseFragment() {
@@ -32,6 +34,7 @@ public class BaseFragment extends Fragment {
         if (getArguments()!=null){
             mType=getArguments().getString("type");
         }
+        Log.e(TAG,"------->index= "+mType);
     }
 
     @Override
