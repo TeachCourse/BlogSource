@@ -1,0 +1,61 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="main_line_vertical_style">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">#e8e8e8</item>
+    </style>
+
+    <style name="main_line_horizontal_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">#e8e8e8</item>
+    </style>
+
+    <style name="main_account_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#999999</item>
+        <item name="android:textSize">@dimen/px30</item>
+    </style>
+
+    <style name="main_account_num_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/px18</item>
+        <item name="android:textColor">#ff3c25</item>
+        <item name="android:textSize">@dimen/px40</item>
+    </style>
+
+    <style name="main_ll_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="main_trade_text_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#666666</item>
+        <item name="android:textSize">@dimen/px28</item>
+    </style>
+
+    <style name="main_trade_num_style">
+        <item name="android:layout_width">@dimen/px220</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/px74</item>
+        <item name="android:layout_marginRight">@dimen/px64</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textColor">#35cf6e</item>
+        <item name="android:textSize">@dimen/px48</item>
+    </style>
+</resources>
