@@ -1,3 +1,6 @@
+## 2018-06-07
+删除非封装库项目：`app-clock`、`app-greendao`、`app-obfuscated`、`app-reboot`、`app-scancode`、`app-uploadpic`、`red-packet-plug`、`screenadapter`，并新建分支`thin-master`管理，推荐下载该分支，后期也主要维护`thin-master`分支
+
 ## 2018-04-01
 因为每次升级buildTool或compileSdk后，创建module时默认使用最新的，造成在当前项目中出现多个buildTool版本和多个compileSdk版本
 
