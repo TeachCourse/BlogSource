@@ -16,7 +16,7 @@ public class DimensionUtil {
      * @param value
      * @return
      */
-    public static float getUnitDip(Context context, int value) {
+    public static float  getUnitDip(Context context, int value) {
         return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value, context.getResources().getDisplayMetrics());
     }
 

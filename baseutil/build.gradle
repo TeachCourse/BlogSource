@@ -1,5 +1,15 @@
 apply plugin: 'com.android.library'
 
+ext{
+    repostory='BlogSource'
+    bintrayName='teachcourse'
+    groupName='cn.teachcourse'
+    artifactName='baseutil'
+    versionNname='1.0.0'
+    descrip=''
+    siteuril='https://github.com/TeachCourse/BlogSource/tree/master/baseutil'
+}
+
 android {
     compileSdkVersion rootProject.ext.compileSdk
     buildToolsVersion rootProject.ext.buildTools
@@ -20,6 +30,8 @@ android {
         }
     }
 }
+
+apply from:rootProject.file('upload.gradle')
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
