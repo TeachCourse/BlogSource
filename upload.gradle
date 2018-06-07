@@ -1,0 +1,17 @@
+/** 以下开始是将Android Library上传到jcenter的相关配置**/
+apply plugin: 'com.novoda.bintray-release'//添加
+
+publish{
+    repoName = repostory//远程仓库名字,不指明，默认是上传到maven
+    userOrg = bintrayName//bintray.com的用户名
+    groupId = groupName//jcenter上的路径
+    artifactId = artifactName//项目名称
+    publishVersion = versionNname//版本号
+    desc = descrip//描述，不重要
+    website = siteuril//项目主页
+}
+tasks.withType(Javadoc) {//防止编码问题
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+    options.addStringOption('charSet', 'UTF-8')
+}
