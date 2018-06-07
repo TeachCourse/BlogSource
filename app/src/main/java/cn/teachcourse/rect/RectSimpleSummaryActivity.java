@@ -106,7 +106,7 @@ public class RectSimpleSummaryActivity extends BaseActivity {
         /**
          * 设置button的margin属性值
          */
-        params.setMargins(100,DensityUtil.dip2px(this,100),100,100);
+        params.setMargins(100,(int)DensityUtil.dip2px(this,100f),100,100);
         button.setLayoutParams(params);
         button.setText("计算Rect坐标");
         button.setBackgroundColor(Color.parseColor("#7FFFAA"));
@@ -140,7 +140,7 @@ public class RectSimpleSummaryActivity extends BaseActivity {
         /**
          * 设置button的margin属性值
          */
-        params.setMargins(100,DensityUtil.dip2px(this,100),100,100);
+        params.setMargins(100,(int)DensityUtil.dip2px(this,100f),100,100);
         anim_btn.setLayoutParams(params);
         anim_btn.setText("计算Rect坐标");
         anim_btn.setBackgroundColor(Color.parseColor("#DDA0DD"));

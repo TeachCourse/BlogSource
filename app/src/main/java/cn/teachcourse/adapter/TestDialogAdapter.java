@@ -39,7 +39,7 @@ public class TestDialogAdapter extends MyBaseAdapter {
         if (convertView == null) {
             viewHolder = new MyViewHolder();
             TextView textView = new TextView(mContext);
-            int size=DensityUtil.px2dip(mContext, 28);
+            int size=(int)DensityUtil.px2dip(mContext, 28f);
             textView.setPadding(size,size,size,size);
             textView.setGravity(Gravity.CENTER);
             viewHolder.textView = textView;

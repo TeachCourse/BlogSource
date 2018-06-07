@@ -20,8 +20,6 @@ public class FlingImageViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fling_image_view);
         initView();
-        float dp=DimensionUtil.getUnitDip(this,1);
-        int dip= DensityUtil.px2dip(this,1);
     }
 
     private void initView() {

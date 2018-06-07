@@ -77,8 +77,8 @@ public class DetailViewPagerAdapter extends PagerAdapter implements ViewPager.On
         for (int i = 0; i < 5; i++) {//添加小圆点到指定视图。
             ImageView imageView = new ImageView(mActivity);
             params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-            params.rightMargin = DensityUtil.dip2px(mActivity,5);
-            params.leftMargin =DensityUtil.dip2px(mActivity,5);
+            params.rightMargin = (int)DensityUtil.dip2px(mActivity,5f);
+            params.leftMargin =(int)DensityUtil.dip2px(mActivity,5f);
             imageView.setImageResource(R.drawable.dot_normal);
             imageView.setLayoutParams(params);
             listPoint.add(imageView);//添加到集合中。

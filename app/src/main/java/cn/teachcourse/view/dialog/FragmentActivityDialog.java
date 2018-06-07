@@ -33,7 +33,7 @@ public class FragmentActivityDialog extends FragmentActivity {
     private View createDialog(TestDialogBean bean) {
         /**LinearLayout默认水平方向布局*/
         LinearLayout ll = new LinearLayout(this);
-        ll.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, DensityUtil.px2dip(this,400)));
+        ll.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int)DensityUtil.px2dip(this,400)));
         ll.setOrientation(LinearLayout.VERTICAL);
 
         TextView mTitle_tv = new TextView(this);

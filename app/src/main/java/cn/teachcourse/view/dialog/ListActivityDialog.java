@@ -63,7 +63,7 @@ public class ListActivityDialog extends ListActivity {
     private View createDialog(TestDialogBean bean) {
         /**LinearLayout默认水平方向布局*/
         LinearLayout ll = new LinearLayout(this);
-        ll.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, DensityUtil.px2dip(this,400)));
+        ll.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int)DensityUtil.px2dip(this,400f)));
         ll.setOrientation(LinearLayout.VERTICAL);
 
         TextView mTitle_tv = new TextView(this);
@@ -95,7 +95,7 @@ public class ListActivityDialog extends ListActivity {
             if (convertView == null) {
                 viewHolder = new MyViewHolder();
                 TextView textView = new TextView(ListActivityDialog.this);
-                int size= DensityUtil.px2dip(ListActivityDialog.this, 28);
+                int size= (int)DensityUtil.px2dip(ListActivityDialog.this, 28f);
                 textView.setPadding(size,size,size,size);
                 textView.setGravity(Gravity.CENTER);
                 viewHolder.textView = textView;

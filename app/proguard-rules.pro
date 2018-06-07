@@ -23,7 +23,7 @@
 -dontwarn javax.annotation.**
 
 #添加nineoldandroids混淆规则
--keepnames com.nineoldandroids.**{*;}
+#-keepnames com.nineoldandroids.**{*;}
 
 # -------------------------------------------1.2 混淆注解相关代码------------------------------------------
 
