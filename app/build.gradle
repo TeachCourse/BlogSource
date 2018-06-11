@@ -118,10 +118,10 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile project(':pullable')
-    compile project(':upversion')
-    compile project(':baseutil')
+    compile 'cn.teachcourse:upversion:1.0.0'
+    compile 'cn.teachcourse:baseutil:1.0.1'
     compile project(':pulltofresh')
-    compile project(':fileprovider24')
+    compile 'cn.teachcourse:fileprovider24:1.0.1'
     //    compile 'com.koushikdutta.async:androidasync:2.+'
     compile "com.android.support:appcompat-v7:$rootProject.ext.appCompat"
     compile "com.android.support:design:$rootProject.ext.appCompat"

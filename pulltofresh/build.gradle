@@ -28,5 +28,5 @@ dependencies {
     })
     compile "com.android.support:appcompat-v7:$rootProject.ext.appCompat"
     testCompile 'junit:junit:4.12'
-    compile project(':flinglistview')
+    compile 'cn.teachcourse:flinglistview:1.0.0'
 }

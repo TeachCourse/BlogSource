@@ -1,9 +1,4 @@
 include ':app'
-include ':flinglistview'
-include ':fileprovider24'
-include ':baseutil'
 include ':pulltofresh'
 include ':pullable'
-include ':upversion'
-include ':popupwindow'
 
