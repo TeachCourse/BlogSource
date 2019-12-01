@@ -12,6 +12,9 @@ import android.widget.Toast;
 
 import cn.teachcourse.R;
 
+/**
+ * 跨进程通信之Intent：实现Activity启动符合条件的Intent
+ */
 public class BundleActivity extends AppCompatActivity {
 
     @Override
