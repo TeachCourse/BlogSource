@@ -9,10 +9,11 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".app.AudioMainActivity">
 
-    <TextView
+    <cn.teachcourse.view.TimerTextView
         android:id="@+id/record_time_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="显示"
         android:layout_above="@+id/start_record_audio_btn"
         android:layout_centerHorizontal="true" />
 
