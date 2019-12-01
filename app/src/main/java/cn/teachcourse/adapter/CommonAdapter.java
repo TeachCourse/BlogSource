@@ -1,6 +1,7 @@
 package cn.teachcourse.adapter;
 
 import android.content.Context;
+import android.support.annotation.IdRes;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,8 @@ import java.util.List;
 
 /**
  * Created by postmaster@teachcourse.cn on 2017/1/3.
+ * 简单地封装BaseAdapter，重写{@link CommonAdapter#getLayoutId}和
+ * 重写{@link CommonAdapter#onBindViewHolder}
  */
 
 public abstract class CommonAdapter<T> extends BaseAdapter {
@@ -17,6 +20,10 @@ public abstract class CommonAdapter<T> extends BaseAdapter {
     protected Context context;
     protected List<T> list;
     protected ViewHolder viewHolder;
+
+    public abstract int getLayoutId();
+
+    public abstract void onBindViewHolder(ViewHolder viewHolder,int position);
 
     public CommonAdapter(Context context, List<T> list) {
         this.context = context;
@@ -39,12 +46,10 @@ public abstract class CommonAdapter<T> extends BaseAdapter {
         return position;
     }
 
-    public abstract int setLayoutId();
-    public abstract void onBindViewHolder(ViewHolder viewHolder,int position);
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if(convertView==null){
-            convertView=inflater.inflate(setLayoutId(),parent,false);
+            convertView=inflater.inflate(getLayoutId(),parent,false);
             viewHolder=new ViewHolder(convertView) ;
             convertView.setTag(viewHolder);
         }else{
@@ -58,6 +63,9 @@ public abstract class CommonAdapter<T> extends BaseAdapter {
         protected View view;
         public ViewHolder(View view) {
             this.view = view;
+        }
+        public View findViewById(@IdRes int id){
+            return view.findViewById(id);
         }
     }
 }
