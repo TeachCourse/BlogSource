@@ -3,6 +3,7 @@ package cn.teachcourse.app;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.ActivityOptions;
+import android.app.SharedElementCallback;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
@@ -10,6 +11,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+
+import java.util.List;
+import java.util.Map;
 
 import cn.teachcourse.R;
 import cn.teachcourse.api.DownloadImgAPI;
@@ -29,20 +33,27 @@ public class ActivityTransitionDetails extends AppCompatActivity {
     }
 
     private void initData() {
-        String name = getIntent().getStringExtra(KEY_ID);
-        if (name != null)
-            mName = name;
+
     }
 
     private void initView() {
         final ImageView previewPic = (ImageView) findViewById(R.id.transition_preview_iv);
+        String name = getIntent().getStringExtra(KEY_ID);
+        if (name != null)
+            setEnterSharedElementCallback(new SharedElementCallback() {
+                @Override
+                public void onMapSharedElements(List<String> names,
+                                                Map<String, View> sharedElements) {
+                    sharedElements.put("hero", previewPic);
+                }
+            });
         DownloadImgAPI.setImageViewAware(previewPic, "drawable://" + ActivityTransition.iconId);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public void finish(View v) {
         Intent intent = new Intent(this, ActivityTransition.class);
-        intent.putExtra(KEY_ID, mName);
+        intent.putExtra(KEY_ID, v.getTransitionName());
         ActivityOptions activityOptions = ActivityOptions.makeSceneTransitionAnimation(this,
                 v, "hero");
         startActivity(intent, activityOptions.toBundle());
