@@ -124,9 +124,10 @@ dependencies {
     compile 'cn.teachcourse:fileprovider24:1.0.1'
     //    compile 'com.koushikdutta.async:androidasync:2.+'
     compile "com.android.support:appcompat-v7:$rootProject.ext.appCompat"
+//    compile "com.android.support:support-v4:$rootProject.ext.appCompat"
     compile "com.android.support:design:$rootProject.ext.appCompat"
     compile "com.android.support:recyclerview-v7:$rootProject.ext.appCompat"
-//    compile 'com.android.support.constraint:constraint-layout:1.0.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.1'
     compile 'com.loopj.android:android-async-http:1.4.9'
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
     compile 'com.flaviofaria:kenburnsview:1.0.7'
@@ -137,7 +138,6 @@ dependencies {
     compile 'me.neavo:volley:2014.12.09'
     compile 'com.zhy:okhttputils:2.6.2'
     compile 'com.zhy:autolayout:1.4.5'
-    compile 'com.android.support.constraint:constraint-layout:1.0.1'
     testCompile 'junit:junit:4.12'
 }
 
