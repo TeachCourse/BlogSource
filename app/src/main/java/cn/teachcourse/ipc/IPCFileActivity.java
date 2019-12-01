@@ -41,6 +41,11 @@ public class IPCFileActivity extends AppCompatActivity {
     public void onClick(View view){
         initPermission();
     }
+
+    /**
+     * 启动符合条件的Activity
+     * @param view
+     */
     public void launchB(View view){
         Intent intent = new Intent();
         intent.setAction(MyConstants.INTENT_ACTION+"launchB");
