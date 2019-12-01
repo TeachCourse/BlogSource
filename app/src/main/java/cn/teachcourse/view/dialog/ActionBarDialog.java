@@ -2,7 +2,7 @@ package cn.teachcourse.view.dialog;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,9 +16,9 @@ import cn.teahcourse.baseutil.DensityUtil;
 
 /**
  * Created by postmaster@teachcourse.cn on 2017/1/3.
+ * 自从22.1.0，ActionBarActivity被弃用了
  */
-
-public class ActionBarDialog extends ActionBarActivity {
+public class ActionBarDialog extends AppCompatActivity {
     private static final String TAG = "ActionBarDialog";
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
